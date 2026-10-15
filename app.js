@@ -5,8 +5,8 @@
 'use strict';
 
 /* ======================================================================
-      i18n
-      ====================================================================== */
+   i18n
+   ====================================================================== */
 const I18N = {
     ru: {
         source: 'Источник', search: 'Поиск и список узлов', ss_az: 'А–Я', ss_len: 'Длина', ss_lines: 'Строки', ss_links: 'Связи', ssh_az: 'По алфавиту', ssh_len: 'По длине имени', ssh_lines: 'По числу строк кода', ssh_links: 'По числу связей', viewSettings: 'Настройки вида', fitAll: 'Показать всё', closeBtn: 'Закрыть', expandBtn: 'Развернуть', views_includes: '#include', views_calls: 'Вызовы', views_api: 'API',
@@ -49,7 +49,7 @@ const I18N = {
         v_charge: 'Отталкивание', v_linkDist: 'Длина связей', v_gravity: 'Притяжение к центру', v_decay: 'Трение (затухание)', v_dagDist: 'Расстояние между уровнями',
         v_nodeSize: 'Размер узлов', v_nodeOpacity: 'Непрозрачность узлов', v_linkOpacity: 'Яркость связей', v_quality: 'Качество сфер',
         v_labelCount: 'Число подписей', v_labelSize: 'Размер подписей', v_smooth: 'Плавность камеры', v_sens: 'Чувствительность',
-        srcSnap: 'Снимок', snapSrcHint: 'Снимок проекта (.ccv или .json) из вкладки «Экспорт» — открывается мгновенно, без разбора и без GitHub.',
+        srcSnap: 'Снимок', snapSrcHint: 'Снимок проекта (.drift или .json) из вкладки «Экспорт» — открывается мгновенно, без разбора и без GitHub.',
         snapUrl: 'Ссылка на снимок', loadByUrl: 'Загрузить по ссылке', snapPlain: 'Без сжатия (.json — можно читать и править)',
         graphNotSnap: 'Это экспорт графа (для Gephi/скриптов), а не снимок проекта. Сохраните «Снимок проекта» во вкладке «Экспорт».',
         liveFilter: 'Фильтр файлов (сразу, без переоткрытия)', refreshing: 'Обновляю проект…', refreshed: 'Проект обновлён',
@@ -59,9 +59,9 @@ const I18N = {
         autoLangs: 'Файлов выбранных расширений нет — открываю как:', srcFile: 'файл кода', languages: 'Языки',
         msaa: 'Сглаживание (MSAA)', v_idleStop: 'Усыпить анимацию после бездействия', showFps: 'Показывать FPS', resetTab: 'Сбросить вкладку', resetAll: 'Сбросить всё', resetDone: 'Сброшено',
         resetAllConfirm: 'Сбросить все настройки (вид, стиль, экран, физика, фильтры) к значениям по умолчанию? Проект перезагрузится.',
-        snapTitle: 'Снимок проекта (.ccv)', snapHint: 'Результат разбора, раскладка и настройки в одном сжатом файле. Открывается здесь мгновенно — без повторного разбора и GitHub. Можно положить рядом с сайтом проекта и открывать ссылкой ?snap=файл.ccv',
+        snapTitle: 'Снимок проекта (.drift)', snapHint: 'Результат разбора, раскладка и настройки в одном сжатом файле. Открывается здесь мгновенно — без повторного разбора и GitHub. Можно положить рядом с сайтом проекта и открывать ссылкой ?snap=файл.drift',
         snapWithSrc: 'С исходным кодом (для просмотра кода в деталях)', snapSave: 'Скачать снимок', snapBuilding: 'Собираю снимок…', snapSaved: 'Снимок готов:',
-        snapOpening: 'Открываю снимок', snapBad: 'Это не снимок CODEVIZ', openSnap: 'Открыть файл снимка (.ccv / .json)…', dropHint: 'Можно просто перетащить на страницу файл .ccv или .zip.',
+        snapOpening: 'Открываю снимок', snapBad: 'Это не снимок Codrift', openSnap: 'Открыть файл снимка (.drift / .json)…', dropHint: 'Можно просто перетащить на страницу файл .drift или .zip.',
         graphExport: 'Граф текущего вида', graphExportHint: 'С позициями узлов и цветами: GLB — 3D-модель для Blender, GEXF — Gephi, GraphML — yEd/Cytoscape, DOT — Graphviz.', glbBuilding: 'Собираю 3D-модель…',
         nodeLink: 'Ссылка', nodeLinkHint: 'Скопировать ссылку на этот узел с текущими настройками и камерой', openFull: 'Открыть полностью',
         pngScale: 'Качество (масштаб)', png_labels: 'Подписи узлов', png_legend: 'Пояснение цветов (что каким цветом)', png_title: 'Заголовок (проект, вид)', pngSave: 'Сохранить PNG', pngRendering: 'Рендерю картинку…',
@@ -71,7 +71,7 @@ const I18N = {
         v_rim: 'Ободок (контур)', effects: 'Эффекты', c_orbits: 'Орбиты (оболочки)', c_fog: 'Туман глубины', c_additive: 'Светящиеся связи',
         sky: 'Фон', sky_none: 'Нет', sky_gradient: 'Градиент', sky_stars: 'Звёзды', sky_nebula: 'Туманность', sky_grid: 'Сетка', v_skyAmt: 'Яркость фона', newSky: 'Сгенерировать новое небо',
         nearFade: 'Растворять узлы у камеры', perf: 'Производительность', fpsCap: 'Ограничение FPS', fps_auto: 'Нет', resScale: 'Разрешение рендера',
-        res_low: 'Низкое', res_mid: 'Среднее', res_auto: 'Авто', res_high: 'Высокое', perfHint: 'Кадры рисуются только при движении и анимации; без касаний — 30 к/с, после бездействия анимация засыпает. «Авто»-разрешение само снижается при просадке FPS. Больше всего нагрузки дают свечение, орбиты, импульсы и дрожание («Стиль»).',
+        res_low: 'Низкое', res_mid: 'Среднее', res_auto: 'Авто', res_high: 'Высокое', res_max: 'Максимум', maxQuality: 'Максимальная графика', maxQualityDone: 'Графика на максимуме: родное разрешение, MSAA, гладкие узлы, без ограничения FPS', perfHint: 'Кадры рисуются только при движении и анимации; без касаний — 30 к/с, после бездействия анимация засыпает. «Авто»-разрешение само снижается при просадке FPS. Больше всего нагрузки дают свечение, орбиты, импульсы и дрожание («Стиль»).',
         lk_ref: 'ссылка (&fn)', lk_indirect: 'через указатель', viaPtr: 'указатель', maxFiles: 'Макс. файлов',
         tooManyHint: 'Сузьте выбор в «Искать только в».',
         stylePreset: 'Стиль сцены', st_cosmos: 'Космос', st_classic: 'Классика', c_bloom: 'Свечение (bloom)', c_stars: 'Звёзды и туманности',
@@ -82,7 +82,7 @@ const I18N = {
         gradient: 'Направление связи градиентом', labels: 'Подписи', labelKinds: 'Подписывать типы узлов', camera: 'Камера',
         mdHint: 'Текстовая документация из того же разбора: дерево, связи, описания из комментариев.', mdAll: 'Markdown: весь проект', mdApi: 'Markdown: только заголовки (API)',
         png: 'Картинка PNG', copyLink: 'Скопировать ссылку на вид', switchProject: 'Открыть другой проект…', copied: 'Скопировано',
-        md_title: 'документация кода', md_titleApi: 'справочник API', md_generated: 'Сгенерировано CODEVIZ', md_fromComments: 'Описания взяты из комментариев в исходниках.',
+        md_title: 'документация кода', md_titleApi: 'справочник API', md_generated: 'Сгенерировано Codrift', md_fromComments: 'Описания взяты из комментариев в исходниках.',
         md_toc: 'Содержание', md_tree: 'Структура директорий', md_source: 'исходник', md_desc: 'Описание', md_value: 'Значение', md_decl: 'Объявление',
         md_download: 'Скачать .md', md_copy: 'Копировать', md_note: 'Файл формируется в браузере, ничего не отправляется.',
     },
@@ -127,7 +127,7 @@ const I18N = {
         v_charge: 'Repulsion', v_linkDist: 'Link length', v_gravity: 'Pull to center', v_decay: 'Friction (damping)', v_dagDist: 'Level distance',
         v_nodeSize: 'Node size', v_nodeOpacity: 'Node opacity', v_linkOpacity: 'Link brightness', v_quality: 'Sphere quality',
         v_labelCount: 'Label count', v_labelSize: 'Label size', v_smooth: 'Camera smoothness', v_sens: 'Sensitivity',
-        srcSnap: 'Snapshot', snapSrcHint: 'A project snapshot (.ccv or .json) from the Export tab — opens instantly, no parsing, no GitHub.',
+        srcSnap: 'Snapshot', snapSrcHint: 'A project snapshot (.drift or .json) from the Export tab — opens instantly, no parsing, no GitHub.',
         snapUrl: 'Snapshot URL', loadByUrl: 'Load from URL', snapPlain: 'Uncompressed (.json — readable and editable)',
         graphNotSnap: 'This is a graph export (for Gephi/scripts), not a project snapshot. Save “Project snapshot” in the Export tab.',
         liveFilter: 'File filter (live, no reload)', refreshing: 'Refreshing project…', refreshed: 'Project refreshed',
@@ -137,9 +137,9 @@ const I18N = {
         autoLangs: 'No files with the selected extensions — opening as:', srcFile: 'source file', languages: 'Languages',
         msaa: 'Anti-aliasing (MSAA)', v_idleStop: 'Sleep animation after inactivity', showFps: 'Show FPS', resetTab: 'Reset tab', resetAll: 'Reset everything', resetDone: 'Reset done',
         resetAllConfirm: 'Reset all settings (view, style, screen, physics, filters) to defaults? The project will reload.',
-        snapTitle: 'Project snapshot (.ccv)', snapHint: 'Parse result, layout and settings in one compressed file. Opens here instantly — no re-parsing, no GitHub. Put it next to your project site and open with ?snap=file.ccv',
+        snapTitle: 'Project snapshot (.drift)', snapHint: 'Parse result, layout and settings in one compressed file. Opens here instantly — no re-parsing, no GitHub. Put it next to your project site and open with ?snap=file.drift',
         snapWithSrc: 'Include source code (for code view in details)', snapSave: 'Download snapshot', snapBuilding: 'Building snapshot…', snapSaved: 'Snapshot ready:',
-        snapOpening: 'Opening snapshot', snapBad: 'Not a CODEVIZ snapshot', openSnap: 'Open snapshot file (.ccv / .json)…', dropHint: 'You can also drop a .ccv or .zip file onto the page.',
+        snapOpening: 'Opening snapshot', snapBad: 'Not a Codrift snapshot', openSnap: 'Open snapshot file (.drift / .json)…', dropHint: 'You can also drop a .drift or .zip file onto the page.',
         graphExport: 'Current view graph', graphExportHint: 'With node positions and colors: GLB — 3D model for Blender, GEXF — Gephi, GraphML — yEd/Cytoscape, DOT — Graphviz.', glbBuilding: 'Building 3D model…',
         nodeLink: 'Link', nodeLinkHint: 'Copy a link to this node with current settings and camera', openFull: 'Open full view',
         pngScale: 'Quality (scale)', png_labels: 'Node labels', png_legend: 'Color key (what each color means)', png_title: 'Title (project, view)', pngSave: 'Save PNG', pngRendering: 'Rendering image…',
@@ -149,7 +149,7 @@ const I18N = {
         v_rim: 'Rim light', effects: 'Effects', c_orbits: 'Orbits (shells)', c_fog: 'Depth fog', c_additive: 'Glowing links',
         sky: 'Background', sky_none: 'None', sky_gradient: 'Gradient', sky_stars: 'Stars', sky_nebula: 'Nebula', sky_grid: 'Grid', v_skyAmt: 'Background brightness', newSky: 'Generate new sky',
         nearFade: 'Dissolve nodes near camera', perf: 'Performance', fpsCap: 'FPS limit', fps_auto: 'None', resScale: 'Render resolution',
-        res_low: 'Low', res_mid: 'Medium', res_auto: 'Auto', res_high: 'High', perfHint: 'Frames are drawn only while something moves or animates. Glow, orbits, pulses, jitter and rotation cost the most — turn them off in Style.',
+        res_low: 'Low', res_mid: 'Medium', res_auto: 'Auto', res_high: 'High', res_max: 'Max', maxQuality: 'Maximum graphics', maxQualityDone: 'Graphics maxed out: native resolution, MSAA, smooth nodes, no FPS cap', perfHint: 'Frames are drawn only while something moves or animates. Glow, orbits, pulses, jitter and rotation cost the most — turn them off in Style.',
         lk_ref: 'reference (&fn)', lk_indirect: 'via pointer', viaPtr: 'pointer', maxFiles: 'Max files',
         tooManyHint: 'Narrow it down with “Search only in”.',
         stylePreset: 'Scene style', st_cosmos: 'Cosmos', st_classic: 'Classic', c_bloom: 'Glow (bloom)', c_stars: 'Stars and nebulae',
@@ -160,21 +160,30 @@ const I18N = {
         gradient: 'Link direction as gradient', labels: 'Labels', labelKinds: 'Label these node kinds', camera: 'Camera',
         mdHint: 'Text documentation from the same parse: tree, relations, descriptions from comments.', mdAll: 'Markdown: whole project', mdApi: 'Markdown: headers only (API)',
         png: 'PNG screenshot', copyLink: 'Copy link', switchProject: 'Open another project…', copied: 'Copied',
-        md_title: 'code documentation', md_titleApi: 'API reference', md_generated: 'Generated by CODEVIZ', md_fromComments: 'Descriptions are taken from source comments.',
+        md_title: 'code documentation', md_titleApi: 'API reference', md_generated: 'Generated by Codrift', md_fromComments: 'Descriptions are taken from source comments.',
         md_toc: 'Contents', md_tree: 'Directory structure', md_source: 'source', md_desc: 'Description', md_value: 'Value', md_decl: 'Declaration',
         md_download: 'Download .md', md_copy: 'Copy', md_note: 'Generated in your browser, nothing is uploaded.',
     },
 };
 const store = {
-    get(k, d) { try { const v = localStorage.getItem('ccv.' + k); return v == null ? d : JSON.parse(v); } catch { return d; } },
-    set(k, v) { try { localStorage.setItem('ccv.' + k, JSON.stringify(v)); } catch { /* приватный режим */ } },
+    get(k, d) { try { const v = localStorage.getItem('drift.' + k); return v == null ? d : JSON.parse(v); } catch { return d; } },
+    set(k, v) { try { localStorage.setItem('drift.' + k, JSON.stringify(v)); } catch { /* приватный режим */ } },
 };
+// Настройки со времён прежнего имени (ключи «ccv.*») переезжают на новые один раз
+try {
+    for (const k of Object.keys(localStorage)) {
+        if (!k.startsWith('ccv.')) continue;
+        const nk = 'drift.' + k.slice(4);
+        if (localStorage.getItem(nk) == null) localStorage.setItem(nk, localStorage.getItem(k));
+        localStorage.removeItem(k);
+    }
+} catch { /* приватный режим */ }
 let LANG = store.get('lang', 'en');
 const t = k => (I18N[LANG] && I18N[LANG][k]) || I18N.en[k] || k;
 
 /* ======================================================================
-      Утилиты
-      ====================================================================== */
+   Утилиты
+   ====================================================================== */
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const fmt = n => (n == null ? '—' : Number(n).toLocaleString(LANG === 'ru' ? 'ru-RU' : 'en-US'));
@@ -216,8 +225,8 @@ function toast(msg, ms = 3500) {
 }
 
 /* ======================================================================
-      Glob-фильтры
-      ====================================================================== */
+   Glob-фильтры
+   ====================================================================== */
 const DEFAULT_IGNORE = [
     '# Каталоги сторонних библиотек и сборки',
     '.git', 'node_modules', 'build', 'cmake-build-*', 'out', 'bin', 'obj',
@@ -255,8 +264,8 @@ function readCfg() {
 }
 
 /* ======================================================================
-      Источники: GitHub, локальная папка, zip
-      ====================================================================== */
+   Источники: GitHub, локальная папка, zip
+   ====================================================================== */
 let ghToken = ''; // только в памяти
 
 
@@ -362,7 +371,7 @@ async function sourceZip(file) {
     // Распаковываем файлы всех поддерживаемых языков — иначе автоопределение языка не сработает
     const cfg = readCfg();
     const exts = new Set(cfg.exts.split(/[\s,]+/).filter(Boolean).map(s => (s.startsWith('.') ? s : '.' + s).toLowerCase()));
-    if (window.CodeVizLangs) for (const L of CodeVizLangs.all) for (const e of L.exts) exts.add(e);
+    if (window.CodriftLangs) for (const L of CodriftLangs.all) for (const e of L.exts) exts.add(e);
     const files = window.fflate.unzipSync(buf, { filter: f => exts.has(extOf(f.name)) && f.originalSize < cfg.maxKB * 1024 });
     const entries = Object.keys(files).filter(p => !p.endsWith('/')).map(p => ({ path: p, size: files[p].length, data: files[p] }));
     const root = stripCommonRoot(entries);
@@ -371,8 +380,8 @@ async function sourceZip(file) {
 }
 
 /* ======================================================================
-      Загрузка и разбор
-      ====================================================================== */
+   Загрузка и разбор
+   ====================================================================== */
 let model = null;
 let busy = false;
 
@@ -392,7 +401,7 @@ async function runSource(makeSource, opts) {
     const ignoreRes = compileGlobs(cfg.ignore), onlyRes = compileGlobs(cfg.only);
     let exts = cfg.exts.split(/[\s,]+/).filter(Boolean).map(s => (s.startsWith('.') ? s : '.' + s).toLowerCase());
     // Выбрано хоть одно расширение языка — берём все его расширения (.cpp без .hpp потерял бы заголовки)
-    if (window.CodeVizLangs) for (const L of CodeVizLangs.all) if (L.exts.some(e => exts.includes(e))) exts = [...new Set([...exts, ...L.exts])];
+    if (window.CodriftLangs) for (const L of CodriftLangs.all) if (L.exts.some(e => exts.includes(e))) exts = [...new Set([...exts, ...L.exts])];
     try {
         setProgress(t('listing'), 0);
         const src = await makeSource(ignoreRes);
@@ -413,15 +422,15 @@ async function runSource(makeSource, opts) {
             }
         };
         pickFiles(exts);
-        const cppL = window.CodeVizLangs && CodeVizLangs.byId('cpp');
+        const cppL = window.CodriftLangs && CodriftLangs.byId('cpp');
         // Проект на C++ с заголовками .h: файлов .c нет, а .cpp/.hpp есть — открываем как C++
         if (cppL && picked.length && !picked.some(e => extOf(e.path) === '.c') && src.entries.some(e => !e.dirOnly && cppL.exts.includes(extOf(e.path)) && !anyMatch(ignoreRes, e.path))) {
             pickFiles([...new Set([...exts, ...cppL.exts])]); toast(t('autoLangs') + ' C++', 4000);
         }
-        if (!picked.length && window.CodeVizLangs) {
+        if (!picked.length && window.CodriftLangs) {
             // Нет файлов выбранных расширений — определяем языки проекта сами (самые частые)
             const cnt = new Map();
-            for (const e of src.entries) { if (e.dirOnly || anyMatch(ignoreRes, e.path)) continue; const L = CodeVizLangs.forPath(e.path); if (L) cnt.set(L, (cnt.get(L) || 0) + 1); }
+            for (const e of src.entries) { if (e.dirOnly || anyMatch(ignoreRes, e.path)) continue; const L = CodriftLangs.forPath(e.path); if (L) cnt.set(L, (cnt.get(L) || 0) + 1); }
             const max = Math.max(0, ...cnt.values());
             const chosen = [...cnt].filter(([, n]) => n >= Math.max(1, max * 0.15)).map(([L]) => L);
             if (chosen.length) { pickFiles(chosen.flatMap(L => L.exts)); toast(`${t('autoLangs')} ${chosen.map(L => L.name).join(', ')}`, 4000); }
@@ -447,7 +456,7 @@ async function runSource(makeSource, opts) {
             if (texts[i] == null) continue;
             try {
                 // Парсер выбирается по расширению файла (плагины языков — langs.js)
-                let L = window.CodeVizLangs && CodeVizLangs.forPath(picked[i].path);
+                let L = window.CodriftLangs && CodriftLangs.forPath(picked[i].path);
                 if (L && L.id === 'c' && hasCpp && /\.h$/i.test(picked[i].path)) L = cppL; // .h в C++-проекте — заголовок C++
                 const pf = L ? L.parse(picked[i].path, texts[i]) : CParser.parseFile(picked[i].path, texts[i]);
                 pf.lang = L ? L.id : 'c'; pf.text = texts[i]; files.push(pf);
@@ -471,8 +480,8 @@ async function runSource(makeSource, opts) {
 }
 
 /* ======================================================================
-      Модель проекта
-      ====================================================================== */
+   Модель проекта
+   ====================================================================== */
 // Имена параметров функции (из сигнатуры)
 function paramNames(fn) {
     const sig = fn.sig || '', i = sig.indexOf('('); if (i < 0) return new Set();
@@ -496,7 +505,7 @@ function paramNames(fn) {
     }
     return out;
 }
-const langOf = f => (window.CodeVizLangs && f && (CodeVizLangs.byId(f.lang) || CodeVizLangs.forPath(f.path))) || null;
+const langOf = f => (window.CodriftLangs && f && (CodriftLangs.byId(f.lang) || CodriftLangs.forPath(f.path))) || null;
 function buildModel(parsed, ctx) {
     const M = {
         name: ctx.name, ref: ctx.ref, web: ctx.web, files: new Map(), dirs: new Map(), fns: new Map(), fnByName: new Map(),
@@ -764,8 +773,8 @@ function computeModules(M) {
 }
 
 /* ======================================================================
-      Построение данных графа для видов
-      ====================================================================== */
+   Построение данных графа для видов
+   ====================================================================== */
 const VIEW_IDS = ['includes', 'calls', 'api', 'dirs', 'stats'];
 const viewOpts = store.get('viewOpts', {});
 const defOpts = {
@@ -1017,15 +1026,15 @@ function expandOut(fn, o) {
 }
 
 /* ======================================================================
-      3D-граф
-      ====================================================================== */
+   3D-граф
+   ====================================================================== */
 let G = null, gdata = { nodes: [], links: [] }, adj = { out: new Map(), inn: new Map() };
 let selId = null, hlNodes = new Set(), hlLinks = new Set();
 let paused = false, fitPending = false;
 const colorCache = {};
 
 /* ----- Палитры и пресеты стилей -----
-      Пресет задаёт набор параметров сцены; любой из них потом можно поменять вручную. */
+   Пресет задаёт набор параметров сцены; любой из них потом можно поменять вручную. */
 const PALETTES = {
     vivid: { '--s1': '#5aa9ff', '--s2': '#ff8a5c', '--s3': '#38e0a8', '--s4': '#ffd166', '--s5': '#ff6fae', '--s6': '#8be36a', '--s7': '#b39dff', '--s8': '#ff5c5c', '--ext': '#6b7280', '--graph-bg': '#0a0e19', '--hl': '#ffe066', '--muted': '#7f8bb0', neb: ['#3949ab', '#00838f', '#6a1b9a'] },
     cosmos: { '--s1': '#4da3ff', '--s2': '#ff7a45', '--s3': '#2ef2b0', '--s4': '#ffc93c', '--s5': '#ff5fa2', '--s6': '#7cff4f', '--s7': '#a78bfa', '--s8': '#ff4d4d', '--ext': '#5b6378', '--graph-bg': '#03040a', '--hl': '#ffe066', '--muted': '#6f7da8', neb: ['#5b3fd1', '#1b6fd8', '#c2306f'] },
@@ -1086,8 +1095,8 @@ function linkBase(l) { return colorCache[LINK_KIND_COLOR[l.kind]] || colorCache[
 function hlLinkColor(l) { return (l.source.id || l.source) === selId ? colorCache['--hl'] : colorCache['--s1']; }
 
 /* ----- Рендер только по необходимости -----
-      Библиотека сама рисовала бы каждый кадр. Мы останавливаем её цикл и даём ровно один кадр
-      (шаг раскладки + рендер), когда что-то меняется: камера, раскладка, анимация, выделение. */
+   Библиотека сама рисовала бы каждый кадр. Мы останавливаем её цикл и даём ровно один кадр
+   (шаг раскладки + рендер), когда что-то меняется: камера, раскладка, анимация, выделение. */
 let needRender = true, engineActive = false, lastRender = 0;
 const requestRender = () => { needRender = true; };
 // Анимация с плавной остановкой: ts — масштаб времени (1 — идёт, 0 — уснула), animT — «время анимации»
@@ -1134,11 +1143,11 @@ function planGrowth(nodes, t0) {
 }
 
 /* ----- Камера -----
-      Ориентация — кватернион (свободное вращение без «верха/низа»), расстояние и цель — отдельно.
-      Ввод меняет только цели, текущие значения догоняют их экспоненциально, как в CameraOrbitController3D CGDF:
-      alpha = 1 - exp(-dt / (1 - friction)). Программный перелёт к узлу — отдельная плавная кривая (ease-in-out).
-      Проекция плавно переходит от перспективы к изометрии («долли-зум»: угол обзора уменьшается,
-      камера отъезжает так, что масштаб в центре не меняется). */
+   Ориентация — кватернион (свободное вращение без «верха/низа»), расстояние и цель — отдельно.
+   Ввод меняет только цели, текущие значения догоняют их экспоненциально, как в CameraOrbitController3D CGDF:
+   alpha = 1 - exp(-dt / (1 - friction)). Программный перелёт к узлу — отдельная плавная кривая (ease-in-out).
+   Проекция плавно переходит от перспективы к изометрии («долли-зум»: угол обзора уменьшается,
+   камера отъезжает так, что масштаб в центре не меняется). */
 const DEG = Math.PI / 180, FOV_PERSP = 50, FOV_ISO = 1.2;
 const orbit = {
     q: new THREE.Quaternion().setFromEuler(new THREE.Euler(-0.35, -0.6, 0, 'YXZ')), gq: new THREE.Quaternion(),
@@ -1282,8 +1291,13 @@ function bindOrbitInput(el) {
             orbit.gq.setFromEuler(eu);
         }
     };
+    // Сброс ввода: палец, отпущенный над кнопкой или панелью, иначе «оставался» на экране —
+    // следующее касание считалось вторым пальцем, и камера залипала в режиме щипка
+    const resetInput = () => { ptrs.clear(); mode = null; down = null; };
     el.addEventListener('pointerdown', e => {
         cz.lastInput = performance.now();
+        if (e.isPrimary) resetInput(); // первый палец нового жеста — старых касаний быть не может
+        try { el.setPointerCapture(e.pointerId); } catch { /* */ } // отпускание придёт сюда, где бы ни был палец
         ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
         if (ptrs.size === 1) { mode = (e.button === 2 || e.button === 1 || e.shiftKey || e.ctrlKey) ? 'pan' : 'rot'; down = { x: e.clientX, y: e.clientY, moved: false, type: e.pointerType }; }
         if (ptrs.size === 2) { mode = 'pinch'; lastSpan = span(); lastC = centroid(); if (down) down.moved = true; }
@@ -1326,6 +1340,13 @@ function bindOrbitInput(el) {
         if (ptrs.size === 1) mode = 'rot'; else if (!ptrs.size) { mode = null; down = null; }
     };
     el.addEventListener('pointerup', up); el.addEventListener('pointercancel', up);
+    // Захват потерян (системный жест, уведомление, сворачивание) — касание считается законченным
+    el.addEventListener('lostpointercapture', e => {
+        if (!ptrs.delete(e.pointerId)) return;
+        if (ptrs.size === 1) mode = 'rot'; else if (!ptrs.size) { mode = null; down = null; }
+    });
+    window.addEventListener('blur', resetInput);
+    document.addEventListener('visibilitychange', () => { if (document.hidden) resetInput(); });
     el.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') { up(e); hideTip(); } });
     el.addEventListener('wheel', e => {
         e.preventDefault(); cz.lastInput = performance.now();
@@ -1423,7 +1444,7 @@ function makeNodeMaterial() {
     if (any(isnan(outgoingLight)) || any(isinf(outgoingLight))) outgoingLight = vec3(0.0);
 #include <opaque_fragment>`);
     };
-    mat.customProgramCacheKey = () => 'ccv-node';
+    mat.customProgramCacheKey = () => 'drift-node';
     return mat;
 }
 function nodeGeometry() {
@@ -1516,9 +1537,9 @@ function recolorLines() {
 }
 
 /* ======================================================================
-      Сцена: небо (градиент / звёзды / процедурная туманность / сетка), свечение,
-      атомы с оболочками, импульсы по связям, «тепловое» дрожание
-      ====================================================================== */
+   Сцена: небо (градиент / звёзды / процедурная туманность / сетка), свечение,
+   атомы с оболочками, импульсы по связям, «тепловое» дрожание
+   ====================================================================== */
 const cz = { stars: null, background: null, grid: null, rings: null, ringDefs: [], electrons: null, elDefs: [], pulses: null, hlPulses: null, pv: 1, bloom: null, lastInput: 0, disp: new Float32Array(0), rad: new Float32Array(0) };
 let posDirty = true;
 
@@ -1667,8 +1688,8 @@ function ensureBloom() {
         const pass = new window.UnrealBloomPass(new THREE.Vector2(el.clientWidth || 512, el.clientHeight || 512), vis.glow, 0.45, 0.24);
         // Свечение считается в полном разрешении: в половинном мелкие уровни размытия давали «квадратные» пятна вокруг крупных узлов.
         // На телефонах (высокая плотность пикселей, слабый GPU) — в 0.75: там ступеньки не видны
-        const orig = pass.setSize.bind(pass), k = IS_TOUCH ? 0.75 : 1;
-        pass.setSize = (w, h) => orig(Math.max(1, Math.round(w * k)), Math.max(1, Math.round(h * k)));
+        const orig = pass.setSize.bind(pass);
+        pass.setSize = (w, h) => { const k = IS_TOUCH && vis.res !== 'max' ? 0.75 : 1; orig(Math.max(1, Math.round(w * k)), Math.max(1, Math.round(h * k))); };
         G.postProcessingComposer().addPass(pass);
         cz.bloom = pass; applyRenderScale(); applyMsaa();
     }
@@ -1686,7 +1707,8 @@ function setPixelRatio(pr) {
 function applyRenderScale() {
     if (!G) return;
     const dpr = window.devicePixelRatio || 1;
-    const pr = vis.res === 'low' ? Math.min(dpr, 1) * 0.75 : vis.res === 'mid' ? Math.min(dpr, 1) : vis.res === 'high' ? Math.min(dpr, 2) : Math.min(dpr, 1.5);
+    // «Максимум» — родное разрешение экрана (у телефонов ×3)
+    const pr = vis.res === 'low' ? Math.min(dpr, 1) * 0.75 : vis.res === 'mid' ? Math.min(dpr, 1) : vis.res === 'high' ? Math.min(dpr, 2) : vis.res === 'max' ? Math.min(dpr, 3) : Math.min(dpr, 1.5);
     setPixelRatio(pr * (vis.res === 'auto' ? dyn.scale : 1));
     applyMsaa();
     requestRender();
@@ -1776,10 +1798,10 @@ function ensurePointsCapacity(obj, count) {
 }
 
 /* ----- Импульсы по связям -----
-      Каждая связь испускает vis.pulseRate импульсов в секунду (со своей случайной фазой), импульс идёт
-      с постоянной скоростью vis.pulseSpeed независимо от длины связи и гаснет у её концов.
-      Фоновые импульсы плавно скрываются при выделении узла и при сильном отдалении камеры.
-      Пауза останавливает рождение новых импульсов: уже летящие долетают до конца связи. */
+   Каждая связь испускает vis.pulseRate импульсов в секунду (со своей случайной фазой), импульс идёт
+   с постоянной скоростью vis.pulseSpeed независимо от длины связи и гаснет у её концов.
+   Фоновые импульсы плавно скрываются при выделении узла и при сильном отдалении камеры.
+   Пауза останавливает рождение новых импульсов: уже летящие долетают до конца связи. */
 let pulsePhase = new Float32Array(0), pulseBase = new Float32Array(0);
 // Интервалы времени анимации, в которые импульсы не рождаются (to = Infinity — пауза ещё идёт)
 const pulseGaps = [];
@@ -1850,7 +1872,6 @@ function frameSync(t, dt, cam) {
     _frustum.setFromProjectionMatrix(_pm.multiplyMatrices(cam.projectionMatrix, cam.matrixWorldInverse));
     if (nodeVis.length < N) nodeVis = new Uint8Array(N);
     let jp = 0, je = 0;
-    const ringOf = d => d; // (оболочки проверяются по видимости узла)
     for (let i = 0; i < N; i++) {
         const n = ns[i], r = R[i];
         let v = 0;
@@ -1928,7 +1949,7 @@ function frameSync(t, dt, cam) {
         const out = (Lk[li].source.id || Lk[li].source) === selId; return out ? colorCache['--hl'] : colorCache['--s1'];
     });
 }
-// Импульсы на видимых связях: по одному в секунду на связь, постоянная скорость, затухание у концов
+// Импульсы на видимых связях: vis.pulseRate в секунду на связь, постоянная скорость, затухание у концов
 const _pc = new THREE.Color();
 function emitPulses(obj, D, t, gain, accept, colorFn) {
     if (!obj) return;
@@ -2013,6 +2034,7 @@ function initGraph() {
         .linkDirectionalParticles(0) // импульсы выделения рисуем сами (rebuildHlPulses)
         .onEngineTick(() => {
             posDirty = true;
+            if (fitDeferred && gdata.nodes.some(n => n.x != null)) fitView(fitDeferred === 'snap' ? true : undefined);
             if (softUntil && performance.now() > softUntil) { softUntil = 0; G.d3VelocityDecay(vis.decay); }
         })
         // После остановки раскладки камера подстраивается под граф — но только если пользователь её не трогал и ничего не выделено
@@ -2070,9 +2092,12 @@ function applyView(keepSel) {
     if (isStats) { renderStats(); closeDetails(); return; }
     const first = !G;
     if (!G) initGraph();
-    if (paused) { paused = false; setPauseIcon(); setPulseSpawn(true); }
     // Перестройка того же вида (опции, фильтр, обновление файлов) сохраняет позиции узлов и камеру
     const viewChanged = lastAppliedView !== curView || first; lastAppliedView = curView;
+    // Другой проект или перечитанный тот же — после раскладки камера показывает граф целиком
+    const modelChanged = lastAppliedModel !== model; lastAppliedModel = model;
+    // Пауза держится, пока это тот же вид того же проекта (фильтр, опции); другой вид или проект — раскладка снова идёт
+    if (paused && (viewChanged || modelChanged)) { paused = false; setPauseIcon(); setPulseSpawn(true); }
     const prevPos = new Map();
     if (!viewChanged) for (const n of gdata.nodes) if (n.x != null) prevPos.set(n.id, n);
     gdata = buildView(curView);
@@ -2126,6 +2151,7 @@ function applyView(keepSel) {
     G.graphData(gdata);
     engineActive = true;
     if (restored) { paused = true; setPauseIcon(); setPulseSpawn(false); }
+    else if (paused) for (const n of gdata.nodes) if (n.x != null) { n.fx = n.x; n.fy = n.y; n.fz = n.z; } // на паузе узлы остаются закреплёнными
     // Появление: весь вид — волнами по связям; перестройка — растут только новые узлы (из соседа)
     const now = performance.now() / 1000;
     gdata.nodes.forEach((n, i) => { n.__i = i; n.__par = -1; n.__born = null; });
@@ -2147,7 +2173,7 @@ function applyView(keepSel) {
     rebuildNodeMesh();
     rebuildCosmos();
     placeGrid();
-    if (viewChanged) { fitPending = true; fitStamp = cz.lastInput; fitView(first); }
+    if (viewChanged || modelChanged) { fitPending = true; fitStamp = cz.lastInput; fitView(first); }
     // Выделение переживает смену вида: функция → её файл и т.п.
     const sel = mapSelection(globalSel || selId);
     selId = null;
@@ -2156,12 +2182,16 @@ function applyView(keepSel) {
     renderLegend();
     requestRender();
 }
-let lastAppliedView = null, fitStamp = 0, softUntil = 0;
+let lastAppliedView = null, lastAppliedModel = null, fitStamp = 0, softUntil = 0, fitDeferred = null;
 
 
 // Подгонка камеры по координатам узлов (2–98 перцентиль, чтобы одиночные выбросы не мельчили граф)
 function fitView(snap) {
-    const ns = gdata.nodes.filter(n => n.x != null); if (!ns.length || !G) return;
+    if (!G) return;
+    const ns = gdata.nodes.filter(n => n.x != null);
+    // Граф только что заменён — координаты появятся на первом шаге раскладки, тогда и центрируем
+    if (!ns.length) { fitDeferred = snap === true ? 'snap' : 'fly'; return; }
+    fitDeferred = null;
     const q = (arr, p) => arr[Math.min(arr.length - 1, Math.max(0, Math.round(p * (arr.length - 1))))];
     const lo = ns.length > 30 ? 0.02 : 0, hi = 1 - lo;
     const xs = ns.map(n => n.x).sort((a, b) => a - b), ys = ns.map(n => n.y).sort((a, b) => a - b), zs = ns.map(n => n.z || 0).sort((a, b) => a - b);
@@ -2364,7 +2394,9 @@ function placeLabels(camera) {
     const cv = G.renderer().domElement; const w = cv.clientWidth, h = cv.clientHeight;
     const proj = n => { dispPos(n, labelVec).project(camera); return labelVec.z > -1 && labelVec.z < 1 && Math.abs(labelVec.x) < 1.2 && Math.abs(labelVec.y) < 1.2; };
     // Подписи идут по убыванию важности; перекрывающую более важную — прячем (плавно, через прозрачность)
-    const placed = [], tNow = performance.now() / 1000;
+    // Занятые места — в сетке ячеек 64 px: проверка перекрытия смотрит только соседние ячейки (1000 подписей — без тормозов)
+    const CELL = 64, grid = new Map(), tNow = performance.now() / 1000;
+    const cellsOf = (x0, y0, x1, y1, fn) => { for (let cy = Math.floor(y0 / CELL); cy <= Math.floor(y1 / CELL); cy++) for (let cx = Math.floor(x0 / CELL); cx <= Math.floor(x1 / CELL); cx++) if (fn(cx + ',' + cy) === false) return false; return true; };
     for (const it of labelItems) {
         const n = it.n;
         // Узел ещё растёт — подпись появится, когда он почти вырос
@@ -2372,8 +2404,9 @@ function placeLabels(camera) {
         if (show) {
             sx = (labelVec.x + 1) / 2 * w; sy = (1 - labelVec.y) / 2 * h;
             const x0 = sx - it.w / 2, y0 = sy - it.h * 1.35;
-            if (n.id !== selId) for (const r of placed) if (x0 < r[2] && x0 + it.w > r[0] && y0 < r[3] && y0 + it.h > r[1]) { show = false; break; }
-            if (show) placed.push([x0, y0, x0 + it.w, y0 + it.h]);
+            const x1 = x0 + it.w, y1 = y0 + it.h;
+            if (n.id !== selId) show = cellsOf(x0, y0, x1, y1, k => { const list = grid.get(k); if (list) for (const r of list) if (x0 < r[2] && x1 > r[0] && y0 < r[3] && y1 > r[1]) return false; });
+            if (show) { const r = [x0, y0, x1, y1]; cellsOf(x0, y0, x1, y1, k => { const list = grid.get(k); if (list) list.push(r); else grid.set(k, [r]); }); }
             it.el.style.transform = `translate3d(${sx.toFixed(1)}px, ${sy.toFixed(1)}px, 0) translate(-50%, -135%)`;
         }
         if (show !== it.shown || it.fresh) { it.el.classList.toggle('off', !show); it.shown = show; it.fresh = false; }
@@ -2386,8 +2419,8 @@ function placeLabels(camera) {
 }
 
 /* ======================================================================
-      Панель деталей
-      ====================================================================== */
+   Панель деталей
+   ====================================================================== */
 function closeDetails() { $('#detBody').dataset.node = ''; setShown($('#details'), false); $('#details').classList.remove('expanded'); document.body.classList.remove('has-details', 'det-expanded'); }
 function nodeDot(n) { return n ? baseColor(n) : colorCache['--ext']; }
 function listHtml(items, cap = 150) {
@@ -2587,8 +2620,8 @@ function goTo(id, view) {
 }
 
 /* ======================================================================
-      Статистика
-      ====================================================================== */
+   Статистика
+   ====================================================================== */
 let statSort = { key: 'code', dir: -1 }, statFilter = '', openDirs = new Set(['']);
 function renderStats() {
     const M = model, T = M.totals;
@@ -2698,8 +2731,8 @@ function includeCycles(M) {
 }
 
 /* ======================================================================
-      Генератор Markdown-документации (из той же модели: дерево, связи, комментарии)
-      ====================================================================== */
+   Генератор Markdown-документации (из той же модели: дерево, связи, комментарии)
+   ====================================================================== */
 const mdAnchor = p => 'f-' + p.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const mdCell = s => String(s == null ? '' : s).replace(/\|/g, '\\|').replace(/\r?\n/g, '<br>');
 const mdCode = s => '`' + String(s).replace(/`/g, 'ˋ') + '`';
@@ -2841,11 +2874,11 @@ function openMarkdown(apiOnly, only) {
 }
 
 /* ======================================================================
-      Снимки проекта (.ccv) и экспорт графов
-      Снимок = результат разбора + раскладка + настройки; открывается без повторного разбора и без GitHub API.
-      ====================================================================== */
+   Снимки проекта (.drift) и экспорт графов
+   Снимок = результат разбора + раскладка + настройки; открывается без повторного разбора и без GitHub API.
+   ====================================================================== */
 let layoutRestore = null;
-const SNAP_FORMAT = 'c-codeviz-snapshot';
+const SNAP_FORMAT = 'codrift-snapshot', SNAP_FORMAT_OLD = 'c-codeviz-snapshot'; // старые снимки .ccv тоже открываются
 async function gzipText(text) {
     if (typeof CompressionStream === 'undefined') return new Blob([text], { type: 'application/json' });
     return new Response(new Blob([text]).stream().pipeThrough(new CompressionStream('gzip'))).blob();
@@ -2872,7 +2905,7 @@ async function exportSnapshot(withSource) {
     toast(t('snapBuilding'), 1500); await sleep0();
     const files = model.parsed.map(f => { const o = Object.assign({}, f); if (!withSource) delete o.text; return o; });
     const snap = {
-        format: SNAP_FORMAT, version: 1, created: new Date().toISOString(), generator: 'CODEVIZ',
+        format: SNAP_FORMAT, version: 1, created: new Date().toISOString(), generator: 'Codrift',
         project: { name: model.name, ref: model.ref || null, repo: model.repoSpec || null },
         ctx: model.ctxRaw, files,
         state: buildStateParams(true).toString(),
@@ -2880,7 +2913,7 @@ async function exportSnapshot(withSource) {
     };
     const plain = store.get('snapPlain', false);
     const blob = plain ? new Blob([JSON.stringify(snap)], { type: 'application/json' }) : await gzipText(JSON.stringify(snap));
-    downloadBlob(blob, `${safeName()}${withSource ? '' : '-nosrc'}.${plain ? 'ccv.json' : 'ccv'}`);
+    downloadBlob(blob, `${safeName()}${withSource ? '' : '-nosrc'}.${plain ? 'drift.json' : 'drift'}`);
     toast(`${t('snapSaved')} ${(blob.size / 1024 / 1024).toFixed(2)} MB`, 3000);
 }
 
@@ -2893,8 +2926,8 @@ async function openSnapshot(getBuffer, label) {
         const text = await readMaybeGzip(await getBuffer());
         setProgress(t('parsing'), 0.6); await sleep0();
         const snap = JSON.parse(text);
-        if (snap && snap.format === 'c-codeviz-graph') throw new Error(t('graphNotSnap'));
-        if (!snap || snap.format !== SNAP_FORMAT || !Array.isArray(snap.files)) throw new Error(t('snapBad'));
+        if (snap && (snap.format === 'codrift-graph' || snap.format === 'c-codeviz-graph')) throw new Error(t('graphNotSnap'));
+        if (!snap || (snap.format !== SNAP_FORMAT && snap.format !== SNAP_FORMAT_OLD) || !Array.isArray(snap.files)) throw new Error(t('snapBad'));
         // Настройки снимка, поверх — параметры исходной ссылки (они важнее)
         if (snap.state) applyUrlState(new URLSearchParams(snap.state));
         applyUrlState(START_QUERY);
@@ -2944,11 +2977,11 @@ function exportGraph(fmt) {
     if (!gdata.nodes.length) return;
     const nodes = exportNodes(), links = exportLinks(), base = `${safeName()}-${curView}`;
     if (fmt === 'json') {
-        downloadBlob(new Blob([JSON.stringify({ format: 'c-codeviz-graph', version: 1, project: model.name, view: curView, nodes, links }, null, 1)], { type: 'application/json' }), base + '.graph.json');
+        downloadBlob(new Blob([JSON.stringify({ format: 'codrift-graph', version: 1, project: model.name, view: curView, nodes, links }, null, 1)], { type: 'application/json' }), base + '.graph.json');
     } else if (fmt === 'gexf') {
         // GEXF (Gephi): с позициями, цветами и размерами — раскладка открывается как есть
         const rgb = c => { const x = new THREE.Color(c); return `r="${Math.round(x.r * 255)}" g="${Math.round(x.g * 255)}" b="${Math.round(x.b * 255)}"`; };
-        let x = `<?xml version="1.0" encoding="UTF-8"?>\n<gexf xmlns="http://gexf.net/1.3" xmlns:viz="http://gexf.net/1.3/viz" version="1.3">\n<meta><creator>CODEVIZ</creator><description>${xmlEsc(model.name + ' — ' + curView)}</description></meta>\n<graph defaultedgetype="directed">\n<attributes class="node"><attribute id="kind" title="kind" type="string"/><attribute id="module" title="module" type="string"/><attribute id="file" title="file" type="string"/><attribute id="line" title="line" type="integer"/></attributes>\n<attributes class="edge"><attribute id="kind" title="kind" type="string"/></attributes>\n<nodes>\n`;
+        let x = `<?xml version="1.0" encoding="UTF-8"?>\n<gexf xmlns="http://gexf.net/1.3" xmlns:viz="http://gexf.net/1.3/viz" version="1.3">\n<meta><creator>Codrift</creator><description>${xmlEsc(model.name + ' — ' + curView)}</description></meta>\n<graph defaultedgetype="directed">\n<attributes class="node"><attribute id="kind" title="kind" type="string"/><attribute id="module" title="module" type="string"/><attribute id="file" title="file" type="string"/><attribute id="line" title="line" type="integer"/></attributes>\n<attributes class="edge"><attribute id="kind" title="kind" type="string"/></attributes>\n<nodes>\n`;
         for (const n of nodes) x += `<node id="${xmlEsc(n.id)}" label="${xmlEsc(n.label)}"><attvalues><attvalue for="kind" value="${xmlEsc(n.kind)}"/><attvalue for="module" value="${xmlEsc(n.module)}"/><attvalue for="file" value="${xmlEsc(n.file)}"/>${n.line ? `<attvalue for="line" value="${n.line}"/>` : ''}</attvalues><viz:color ${rgb(n.color)}/><viz:position x="${n.x}" y="${n.y}" z="${n.z}"/><viz:size value="${n.size}"/></node>\n`;
         x += `</nodes>\n<edges>\n`;
         links.forEach((l, i) => { x += `<edge id="${i}" source="${xmlEsc(l.source)}" target="${xmlEsc(l.target)}" weight="${l.count}"><attvalues><attvalue for="kind" value="${xmlEsc(l.kind)}"/></attvalues></edge>\n`; });
@@ -3010,8 +3043,8 @@ async function exportGlb(nodes, base) {
 }
 
 /* ======================================================================
-      UI: вкладки, поиск, опции, панели
-      ====================================================================== */
+   UI: вкладки, поиск, опции, панели
+   ====================================================================== */
 function renderTabs() {
     $('#tabs').innerHTML = VIEW_IDS.map(v => `<button role="tab" data-view="${v}" aria-selected="${v === curView}" ${model ? '' : 'disabled'}>${t('views_' + v)}</button>`).join('');
     placeTabIndicator();
@@ -3076,7 +3109,8 @@ const HINTS = {
         labelNear: 'Когда приближаетесь, подписываются крупные на экране узлы и их соседи — удобно разбирать плотные места.',
         liveFilter: 'Показывать только файлы, подходящие под шаблоны: «src/cgdf» — только эта папка, «!opengl» — исключить. Несколько условий — через пробел. Чипы ниже прячут целые модули. Работает сразу во всех видах.', sens: 'Чувствительность вращения и масштаба.',
         fpsCap: 'Максимум кадров в секунду. 30 заметно снижает нагрузку.',
-        resScale: 'Разрешение рендера. «Авто» само снижает его, если кадры не успевают отрисоваться.',
+        resScale: 'Разрешение рендера. «Авто» само снижает его, если кадры не успевают отрисоваться. «Максимум» — родное разрешение экрана (на телефонах ×3).',
+        maxQuality: 'Одной кнопкой: родное разрешение экрана, сглаживание MSAA, самые гладкие узлы и частота кадров без ограничения (на iPhone Pro — до 120 Гц). Для мощных устройств.',
         msaa: 'Сглаживание краёв (MSAA). Выше — меньше «лесенок», но тяжелее.',
         idleStop: 'Через сколько секунд бездействия остановить фоновую анимацию (рендер замрёт до следующего движения мыши). 0 — никогда.',
         showFps: 'Показывать в легенде частоту кадров и текущий масштаб разрешения.',
@@ -3115,7 +3149,7 @@ const HINTS = {
         arrows: 'Arrows on links of the selected node.', particles: 'Pulses on links of the selected node.', nearFade: 'Nodes right in front of the camera dissolve.',
         labelCount: 'How many most-connected nodes get labels.', labelSize: 'Label font size.', labelKinds: 'Which node kinds get labels (the selection always does).',
         smooth: 'Camera inertia.', sens: 'Rotate/zoom sensitivity.', fpsCap: 'Frame rate limit; 30 lowers load a lot.',
-        resScale: 'Render resolution; Auto lowers it when frames are late.', msaa: 'Edge anti-aliasing.',
+        resScale: 'Render resolution; Auto lowers it when frames are late, Max is the native screen resolution.', maxQuality: 'One tap: native resolution, MSAA, smoothest nodes and uncapped frame rate (up to 120 Hz on ProMotion). For powerful devices.', msaa: 'Edge anti-aliasing.',
         idleStop: 'Stop background animation after this many idle seconds. 0 = never.', showFps: 'Show FPS and resolution scale in the legend.',
         theme: 'UI theme.', charge: 'Node repulsion.', linkDist: 'Preferred link length.', gravity: 'Pull to the center.',
         cluster: 'How tightly functions of one file (and files of one folder) group into “molecules”.', decay: 'Friction: higher settles faster.',
@@ -3138,7 +3172,7 @@ const PHYS_KEYS = new Set(['charge', 'linkDist', 'gravity', 'decay', 'dagDist', 
 const SLIDERS = {
     charge: [0.1, 4, 0.05], linkDist: [0.2, 4, 0.05], gravity: [0, 5, 0.05], decay: [0.05, 0.9, 0.01], dagDist: [0.3, 4, 0.05],
     nodeSize: [0.3, 3, 0.05], nodeOpacity: [0.2, 1, 0.01], linkOpacity: [0.05, 1, 0.01], quality: [4, 24, 1],
-    labelCount: [0, 400, 1], labelSize: [8, 20, 1], smooth: [0, 0.98, 0.01], sens: [0.2, 3, 0.05],
+    labelCount: [0, 1000, 5], labelSize: [8, 20, 1], smooth: [0, 0.98, 0.01], sens: [0.2, 3, 0.05],
     idleStop: [0, 300, 5], pulseSpeed: [8, 240, 1], pulseRate: [0.2, 4, 0.1], cluster: [0, 3, 0.05], glow: [0, 3, 0.05], selfGlow: [0, 1.5, 0.05], wobble: [0, 4, 0.1], rim: [0, 2, 0.05], skyAmt: [0, 2, 0.05],
 };
 // Как применить изменение параметра стиля
@@ -3219,7 +3253,8 @@ function renderOpts() {
         h += field(t('projection'), vseg('proj', [['persp', t('proj_persp')], ['iso', t('proj_iso')]]) + `<button class="iconbtn" data-oact="isoView" style="margin-top:6px">${t('isoView')}</button>`, 'projection');
         h += hr + `<h4>${t('perf')}</h4>`;
         h += field(t('fpsCap'), vseg('fps', [[0, t('fps_auto')], [60, '60'], [30, '30']]));
-        h += field(t('resScale'), vseg('res', [['low', t('res_low')], ['mid', t('res_mid')], ['auto', t('res_auto')], ['high', t('res_high')]]));
+        h += `<button class="iconbtn primary btn-wide" data-oact="maxQuality" style="margin-bottom:10px" data-hint="${esc(hintFor('maxQuality'))}">${t('maxQuality')}</button>`;
+        h += field(t('resScale'), vseg('res', [['low', t('res_low')], ['mid', t('res_mid')], ['auto', t('res_auto')], ['high', t('res_high')], ['max', t('res_max')]]));
         h += field(t('msaa'), vseg('msaa', [[0, t('fps_auto') === 'Нет' ? 'Выкл' : 'Off'], [2, '2×'], [4, '4×'], [8, '8×']]));
         h += slider('idleStop') + chk('showFps', t('showFps'), 'c');
         h += `<p class="small muted" style="margin:4px 0 0">${t('perfHint')}</p>`;
@@ -3345,6 +3380,13 @@ function optsAction(a) {
         for (const k of ['nodeSize', 'nodeOpacity', 'linkOpacity', 'quality', 'arrows', 'particles', 'nearFade', 'labelCount', 'labelSize', 'labelKinds', 'smooth', 'sens', 'fps', 'res', 'msaa', 'idleStop', 'showFps', 'freeRotate', 'proj', 'labelNear']) vis[k] = JSON.parse(JSON.stringify(VIS_DEF[k]));
         saveVis(); renderOpts(); applyRenderScale(); refreshVisual();
     }
+    if (a === 'maxQuality') {
+        // Всё на максимум: родное разрешение, сглаживание, гладкие узлы, без ограничения кадров (120 Гц на ProMotion)
+        Object.assign(vis, { res: 'max', msaa: Math.min(8, r_maxSamples()) >= 4 ? 4 : 2, quality: 24, fps: 0 });
+        saveVis(); applyRenderScale(); applyMsaa(); refreshVisual(); renderOpts();
+        toast(t('maxQualityDone'), 2500);
+        return;
+    }
     if (a === 'isoView') { orbit.gq.copy(isoOrientation()); if (vis.proj !== 'iso') { vis.proj = 'iso'; saveVis(); renderOpts(); updateProjBtn(); } requestRender(); return; }
     if (a === 'resetTab') {
         if (optsTab === 'view') { viewOpts[curView] = JSON.parse(JSON.stringify(defOpts[curView] || {})); store.set('viewOpts', viewOpts); vis.sizeBy = VIS_DEF.sizeBy; saveVis(); renderOpts(); if (curView !== 'stats') applyView(true); }
@@ -3358,7 +3400,7 @@ function optsAction(a) {
     if (a === 'resetAll') {
         if (!confirm(t('resetAllConfirm'))) return;
         // Стираем все сохранённые настройки, кроме последнего репозитория; оставляем в ссылке только источник
-        try { for (const k of Object.keys(localStorage)) if (k.startsWith('ccv.') && !['ccv.repo', 'ccv.ref', 'ccv.lang'].includes(k)) localStorage.removeItem(k); } catch { /* */ }
+        try { for (const k of Object.keys(localStorage)) if (k.startsWith('drift.') && !['drift.repo', 'drift.ref', 'drift.lang'].includes(k)) localStorage.removeItem(k); } catch { /* */ }
         const u = new URL(location.href), keepQ = new URLSearchParams();
         if (model) {
             // Проект открыт — сбрасываем на месте (перезагрузка потеряла бы локальную папку и не работает под file://)
@@ -3424,7 +3466,7 @@ async function savePng() {
         const pad = 14 * k;
         if (o.title) {
             const title = `${model.name}${model.ref && model.ref !== 'HEAD' ? ' @ ' + model.ref : ''} — ${t('views_' + curView)}`;
-            const sub = `${fmt(gdata.nodes.length)} ${t('nodes')} · ${fmt(gdata.links.length)} ${t('links')} · CODEVIZ`;
+            const sub = `${fmt(gdata.nodes.length)} ${t('nodes')} · ${fmt(gdata.links.length)} ${t('links')} · Codrift`;
             ctx.textAlign = 'left'; ctx.textBaseline = 'top';
             ctx.font = `700 ${18 * k}px system-ui, sans-serif`; const tw1 = ctx.measureText(title).width;
             ctx.font = `400 ${12 * k}px system-ui, sans-serif`; const tw2 = ctx.measureText(sub).width;
@@ -3571,13 +3613,13 @@ function renderSource() {
             ${fsOk ? '' : `<div class="muted small" style="margin-top:6px">${t('fsUnsupported')}</div>`}
             <input type="file" id="inDir" webkitdirectory directory multiple hidden>
             <input type="file" id="inZip" accept=".zip,application/zip" hidden>
-            <input type="file" id="inFiles" multiple accept="${(window.CodeVizLangs ? CodeVizLangs.all.flatMap(L => L.exts) : ['.c', '.h']).join(',')}" hidden>
+            <input type="file" id="inFiles" multiple accept="${(window.CodriftLangs ? CodriftLangs.all.flatMap(L => L.exts) : ['.c', '.h']).join(',')}" hidden>
         </div>
         <div id="srcSnap" ${tab === 'snap' ? '' : 'hidden'}>
             <p class="small muted" style="margin:0 0 8px">${t('snapSrcHint')}</p>
             <button class="iconbtn primary btn-wide" id="btnPickSnap">${t('openSnap')}</button>
-            <input type="file" id="inSnap" accept=".ccv,.json,.gz,application/json,application/gzip,application/octet-stream" hidden>
-            <label class="field" style="margin-top:12px"><span>${t('snapUrl')}</span><input type="text" id="inSnapUrl" value="${esc(store.get('snapUrl', ''))}" placeholder="https://…/project.ccv" autocapitalize="off" spellcheck="false"></label>
+            <input type="file" id="inSnap" accept=".drift,.ccv,.json,.gz,application/json,application/gzip,application/octet-stream" hidden>
+            <label class="field" style="margin-top:12px"><span>${t('snapUrl')}</span><input type="text" id="inSnapUrl" value="${esc(store.get('snapUrl', ''))}" placeholder="https://…/project.drift" autocapitalize="off" spellcheck="false"></label>
             <button class="iconbtn btn-wide" id="btnLoadSnapUrl">${t('loadByUrl')}</button>
             <p class="small muted" style="margin:6px 0 0">${t('dropHint')}</p>
         </div>
@@ -3591,7 +3633,7 @@ function renderSource() {
                 <label class="field" style="width:110px"><span>${t('maxSize')}</span><input type="number" id="inMaxKB" value="${esc(cfg.maxKB)}" min="1"></label>
             </div>
             <label class="field"><span>${t('maxFiles')}</span><input type="number" id="inMaxFiles" value="${esc(cfg.maxFiles)}" min="50" step="500"></label>
-            <div class="field"><span>${t('languages')}</span><div class="chips">${(window.CodeVizLangs ? CodeVizLangs.all : []).map(L => { const on = L.exts.some(e => cfg.exts.split(/[\s,]+/).includes(e)); return `<label class="check chipchk"><input type="checkbox" data-lang="${L.id}" ${on ? 'checked' : ''}>${esc(L.name)}</label>`; }).join('')}</div></div>
+            <div class="field"><span>${t('languages')}</span><div class="chips">${(window.CodriftLangs ? CodriftLangs.all : []).map(L => { const on = L.exts.some(e => cfg.exts.split(/[\s,]+/).includes(e)); return `<label class="check chipchk"><input type="checkbox" data-lang="${L.id}" ${on ? 'checked' : ''}>${esc(L.name)}</label>`; }).join('')}</div></div>
             <label class="field"><span>${t('incRoots')}</span><input type="text" id="inRoots" value="${esc(cfg.roots)}" spellcheck="false"></label>
             <button class="iconbtn" id="btnResetCfg">${t('resetDefaults')}</button>
         </details>
@@ -3659,7 +3701,7 @@ function onModelReady() {
     startWatch();
     if (refreshing) { refreshing = false; renderTabs(); applyView(true); toast(t('refreshed'), 1500); return; }
     $('#projName').textContent = model.name + (model.ref ? ' @ ' + model.ref : '');
-    document.title = model.name + ' — CODEVIZ';
+    document.title = model.name + ' — Codrift';
     if (window.matchMedia('(max-width: 760px)').matches) openSource(false);
     else setTimeout(() => openSource(false), 400);
     renderTabs();
@@ -3724,8 +3766,11 @@ function bindSheetSwipe() {
         if (dy < -40 && !exp) { det.classList.add('expanded'); document.body.classList.add('det-expanded'); }
         else if (dy > 40 && exp) { det.classList.remove('expanded'); document.body.classList.remove('det-expanded'); }
         else if (dy > 60 && !exp) dropFocus();
-        // клик после перетаскивания не должен срабатывать как тап по ручке
-        det.addEventListener('click', ev => { ev.stopPropagation(); ev.preventDefault(); }, { capture: true, once: true });
+        // Клик сразу после перетаскивания не должен срабатывать как тап по ручке; если браузер его не прислал —
+        // перехватчик снимается сам, иначе он «съел» бы следующий настоящий тап (например, по пункту списка)
+        const swallow = ev => { ev.stopPropagation(); ev.preventDefault(); det.removeEventListener('click', swallow, true); };
+        det.addEventListener('click', swallow, true);
+        setTimeout(() => det.removeEventListener('click', swallow, true), 350);
     };
     det.addEventListener('pointerup', end); det.addEventListener('pointercancel', end);
 }
@@ -3735,8 +3780,8 @@ function setPauseIcon() {
 }
 
 /* ======================================================================
-      Обработчики событий
-      ====================================================================== */
+   Обработчики событий
+   ====================================================================== */
 function bind() {
     $('#btnSource').onclick = () => openSource(!isShown($('#srcpanel')));
     $('#btnLang').onclick = () => { LANG = LANG === 'ru' ? 'en' : 'ru'; store.set('lang', LANG); applyLang(); if (model) syncUrl(); };
@@ -3835,7 +3880,7 @@ function bind() {
         if (e.target.id === 'inWatch') { store.set('watch', e.target.checked); startWatch(); }
         if (e.target.dataset && e.target.dataset.lang) {
             // Язык включает/выключает свои расширения в поле «Расширения»
-            const L = CodeVizLangs.byId(e.target.dataset.lang), inp = $('#inExts');
+            const L = CodriftLangs.byId(e.target.dataset.lang), inp = $('#inExts');
             let cur = inp.value.split(/[\s,]+/).filter(Boolean);
             cur = e.target.checked ? [...new Set([...cur, ...L.exts])] : cur.filter(x => !L.exts.includes(x));
             inp.value = cur.join(' '); saveCfgFromUI();
@@ -3900,7 +3945,7 @@ function bind() {
     // Любое взаимодействие будит «уснувшую» анимацию
     const wake = () => { const was = (performance.now() - cz.lastInput) / 1000 > (vis.idleStop || 1e9); cz.lastInput = performance.now(); if (was) requestRender(); };
     for (const ev of ['pointerdown', 'pointermove', 'wheel', 'keydown', 'touchstart']) document.addEventListener(ev, wake, { passive: true });
-    // Перетаскивание: снимок .ccv/.json или архив .zip
+    // Перетаскивание: снимок .drift/.ccv/.json или архив .zip
     document.addEventListener('dragover', e => { if (e.dataTransfer && [...e.dataTransfer.types].includes('Files')) { e.preventDefault(); document.body.classList.add('dragging'); } });
     document.addEventListener('dragleave', e => { if (!e.relatedTarget) document.body.classList.remove('dragging'); });
     document.addEventListener('drop', e => {
@@ -3917,10 +3962,10 @@ function bind() {
 }
 
 /* ======================================================================
-      Состояние в ссылке: проект + фильтры + вид + стиль + выделение + камера.
-      В ссылку попадает только то, что отличается от значений по умолчанию (и от выбранного пресета),
-      поэтому ссылки короткие и читаемые:  ?repo=LukovDev/CGDF&view=calls&style=neon&vs=bloom:0,glow:1.2
-      ====================================================================== */
+   Состояние в ссылке: проект + фильтры + вид + стиль + выделение + камера.
+   В ссылку попадает только то, что отличается от значений по умолчанию (и от выбранного пресета),
+   поэтому ссылки короткие и читаемые:  ?repo=LukovDev/CGDF&view=calls&style=neon&vs=bloom:0,glow:1.2
+   ====================================================================== */
 const URL_VIS_SKIP = new Set(['labelKinds', 'png', 'styleEdited', 'style']);
 const encVal = v => (typeof v === 'boolean' ? (v ? '1' : '0') : typeof v === 'number' ? String(Math.round(v * 1000) / 1000) : String(v));
 function decVal(raw, ref) {
@@ -4039,8 +4084,8 @@ function applyUrlPending() {
 }
 
 /* ======================================================================
-      Старт
-      ====================================================================== */
+   Старт
+   ====================================================================== */
 const START_QUERY = new URLSearchParams(location.search);
 (function main() {
     const q = START_QUERY;
@@ -4066,5 +4111,5 @@ const START_QUERY = new URLSearchParams(location.search);
     // Для тестов и автоматизации
     cz.lastInput = performance.now();
     requestAnimationFrame(orbitFrame);
-    window.CCV = { step: renderStep, get orbit() { return orbit; }, runSource, sourceFileList, sourceDirHandle, openSnapshot, get model() { return model; }, get graph() { return G; }, setView, goTo, buildView };
+    window.Codrift = { step: renderStep, get orbit() { return orbit; }, runSource, sourceFileList, sourceDirHandle, openSnapshot, get model() { return model; }, get graph() { return G; }, setView, goTo, buildView };
 })();

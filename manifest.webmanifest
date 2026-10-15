@@ -1,6 +1,6 @@
 {
-    "name": "CODEVIZ",
-    "short_name": "CODEVIZ",
+    "name": "Codrift",
+    "short_name": "Codrift",
     "description": "3D code structure visualizer: include/import graph, call graph, API, directories and statistics. Runs entirely in the browser.",
     "start_url": "./index.html",
     "scope": "./",

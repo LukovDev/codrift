@@ -1,5 +1,5 @@
 //
-// langs.js - реестр языков CODEVIZ и парсеры для C++, Java, C#, JavaScript/TypeScript, Python.
+// langs.js - реестр языков Codrift и парсеры для C++, Java, C#, JavaScript/TypeScript, Python.
 //
 // Контракт плагина языка:
 //   {
@@ -14,7 +14,7 @@
 //   funcs[{name,line,startLine,endLine,sig,doc,isStatic,isInline,container,calls,ids,memberCalls}],
 //   decls[{name,line,startLine,sig,doc,container}], types[{name,kind,line,startLine,endLine,def,doc}], vars[],
 //   fieldAssigns[], inits[], namespace? }
-// Новый язык подключается вызовом CodeVizLangs.register({...}) — модель, виды и экспорт работают сами.
+// Новый язык подключается вызовом CodriftLangs.register({...}) — модель, виды и экспорт работают сами.
 
 (function (root) {
 'use strict';
@@ -36,8 +36,8 @@ function normPath(p) {
 function lineIndex(text) { const starts = [0]; for (let i = 0; i < text.length; i++) if (text.charCodeAt(i) === 10) starts.push(i + 1); return idx => { let lo = 0, hi = starts.length - 1; while (lo < hi) { const m = (lo + hi + 1) >> 1; if (starts[m] <= idx) lo = m; else hi = m - 1; } return lo + 1; }; }
 
 /* ======================================================================
-      C — существующий парсер
-      ====================================================================== */
+   C — существующий парсер
+   ====================================================================== */
 register({
     id: 'c', name: 'C', exts: ['.c', '.h'], hasHeaders: true, oop: false,
     isHeader: p => /\.h$/i.test(p),
@@ -45,8 +45,8 @@ register({
 });
 
 /* ======================================================================
-      Общий парсер языков с фигурными скобками: C++, Java, C#, JavaScript/TypeScript
-      ====================================================================== */
+   Общий парсер языков с фигурными скобками: C++, Java, C#, JavaScript/TypeScript
+   ====================================================================== */
 const CONTROL = ['if', 'for', 'while', 'switch', 'catch', 'return', 'new', 'else', 'do', 'try', 'with', 'sizeof', 'typeof', 'await', 'yield', 'throw',
     'case', 'delete', 'in', 'of', 'instanceof', 'super', 'this', 'base', 'using', 'lock', 'synchronized', 'foreach', 'fixed', 'checked', 'unchecked',
     'default', 'nameof', 'is', 'as', 'when', 'where', 'void', 'decltype', 'alignof', 'static_assert', 'noexcept', 'requires', 'operator', 'assert', 'function', 'import', 'export'];
@@ -292,8 +292,8 @@ register({
 });
 
 /* ======================================================================
-      Python — блоки по отступам
-      ====================================================================== */
+   Python — блоки по отступам
+   ====================================================================== */
 const PY_NOT_CALL = new Set(['if', 'elif', 'while', 'for', 'return', 'and', 'or', 'not', 'in', 'is', 'lambda', 'with', 'assert', 'del', 'yield', 'await', 'except', 'raise', 'print', 'class', 'def', 'async', 'import', 'from', 'as', 'global', 'nonlocal', 'pass', 'super', 'isinstance', 'len', 'range', 'str', 'int', 'float', 'list', 'dict', 'set', 'tuple', 'bool', 'type', 'enumerate', 'zip', 'map', 'filter', 'sorted', 'open', 'getattr', 'setattr', 'hasattr', 'min', 'max', 'sum', 'any', 'all', 'iter', 'next', 'repr', 'format', 'id', 'hash', 'abs', 'round', 'reversed', 'vars', 'callable']);
 const PY_SKIP = new Set([...PY_NOT_CALL, 'self', 'cls', 'True', 'False', 'None', 'else', 'try', 'finally', 'break', 'continue']);
 // Комментарии «#» и строки (в т.ч. тройные) → очищенный текст той же длины + статистика строк
@@ -432,5 +432,5 @@ const api = {
     byId: id => langs.find(l => l.id === id),
     extsOf: ids => langs.filter(l => ids.includes(l.id)).flatMap(l => l.exts),
 };
-root.CodeVizLangs = api;
+root.CodriftLangs = api;
 })(typeof self !== 'undefined' ? self : this);
