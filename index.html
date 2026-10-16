@@ -497,8 +497,8 @@ table.t tr.clk:hover td { background: var(--surface-2); }
         <div id="mdmodal" hidden></div>
     </main>
 </div>
-<script src="parser.js?v=82"></script>
-<script src="langs.js?v=82"></script>
+<script src="parser.js?v=83"></script>
+<script src="langs.js?v=83"></script>
 <!-- three.js и 3d-force-graph как ES-модули с одного CDN: three@0.174.0 - та же копия, что импортирует сам граф,
           поэтому собственные объекты сцены (общий буфер связей) совместимы. app.js - обычный скрипт, чтобы работал и file:// -->
 <script type="module">
@@ -506,7 +506,7 @@ table.t tr.clk:hover td { background: var(--surface-2); }
     import ForceGraph3D from 'https://cdn.jsdelivr.net/npm/3d-force-graph@1.77.0/+esm';
     import { UnrealBloomPass } from 'https://cdn.jsdelivr.net/npm/three@0.174.0/examples/jsm/postprocessing/UnrealBloomPass.js/+esm';
     window.THREE = THREE; window.ForceGraph3D = ForceGraph3D; window.UnrealBloomPass = UnrealBloomPass;
-    const s = document.createElement('script'); s.src = 'app.js?v=82'; document.body.appendChild(s);
+    const s = document.createElement('script'); s.src = 'app.js?v=83'; document.body.appendChild(s);
 </script>
 <script nomodule>document.body.textContent = 'This browser is too old for Codrift.';</script>
 <script>

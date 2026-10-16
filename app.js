@@ -2258,9 +2258,12 @@ function applyView(keepSel) {
     rebuildNodeMesh();
     rebuildCosmos();
     placeGrid();
-    if (viewChanged || modelChanged) { fitPending = true; fitStamp = cz.lastInput; fitView(first); }
     // Выделение переживает смену вида: функция → её файл и т.п.
     const sel = mapSelection(globalSel || selId);
+    // Общий план: при смене вида и при смене/обновлении проекта. Но если после обновления (вручную или наблюдателем)
+    // выделенный узел остался — камера не трогается: ни масштаб, ни ракурс не меняются
+    if (viewChanged || (modelChanged && !sel)) { fitPending = true; fitStamp = cz.lastInput; fitView(first); }
+    else if (modelChanged) fitDeferred = null;
     selId = null;
     if (sel) selectNode(sel, viewChanged && !first, true); else selectNode(null, false, true);
     if (!sel && !globalSel) closeDetails();
