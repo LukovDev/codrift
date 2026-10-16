@@ -6,7 +6,7 @@
 //     id, name, exts: ['.ext', ...],
 //     parse(path, text) → ParsedFile,              // единый формат (см. ниже)
 //     isHeader?(path) → bool,                      // заголовок/интерфейс (для вида API)
-//     hasHeaders: bool,                            // есть ли у языка заголовки; иначе любой файл — «API»
+//     hasHeaders: bool,                            // есть ли у языка заголовки; иначе любой файл - «API»
 //     oop: bool,                                   // методы классов: obj.method() разрешается по имени метода
 //     resolveImport?(file, imp, ctx) → [{kind: 'project'|'vendor'|'external', path}] | null
 //   }
@@ -14,7 +14,7 @@
 //   funcs[{name,line,startLine,endLine,sig,doc,isStatic,isInline,container,calls,ids,memberCalls}],
 //   decls[{name,line,startLine,sig,doc,container}], types[{name,kind,line,startLine,endLine,def,doc}], vars[],
 //   fieldAssigns[], inits[], namespace? }
-// Новый язык подключается вызовом CodriftLangs.register({...}) — модель, виды и экспорт работают сами.
+// Новый язык подключается вызовом CodriftLangs.register({...}) - модель, виды и экспорт работают сами.
 
 (function (root) {
 'use strict';
@@ -32,11 +32,13 @@ function normPath(p) {
     for (const seg of p.split('/')) { if (!seg || seg === '.') continue; if (seg === '..') { if (out.length) out.pop(); else return null; } else out.push(seg); }
     return out.join('/');
 }
+
+
 // Индекс номеров строк по смещению (быстрее, чем считать каждый раз)
 function lineIndex(text) { const starts = [0]; for (let i = 0; i < text.length; i++) if (text.charCodeAt(i) === 10) starts.push(i + 1); return idx => { let lo = 0, hi = starts.length - 1; while (lo < hi) { const m = (lo + hi + 1) >> 1; if (starts[m] <= idx) lo = m; else hi = m - 1; } return lo + 1; }; }
 
 /* ======================================================================
-   C — существующий парсер
+   C - существующий парсер
    ====================================================================== */
 register({
     id: 'c', name: 'C', exts: ['.c', '.h'], hasHeaders: true, oop: false,
@@ -57,9 +59,9 @@ function makeBraceLang(cfg) {
     const NOT_CALL = new Set([...CONTROL, ...(cfg.notCall || [])]);
     const SKIP_IDS = new Set([...CONTROL, ...(cfg.keywords || [])]);
 
-    // Поиск «имя ( параметры )» — заголовка функции/метода в высказывании stmt (до '{' или ';')
+    // Поиск «имя ( параметры )» - заголовка функции/метода в высказывании stmt (до '{' или ';')
     function funcHead(stmt, scope, forDecl) {
-        // Группы скобок верхнего уровня (вне [] и <...>-генериков не различаем — достаточно скобок)
+        // Группы скобок верхнего уровня (вне [] и <...>-генериков не различаем - достаточно скобок)
         const groups = []; let depth = 0, bdepth = 0, open = -1;
         for (let i = 0; i < stmt.length; i++) {
             const v = stmt[i].v;
@@ -67,7 +69,7 @@ function makeBraceLang(cfg) {
             else if (v === '(') { if (depth === 0 && bdepth === 0) open = i; depth++; }
             else if (v === ')') { depth--; if (depth === 0 && open >= 0) { groups.push([open, i]); open = -1; } }
         }
-        if (depth !== 0) return null; // незакрытая скобка: '{' внутри вызова (лямбда/объект) — это не заголовок
+        if (depth !== 0) return null; // незакрытая скобка: '{' внутри вызова (лямбда/объект) - это не заголовок
         const has = (from, to, set) => { for (let i = from; i < to; i++) if (set.has(stmt[i].v)) return true; return false; };
         // JS/TS: «function name(», «name = (…) => {», «name: function(», «name = async (…) => {»
         if (cfg.js) {
@@ -75,13 +77,13 @@ function makeBraceLang(cfg) {
             if (fi >= 0) {
                 let ni = fi + 1; if (stmt[ni] && stmt[ni].v === '*') ni++;
                 if (stmt[ni] && stmt[ni].t === 'id' && stmt[ni + 1] && (stmt[ni + 1].v === '(' || stmt[ni + 1].v === '<')) return { name: stmt[ni].v, nameIdx: ni, close: groups.length ? groups[groups.length - 1][1] : ni };
-                // анонимная function(...) — имя из присваивания «x = function»/«x: function»
+                // анонимная function(...) - имя из присваивания «x = function»/«x: function»
                 const eq = fi - 1; if (stmt[eq] && (stmt[eq].v === '=' || stmt[eq].v === ':') && stmt[eq - 1] && stmt[eq - 1].t === 'id') return { name: stmt[eq - 1].v, nameIdx: eq - 1, close: groups.length ? groups[groups.length - 1][1] : fi };
                 return null;
             }
             const ai = stmt.findIndex((x, i) => x.v === '=' && stmt[i + 1] && stmt[i + 1].v === '>');
             if (ai >= 0) {
-                // «… = (…) => {» или «name => {»: имя — перед ближайшим '=' или ':' слева от параметров
+                // «… = (…) => {» или «name => {»: имя - перед ближайшим '=' или ':' слева от параметров
                 let j = ai - 1; while (j >= 0 && stmt[j].v !== '=' && stmt[j].v !== ':') { if (stmt[j].v === ')' || stmt[j].v === '(' || stmt[j].t === 'id' || stmt[j].v === ',' || stmt[j].v === '.' || stmt[j].v === '?' || stmt[j].v === '<' || stmt[j].v === '>' || stmt[j].v === '[' || stmt[j].v === ']') j--; else break; }
                 if (j > 0 && (stmt[j].v === '=' || stmt[j].v === ':') && stmt[j - 1].t === 'id' && !NOT_CALL.has(stmt[j - 1].v)) return { name: stmt[j - 1].v, nameIdx: j - 1, close: ai };
                 return null;
@@ -95,7 +97,7 @@ function makeBraceLang(cfg) {
             if (!nt || nt.t !== 'id' || NOT_CALL.has(nt.v)) continue;
             const pv = stmt[ni - 1];
             if (pv && (pv.v === '@' || pv.v === '.' || pv.v === '->')) continue; // аннотация / вызов метода
-            // После параметров — только «хвост» заголовка (const, throws X, : base(...), -> T, : Type …), без присваиваний
+            // После параметров - только «хвост» заголовка (const, throws X, : base(...), -> T, : Type …), без присваиваний
             let bad = false;
             for (let k = c + 1; k < stmt.length; k++) { const v = stmt[k].v; if (v === '=' && !(cfg.cpp && forDecl)) { bad = true; break; } }
             if (bad) continue;
@@ -114,15 +116,15 @@ function makeBraceLang(cfg) {
         let depth = 0;
         for (let i = stmt.length - 1; i >= 0; i--) {
             const v = stmt[i].v;
-            // template<class T> / Foo<T extends Bar> — ключевые слова внутри <...> не объявляют тип
+            // template<class T> / Foo<T extends Bar> - ключевые слова внутри <...> не объявляют тип
             if (v === ')' || v === ']' || v === '>') depth++; else if (v === '>>') depth += 2; else if (v === '(' || v === '[' || v === '<') depth--;
             if (depth || !TYPE_KWS.has(v)) continue;
-            // C#: class Foo<T> where T : class — ограничение, а не объявление
+            // C#: class Foo<T> where T : class - ограничение, а не объявление
             if (cfg.cs && stmt[i - 1] && (stmt[i - 1].v === ':' || stmt[i - 1].v === ',')) continue;
             if (cfg.cpp && v === 'enum' && stmt[i + 1] && (stmt[i + 1].v === 'class' || stmt[i + 1].v === 'struct')) i++;
             if (cfg.js && (v === 'namespace' || v === 'module') && !(stmt[i + 1] && stmt[i + 1].t === 'id')) continue;
             let name = null, j = i + 1;
-            // class SPDLOG_API logger / class DLL_EXPORT Foo — макрос экспорта перед именем пропускаем
+            // class SPDLOG_API logger / class DLL_EXPORT Foo - макрос экспорта перед именем пропускаем
             while (stmt[j] && stmt[j].t === 'id' && /^[A-Z][A-Z0-9_]{2,}$/.test(stmt[j].v) && stmt[j + 1] && stmt[j + 1].t === 'id' && !/^(extends|implements|final|sealed|abstract)$/.test(stmt[j + 1].v)) j++;
             if (stmt[j] && stmt[j].t === 'id') {
                 name = stmt[j].v;
@@ -176,7 +178,7 @@ function makeBraceLang(cfg) {
                         if (cfg.js) walk(i + 1, end, { kind: 'block', parent: scope });
                         stmt = []; i = end; continue;
                     }
-                    // Прочие блоки: в JS заходим внутрь (объекты с методами, IIFE, export default {...}); в остальных — пропускаем
+                    // Прочие блоки: в JS заходим внутрь (объекты с методами, IIFE, export default {...}); в остальных - пропускаем
                     if (cfg.js || scope.kind === 'ns') walk(i + 1, end, scope.kind === 'class' ? scope : { kind: cfg.js ? 'block' : scope.kind, name: scope.name, parent: scope });
                     stmt = []; i = end; continue;
                 }
@@ -210,6 +212,8 @@ function nsIndex(ctx) {
     for (const f of ctx.files.values()) for (const n of (f.namespaces && f.namespaces.length ? f.namespaces : f.namespace ? [f.namespace] : [])) { if (!m.has(n)) m.set(n, []); m.get(n).push(f.path); }
     return (ctx._ns = m);
 }
+
+
 // Поиск файла по «хвосту» пути среди файлов проекта / всех файлов репозитория
 function bySuffix(ctx, suffix) {
     const sfx = '/' + suffix.toLowerCase();
@@ -283,7 +287,7 @@ register({
         if (!/^[./]/.test(spec)) return [{ kind: 'external', path: spec.split('/').slice(0, spec.startsWith('@') ? 2 : 1).join('/') }];
         const base = normPath(spec.startsWith('/') ? spec.slice(1) : dirname(f.path) + '/' + spec);
         if (base == null) return [{ kind: 'external', path: spec }];
-        const stripped = base.replace(/\.(js|mjs|cjs|jsx)$/, ''); // TS-импорты пишут .js, а файл — .ts
+        const stripped = base.replace(/\.(js|mjs|cjs|jsx)$/, ''); // TS-импорты пишут .js, а файл - .ts
         const cands = [base, ...JS_EXTS.map(e => stripped + e), stripped + '.d.ts', ...JS_EXTS.map(e => base + '/index' + e)];
         for (const c of cands) if (ctx.files.has(c)) return [{ kind: 'project', path: c }];
         for (const c of cands) if (ctx.allPaths.has(c)) return [{ kind: 'vendor', path: c }];
@@ -292,7 +296,7 @@ register({
 });
 
 /* ======================================================================
-   Python — блоки по отступам
+   Python - блоки по отступам
    ====================================================================== */
 const PY_NOT_CALL = new Set(['if', 'elif', 'while', 'for', 'return', 'and', 'or', 'not', 'in', 'is', 'lambda', 'with', 'assert', 'del', 'yield', 'await', 'except', 'raise', 'print', 'class', 'def', 'async', 'import', 'from', 'as', 'global', 'nonlocal', 'pass', 'super', 'isinstance', 'len', 'range', 'str', 'int', 'float', 'list', 'dict', 'set', 'tuple', 'bool', 'type', 'enumerate', 'zip', 'map', 'filter', 'sorted', 'open', 'getattr', 'setattr', 'hasattr', 'min', 'max', 'sum', 'any', 'all', 'iter', 'next', 'repr', 'format', 'id', 'hash', 'abs', 'round', 'reversed', 'vars', 'callable']);
 const PY_SKIP = new Set([...PY_NOT_CALL, 'self', 'cls', 'True', 'False', 'None', 'else', 'try', 'finally', 'break', 'continue']);
@@ -325,6 +329,8 @@ function scanPython(text) {
     if (n > 0 && text[n - 1] !== '\n') endLine();
     return { stats: { total, code, comment, blank }, noComm: nc.join(''), clean: cl.join(''), comments };
 }
+
+
 function docstringAt(noComm, lines, lineNo) {
     // Первая непустая строка тела: строковый литерал → docstring
     for (let i = lineNo; i < Math.min(lines.length, lineNo + 3); i++) {
@@ -339,6 +345,8 @@ function docstringAt(noComm, lines, lineNo) {
     }
     return '';
 }
+
+
 function parsePython(path, text) {
     const s = scanPython(text);
     const lines = s.clean.split('\n'), raw = s.noComm.split('\n');
@@ -351,7 +359,7 @@ function parsePython(path, text) {
     for (let i = 0; i < lines.length; i++) {
         const L = lines[i], tr = L.trim(), lineNo = i + 1;
         if (!tr) continue;
-        // Продолжение многострочного выражения (внутри скобок) — не начало нового оператора
+        // Продолжение многострочного выражения (внутри скобок) - не начало нового оператора
         if (depth > 0) { for (const ch of L) { if ('([{'.includes(ch)) depth++; else if (')]}'.includes(ch)) depth--; } lastCode = lineNo; continue; }
         const ind = indentOf(L);
         close(ind, lineNo);
@@ -379,7 +387,7 @@ function parsePython(path, text) {
         decoStart = 0; lastCode = lineNo;
     }
     lastCode = lines.length; close(-1);
-    // Тела функций: вызовы и ссылки (вложенные функции — отдельные узлы, их строки из тела родителя не вычитаем)
+    // Тела функций: вызовы и ссылки (вложенные функции - отдельные узлы, их строки из тела родителя не вычитаем)
     const toks = P.tokenize(s.clean);
     for (const fn of funcs) {
         let a = 0, b = toks.length;
@@ -413,7 +421,7 @@ register({
             const r = rest ? tryMod(dir, rest) : null; if (r) out.push(r);
             return out.length ? out : [{ kind: 'external', path: mod }];
         }
-        // Абсолютный: от корня и от src/, затем — по «хвосту» пути
+        // Абсолютный: от корня и от src/, затем - по «хвосту» пути
         const roots = ['', 'src', 'lib', ...ctx.roots];
         if (imp.names) for (const nm of imp.names) for (const r of roots) { const x = tryMod(r, mod + '.' + nm); if (x) { out.push(x); break; } }
         for (const r of roots) { const x = tryMod(r, mod); if (x) { out.push(x); break; } }

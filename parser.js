@@ -10,7 +10,7 @@
 
 const SP = 32, NL = 10, CR = 13, TAB = 9;
 
-// Ключевые слова, после которых '(' — не вызов функции:
+// Ключевые слова, после которых '(' - не вызов функции:
 const NOT_CALL = new Set([
     'if', 'for', 'while', 'switch', 'return', 'sizeof', 'alignof', '_Alignof', 'alignas', '_Alignas',
     'typeof', '__typeof__', '__typeof', 'typeof_unqual', '_Generic', 'defined', '__attribute__', '__attribute',
@@ -19,7 +19,7 @@ const NOT_CALL = new Set([
     'int', 'char', 'short', 'long', 'float', 'double', 'void', 'unsigned', 'signed', 'bool', '_Bool',
     'struct', 'union', 'enum', 'const', 'static', 'extern', 'inline', 'register', 'auto', 'restrict',
 ]);
-// Атрибуты/спецификаторы, стоящие перед '(' — их группа скобок не является списком параметров:
+// Атрибуты/спецификаторы, стоящие перед '(' - их группа скобок не является списком параметров:
 const ATTR = new Set([
     '__attribute__', '__attribute', '__declspec', 'alignas', '_Alignas', '__asm__', 'asm', '__asm',
     '_Static_assert', 'static_assert', 'typeof', '__typeof__', 'typeof_unqual', '_Pragma', '__pragma',
@@ -34,8 +34,8 @@ const AGG = new Set(['struct', 'union', 'enum']);
 
 
 // --- 1. Посимвольный проход: статистика строк + два «очищенных» текста ---
-//   noComm: комментарии заменены пробелами (строки целы) — для препроцессора и сигнатур;
-//   clean : ещё и содержимое литералов заменено пробелами — для разбора кода.
+//   noComm: комментарии заменены пробелами (строки целы) - для препроцессора и сигнатур;
+//   clean : ещё и содержимое литералов заменено пробелами - для разбора кода.
 // opt: { backtick: JS-шаблоны `…`, verbatim: C# @"…", raw: C++ R"x(…)x" }
 function scan(text, opt) {
     opt = opt || {};
@@ -62,7 +62,7 @@ function scan(text, opt) {
                 if (!(j >= 0 && text.charCodeAt(j) === 92)) { st = S_N; cur.e = i; cur.el = ln; comments.push(cur); cur = null; }
             } else if ((st === S_STR || st === S_CHR) && rawEnd < 0) {
                 let j = i - 1; if (j >= 0 && text.charCodeAt(j) === CR) j--;
-                if (!(j >= 0 && text.charCodeAt(j) === 92)) st = S_N; // незакрытый литерал — сброс
+                if (!(j >= 0 && text.charCodeAt(j) === 92)) st = S_N; // незакрытый литерал - сброс
             }
             endLine(); ln++;
             continue;
@@ -270,7 +270,7 @@ function parseTop(toks, noComm) {
         const t = toks[i];
         if (t.v === '{') {
             const end = match[i] >= 0 ? match[i] : toks.length - 1;
-            // extern "C" { ... } — прозрачный блок
+            // extern "C" { ... } - прозрачный блок
             if (stmt.length === 2 && stmt[0].v === 'extern' && stmt[1].t === 'str') { stmt = []; continue; }
             const fn = matchFunc(stmt);
             if (fn && (fn.close === stmt.length - 1 || trailingOk(stmt, fn.close + 1))) {
@@ -298,7 +298,7 @@ function parseTop(toks, noComm) {
                 const ph = { v: '{}', t: 'p', o: t.o, l: t.l, kind, tag, fields, startLine: stmt[aggIdx].l, endLine: toks[end] ? toks[end].l : t.l };
                 stmt.push(ph);
             } else {
-                // Инициализатор: Type name = { a, b, ... } — позиционные элементы пригодятся для указателей на функции
+                // Инициализатор: Type name = { a, b, ... } - позиционные элементы пригодятся для указателей на функции
                 const eq = stmt.findIndex(x => x.v === '=');
                 if (eq > 1) {
                     let k = eq - 1; while (k > 0 && (stmt[k].v === ']' || stmt[k].v === '[' || stmt[k].t === 'num')) k--;
@@ -362,7 +362,7 @@ function initItems(toks, from, to) {
         cur.push(toks[i]);
     }
     if (cur.length) flush();
-    // Назначенные инициализаторы (.x = f) разбираются отдельно — здесь их не путаем с позиционными
+    // Назначенные инициализаторы (.x = f) разбираются отдельно - здесь их не путаем с позиционными
     return items.some(Boolean) && !toks.slice(from, to).some(x => x.v === '=') ? items : [];
 }
 
@@ -402,7 +402,7 @@ function topStatement(stmt, decls, types, vars, sig) {
         if (name) types.push({ name, kind, line, endLine: ph ? ph.endLine : stmt[stmt.length - 1].l, startLine: ph ? stmt[0].l : line, def: !!ph, typedef: true, ref, fields: ph ? ph.fields : null, sig: ph ? null : sig(stmt, stmt.length - 1) });
         return;
     }
-    // struct X;  — предварительное объявление
+    // struct X;  - предварительное объявление
     if (stmt.length === 2 && AGG.has(first) && stmt[1].t === 'id') { types.push({ name: stmt[1].v, kind: first, line: stmt[0].l, def: false, tag: true }); return; }
     if (stmt.some(x => x.v === '{}' && x.kind) && stmt[stmt.length - 1].v === '{}') return; // struct X {...};
     const fn = matchFunc(stmt);
@@ -428,7 +428,7 @@ function topStatement(stmt, decls, types, vars, sig) {
 
 
 // Вызовы и ссылки на идентификаторы внутри тела функции
-// notCall/skipIds — наборы ключевых слов конкретного языка (по умолчанию — C)
+// notCall/skipIds - наборы ключевых слов конкретного языка (по умолчанию - C)
 // Для языков с обобщениями: позиция '(' после «<...>» в вызове foo<T>(x) / foo<List<int>>(x), иначе -1
 function genericCallOpen(toks, i, to) {
     let depth = 0;

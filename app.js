@@ -11,10 +11,10 @@ const I18N = {
     ru: {
         source: 'Источник', search: 'Поиск и список узлов', ss_az: 'А–Я', ss_len: 'Длина', ss_lines: 'Строки', ss_links: 'Связи', ssh_az: 'По алфавиту', ssh_len: 'По длине имени', ssh_lines: 'По числу строк кода', ssh_links: 'По числу связей', viewSettings: 'Настройки вида', fitAll: 'Показать всё', closeBtn: 'Закрыть', expandBtn: 'Развернуть', views_includes: '#include', views_calls: 'Вызовы', views_api: 'API',
         views_dirs: 'Директории', views_stats: 'Статистика', github: 'GitHub', local: 'Папка / zip', repo: 'Репозиторий (owner/repo или URL)',
-        ref: 'Ветка / тег / коммит (пусто — по умолчанию)', token: 'Токен GitHub (необязательно, хранится только в памяти вкладки)',
+        ref: 'Ветка / тег / коммит (пусто - по умолчанию)', token: 'Токен GitHub (необязательно, хранится только в памяти вкладки)',
         load: 'Загрузить и разобрать', pickDir: 'Выбрать папку…', pickZip: 'Открыть .zip…', pickFiles: 'Выбрать файлы…',
-        filters: 'Фильтры файлов', ignore: 'Игнорировать (glob, по строке)', includeOnly: 'Искать только в (glob, пусто — везде)',
-        exts: 'Расширения', incRoots: 'Каталоги include (через пробел, auto — сами)', maxSize: 'Макс. размер файла, КБ',
+        filters: 'Фильтры файлов', ignore: 'Игнорировать (glob, по строке)', includeOnly: 'Искать только в (glob, пусто - везде)',
+        exts: 'Расширения', incRoots: 'Каталоги include (через пробел, auto - сами)', maxSize: 'Макс. размер файла, КБ',
         resetDefaults: 'Сбросить по умолчанию', examples: 'Примеры:', welcomeTitle: '3D-карта кода проекта',
         welcomeText: 'Разбирает код прямо в браузере (C, C++, Java, C#, JS/TS, Python): граф #include и импортов, граф вызовов, API, дерево директорий и статистика строк. Ничего не отправляется на сервер, кроме запросов к GitHub.',
         openGithub: 'GitHub-репозиторий…', openLocal: 'Локальная папка…', listing: 'Получаю список файлов…', reading: 'Читаю файлы',
@@ -36,33 +36,33 @@ const I18N = {
         noProto: 'Не-static функции без прототипа в заголовке', unused: 'Функции, которые не вызываются внутри проекта',
         cycles: 'Циклы #include', headersUnused: 'Заголовки, которые никто не включает', ratio: 'Плотность комментариев',
         avgFn: 'средняя длина функции', maxFn: 'макс.', rateLimit: 'Лимит GitHub API исчерпан. Укажите токен или подождите до',
-        notFound: 'Репозиторий или ветка не найдены (или он приватный — нужен токен).', truncated: 'GitHub обрезал список файлов (очень большой репозиторий) — часть файлов не попала.',
-        noFiles: 'Не найдено ни одного подходящего файла. Проверьте фильтры.', dagCycle: 'В графе есть циклы — иерархия приблизительная.',
-        tooMany: 'Файлов слишком много, взяты первые', fsUnsupported: 'Браузер не поддерживает выбор папки — используйте zip или выбор файлов.',
+        notFound: 'Репозиторий или ветка не найдены (или он приватный - нужен токен).', truncated: 'GitHub обрезал список файлов (очень большой репозиторий) - часть файлов не попала.',
+        noFiles: 'Не найдено ни одного подходящего файла. Проверьте фильтры.', dagCycle: 'В графе есть циклы - иерархия приблизительная.',
+        tooMany: 'Файлов слишком много, взяты первые', fsUnsupported: 'Браузер не поддерживает выбор папки - используйте zip или выбор файлов.',
         selectNode: 'Нажмите на узел, чтобы увидеть детали', more: 'ещё', total: 'Всего', dir: 'директория', file: 'файл', header: 'заголовок',
         func: 'функция', macro: 'макрос', type: 'тип', variable: 'переменная', proj: 'Проект', size: 'Размер', theme: 'Тема',
         includeEdges: 'связей #include', depth: 'Глубина окрестности', cancel: 'Отмена', ok: 'ОК',
-        implIn: 'Реализован в', params: 'Параметры', body: 'Тело', module: 'Модуль', other: 'Прочее', none: '—',
-        clickHint: 'Тап по узлу — детали, один палец — вращение, два — масштаб/сдвиг', loadedFrom: 'Загружено', viaMacro: 'через макрос',
+        implIn: 'Реализован в', params: 'Параметры', body: 'Тело', module: 'Модуль', other: 'Прочее', none: '-',
+        clickHint: 'Тап по узлу - детали, один палец - вращение, два - масштаб/сдвиг', loadedFrom: 'Загружено', viaMacro: 'через макрос',
         o_view: 'Вид', o_phys: 'Физика', o_style: 'Стиль', o_export: 'Экспорт', col_metric: 'по метрике', sizeBy: 'Размер узлов',
         size_lines: 'строки', size_degree: 'связи', size_uniform: 'одинаковый', reheat: 'Перезапустить раскладку', reset: 'Сбросить',
         v_charge: 'Отталкивание', v_linkDist: 'Длина связей', v_gravity: 'Притяжение к центру', v_decay: 'Трение (затухание)', v_dagDist: 'Расстояние между уровнями',
         v_nodeSize: 'Размер узлов', v_nodeOpacity: 'Непрозрачность узлов', v_linkOpacity: 'Яркость связей', v_quality: 'Качество сфер',
         v_labelCount: 'Число подписей', v_labelSize: 'Размер подписей', v_smooth: 'Плавность камеры', v_sens: 'Чувствительность',
-        srcSnap: 'Снимок', snapSrcHint: 'Снимок проекта (.drift или .json) из вкладки «Экспорт» — открывается мгновенно, без разбора и без GitHub.',
-        snapUrl: 'Ссылка на снимок', loadByUrl: 'Загрузить по ссылке', snapPlain: 'Без сжатия (.json — можно читать и править)',
+        srcSnap: 'Снимок', snapSrcHint: 'Снимок проекта (.drift или .json) из вкладки «Экспорт» - открывается мгновенно, без разбора и без GitHub.',
+        snapUrl: 'Ссылка на снимок', loadByUrl: 'Загрузить по ссылке', snapPlain: 'Без сжатия (.json - можно читать и править)',
         graphNotSnap: 'Это экспорт графа (для Gephi/скриптов), а не снимок проекта. Сохраните «Снимок проекта» во вкладке «Экспорт».',
         liveFilter: 'Фильтр файлов (сразу, без переоткрытия)', refreshing: 'Обновляю проект…', refreshed: 'Проект обновлён',
         watchFolder: 'Следить за изменениями в папке (обновлять граф сам)', refreshProject: 'Обновить проект (R)',
         size_both: 'строки + связи', freeRotate: 'Свободное вращение (без верха и низа)', projection: 'Проекция', proj_persp: 'Перспектива', proj_iso: 'Изометрия',
         isoView: 'Изометрический ракурс', labelNear: 'Подписывать узлы при приближении (и их соседей)',
-        autoLangs: 'Файлов выбранных расширений нет — открываю как:', srcFile: 'файл кода', languages: 'Языки',
+        autoLangs: 'Файлов выбранных расширений нет - открываю как:', srcFile: 'файл кода', languages: 'Языки',
         msaa: 'Сглаживание (MSAA)', v_idleStop: 'Усыпить анимацию после бездействия', showFps: 'Показывать FPS', resetTab: 'Сбросить вкладку', resetAll: 'Сбросить всё', resetDone: 'Сброшено',
         resetAllConfirm: 'Сбросить все настройки (вид, стиль, экран, физика, фильтры) к значениям по умолчанию? Проект перезагрузится.',
-        snapTitle: 'Снимок проекта (.drift)', snapHint: 'Результат разбора, раскладка и настройки в одном сжатом файле. Открывается здесь мгновенно — без повторного разбора и GitHub. Можно положить рядом с сайтом проекта и открывать ссылкой ?snap=файл.drift',
+        snapTitle: 'Снимок проекта (.drift)', snapHint: 'Результат разбора, раскладка и настройки в одном сжатом файле. Открывается здесь мгновенно - без повторного разбора и GitHub. Можно положить рядом с сайтом проекта и открывать ссылкой ?snap=файл.drift',
         snapWithSrc: 'С исходным кодом (для просмотра кода в деталях)', snapSave: 'Скачать снимок', snapBuilding: 'Собираю снимок…', snapSaved: 'Снимок готов:',
         snapOpening: 'Открываю снимок', snapBad: 'Это не снимок Codrift', openSnap: 'Открыть файл снимка (.drift / .json)…', dropHint: 'Можно просто перетащить на страницу файл .drift или .zip.',
-        graphExport: 'Граф текущего вида', graphExportHint: 'С позициями узлов и цветами: GLB — 3D-модель для Blender, GEXF — Gephi, GraphML — yEd/Cytoscape, DOT — Graphviz.', glbBuilding: 'Собираю 3D-модель…',
+        graphExport: 'Граф текущего вида', graphExportHint: 'С позициями узлов и цветами: GLB - 3D-модель для Blender, GEXF - Gephi, GraphML - yEd/Cytoscape, DOT - Graphviz.', glbBuilding: 'Собираю 3D-модель…',
         nodeLink: 'Ссылка', nodeLinkHint: 'Скопировать ссылку на этот узел с текущими настройками и камерой', openFull: 'Открыть полностью',
         pngScale: 'Качество (масштаб)', png_labels: 'Подписи узлов', png_legend: 'Пояснение цветов (что каким цветом)', png_title: 'Заголовок (проект, вид)', pngSave: 'Сохранить PNG', pngRendering: 'Рендерю картинку…',
         o_screen: 'Экран', st_simple: 'Простой', st_atoms: 'Атомы', st_neon: 'Неон', st_blueprint: 'Чертёж', presetEdited: 'Пресет изменён.', resetPreset: 'Вернуть пресет',
@@ -71,7 +71,7 @@ const I18N = {
         v_rim: 'Ободок (контур)', effects: 'Эффекты', c_orbits: 'Орбиты (оболочки)', c_fog: 'Туман глубины', c_additive: 'Светящиеся связи',
         sky: 'Фон', sky_none: 'Нет', sky_gradient: 'Градиент', sky_stars: 'Звёзды', sky_nebula: 'Туманность', sky_grid: 'Сетка', v_skyAmt: 'Яркость фона', newSky: 'Сгенерировать новое небо',
         nearFade: 'Растворять узлы у камеры', perf: 'Производительность', fpsCap: 'Ограничение FPS', fps_auto: 'Нет', resScale: 'Разрешение рендера',
-        res_low: 'Низкое', res_mid: 'Среднее', res_auto: 'Авто', res_high: 'Высокое', res_max: 'Максимум', maxQuality: 'Максимальная графика', maxQualityDone: 'Графика на максимуме: родное разрешение, MSAA, гладкие узлы, без ограничения FPS', perfHint: 'Кадры рисуются только при движении и анимации; без касаний — 30 к/с, после бездействия анимация засыпает. «Авто»-разрешение само снижается при просадке FPS. Больше всего нагрузки дают свечение, орбиты, импульсы и дрожание («Стиль»).',
+        res_low: 'Низкое', res_mid: 'Среднее', res_auto: 'Авто', res_high: 'Высокое', gpuLabel: 'Видеокарта', gpuIntegratedHint: 'Похоже, браузер рисует на встроенной видеокарте. Если в компьютере есть дискретная (NVIDIA / AMD): Параметры Windows → Система → Дисплей → Графика → браузер → «Высокая производительность», затем перезапустите браузер.', gpuSoftwareHint: 'Браузер рисует без видеокарты (программно): включите аппаратное ускорение в настройках браузера.', gpuSlow: 'Не успевает видеокарта: FPS низкий, хотя сам сайт тратит на кадр несколько миллисекунд. Поможет разрешение «Авто» или выключенное свечение.', res_max: 'Максимум', perfHint: 'Кадры рисуются только при движении и анимации; без касаний - 30 к/с, после бездействия анимация засыпает. «Авто»-разрешение само снижается при просадке FPS. Больше всего нагрузки дают свечение, орбиты, импульсы и дрожание («Стиль»).',
         lk_ref: 'ссылка (&fn)', lk_indirect: 'через указатель', viaPtr: 'указатель', maxFiles: 'Макс. файлов',
         tooManyHint: 'Сузьте выбор в «Искать только в».',
         stylePreset: 'Стиль сцены', st_cosmos: 'Космос', st_classic: 'Классика', c_bloom: 'Свечение (bloom)', c_stars: 'Звёзды и туманности',
@@ -89,10 +89,10 @@ const I18N = {
     en: {
         source: 'Source', search: 'Search / list nodes', ss_az: 'A–Z', ss_len: 'Length', ss_lines: 'Lines', ss_links: 'Links', ssh_az: 'Alphabetical', ssh_len: 'By name length', ssh_lines: 'By lines of code', ssh_links: 'By number of links', viewSettings: 'View settings', fitAll: 'Fit all', closeBtn: 'Close', expandBtn: 'Expand', views_includes: '#include', views_calls: 'Calls', views_api: 'API',
         views_dirs: 'Directories', views_stats: 'Statistics', github: 'GitHub', local: 'Folder / zip', repo: 'Repository (owner/repo or URL)',
-        ref: 'Branch / tag / commit (empty — default)', token: 'GitHub token (optional, kept only in this tab\'s memory)',
+        ref: 'Branch / tag / commit (empty - default)', token: 'GitHub token (optional, kept only in this tab\'s memory)',
         load: 'Load and parse', pickDir: 'Choose folder…', pickZip: 'Open .zip…', pickFiles: 'Choose files…',
-        filters: 'File filters', ignore: 'Ignore (glob per line)', includeOnly: 'Search only in (glob, empty — everywhere)',
-        exts: 'Extensions', incRoots: 'Include dirs (space-separated, auto — detect)', maxSize: 'Max file size, KB',
+        filters: 'File filters', ignore: 'Ignore (glob per line)', includeOnly: 'Search only in (glob, empty - everywhere)',
+        exts: 'Extensions', incRoots: 'Include dirs (space-separated, auto - detect)', maxSize: 'Max file size, KB',
         resetDefaults: 'Reset to defaults', examples: 'Examples:', welcomeTitle: '3D map of a code project',
         welcomeText: 'Parses code right in your browser (C, C++, Java, C#, JS/TS, Python): #include/import graph, call graph, API, directory tree and line statistics. Nothing is sent anywhere except requests to GitHub.',
         openGithub: 'GitHub repository…', openLocal: 'Local folder…', listing: 'Listing files…', reading: 'Reading files',
@@ -114,33 +114,33 @@ const I18N = {
         noProto: 'Non-static functions without a header prototype', unused: 'Functions never called inside the project',
         cycles: '#include cycles', headersUnused: 'Headers nobody includes', ratio: 'Comment density',
         avgFn: 'avg function length', maxFn: 'max', rateLimit: 'GitHub API rate limit exceeded. Add a token or wait until',
-        notFound: 'Repository or ref not found (or it is private — a token is needed).', truncated: 'GitHub truncated the file list (very large repo) — some files are missing.',
-        noFiles: 'No matching files found. Check the filters.', dagCycle: 'The graph has cycles — hierarchy is approximate.',
-        tooMany: 'Too many files, took the first', fsUnsupported: 'This browser cannot pick folders — use zip or file selection.',
+        notFound: 'Repository or ref not found (or it is private - a token is needed).', truncated: 'GitHub truncated the file list (very large repo) - some files are missing.',
+        noFiles: 'No matching files found. Check the filters.', dagCycle: 'The graph has cycles - hierarchy is approximate.',
+        tooMany: 'Too many files, took the first', fsUnsupported: 'This browser cannot pick folders - use zip or file selection.',
         selectNode: 'Tap a node to see details', more: 'more', total: 'Total', dir: 'directory', file: 'file', header: 'header',
         func: 'function', macro: 'macro', type: 'type', variable: 'variable', proj: 'Project', size: 'Size', theme: 'Theme',
         includeEdges: '#include links', depth: 'Neighborhood depth', cancel: 'Cancel', ok: 'OK',
-        implIn: 'Implemented in', params: 'Parameters', body: 'Body', module: 'Module', other: 'Other', none: '—',
+        implIn: 'Implemented in', params: 'Parameters', body: 'Body', module: 'Module', other: 'Other', none: '-',
         clickHint: 'Tap a node for details, one finger rotates, two zoom/pan', loadedFrom: 'Loaded', viaMacro: 'via macro',
         o_view: 'View', o_phys: 'Physics', o_style: 'Style', o_export: 'Export', col_metric: 'by metric', sizeBy: 'Node size',
         size_lines: 'lines', size_degree: 'links', size_uniform: 'uniform', reheat: 'Restart layout', reset: 'Reset',
         v_charge: 'Repulsion', v_linkDist: 'Link length', v_gravity: 'Pull to center', v_decay: 'Friction (damping)', v_dagDist: 'Level distance',
         v_nodeSize: 'Node size', v_nodeOpacity: 'Node opacity', v_linkOpacity: 'Link brightness', v_quality: 'Sphere quality',
         v_labelCount: 'Label count', v_labelSize: 'Label size', v_smooth: 'Camera smoothness', v_sens: 'Sensitivity',
-        srcSnap: 'Snapshot', snapSrcHint: 'A project snapshot (.drift or .json) from the Export tab — opens instantly, no parsing, no GitHub.',
-        snapUrl: 'Snapshot URL', loadByUrl: 'Load from URL', snapPlain: 'Uncompressed (.json — readable and editable)',
+        srcSnap: 'Snapshot', snapSrcHint: 'A project snapshot (.drift or .json) from the Export tab - opens instantly, no parsing, no GitHub.',
+        snapUrl: 'Snapshot URL', loadByUrl: 'Load from URL', snapPlain: 'Uncompressed (.json - readable and editable)',
         graphNotSnap: 'This is a graph export (for Gephi/scripts), not a project snapshot. Save “Project snapshot” in the Export tab.',
         liveFilter: 'File filter (live, no reload)', refreshing: 'Refreshing project…', refreshed: 'Project refreshed',
         watchFolder: 'Watch the folder for changes (auto-refresh)', refreshProject: 'Refresh project (R)',
         size_both: 'lines + links', freeRotate: 'Free rotation (no up/down)', projection: 'Projection', proj_persp: 'Perspective', proj_iso: 'Isometric',
         isoView: 'Isometric angle', labelNear: 'Label nodes when zoomed in (and their neighbors)',
-        autoLangs: 'No files with the selected extensions — opening as:', srcFile: 'source file', languages: 'Languages',
+        autoLangs: 'No files with the selected extensions - opening as:', srcFile: 'source file', languages: 'Languages',
         msaa: 'Anti-aliasing (MSAA)', v_idleStop: 'Sleep animation after inactivity', showFps: 'Show FPS', resetTab: 'Reset tab', resetAll: 'Reset everything', resetDone: 'Reset done',
         resetAllConfirm: 'Reset all settings (view, style, screen, physics, filters) to defaults? The project will reload.',
-        snapTitle: 'Project snapshot (.drift)', snapHint: 'Parse result, layout and settings in one compressed file. Opens here instantly — no re-parsing, no GitHub. Put it next to your project site and open with ?snap=file.drift',
+        snapTitle: 'Project snapshot (.drift)', snapHint: 'Parse result, layout and settings in one compressed file. Opens here instantly - no re-parsing, no GitHub. Put it next to your project site and open with ?snap=file.drift',
         snapWithSrc: 'Include source code (for code view in details)', snapSave: 'Download snapshot', snapBuilding: 'Building snapshot…', snapSaved: 'Snapshot ready:',
         snapOpening: 'Opening snapshot', snapBad: 'Not a Codrift snapshot', openSnap: 'Open snapshot file (.drift / .json)…', dropHint: 'You can also drop a .drift or .zip file onto the page.',
-        graphExport: 'Current view graph', graphExportHint: 'With node positions and colors: GLB — 3D model for Blender, GEXF — Gephi, GraphML — yEd/Cytoscape, DOT — Graphviz.', glbBuilding: 'Building 3D model…',
+        graphExport: 'Current view graph', graphExportHint: 'With node positions and colors: GLB - 3D model for Blender, GEXF - Gephi, GraphML - yEd/Cytoscape, DOT - Graphviz.', glbBuilding: 'Building 3D model…',
         nodeLink: 'Link', nodeLinkHint: 'Copy a link to this node with current settings and camera', openFull: 'Open full view',
         pngScale: 'Quality (scale)', png_labels: 'Node labels', png_legend: 'Color key (what each color means)', png_title: 'Title (project, view)', pngSave: 'Save PNG', pngRendering: 'Rendering image…',
         o_screen: 'Screen', st_simple: 'Simple', st_atoms: 'Atoms', st_neon: 'Neon', st_blueprint: 'Blueprint', presetEdited: 'Preset modified.', resetPreset: 'Restore preset',
@@ -149,7 +149,7 @@ const I18N = {
         v_rim: 'Rim light', effects: 'Effects', c_orbits: 'Orbits (shells)', c_fog: 'Depth fog', c_additive: 'Glowing links',
         sky: 'Background', sky_none: 'None', sky_gradient: 'Gradient', sky_stars: 'Stars', sky_nebula: 'Nebula', sky_grid: 'Grid', v_skyAmt: 'Background brightness', newSky: 'Generate new sky',
         nearFade: 'Dissolve nodes near camera', perf: 'Performance', fpsCap: 'FPS limit', fps_auto: 'None', resScale: 'Render resolution',
-        res_low: 'Low', res_mid: 'Medium', res_auto: 'Auto', res_high: 'High', res_max: 'Max', maxQuality: 'Maximum graphics', maxQualityDone: 'Graphics maxed out: native resolution, MSAA, smooth nodes, no FPS cap', perfHint: 'Frames are drawn only while something moves or animates. Glow, orbits, pulses, jitter and rotation cost the most — turn them off in Style.',
+        res_low: 'Low', res_mid: 'Medium', res_auto: 'Auto', res_high: 'High', gpuLabel: 'Graphics card', gpuIntegratedHint: 'The browser seems to render on the integrated GPU. If the computer has a discrete one (NVIDIA / AMD): Windows Settings → System → Display → Graphics → your browser → "High performance", then restart the browser.', gpuSoftwareHint: 'The browser renders without a GPU (software): enable hardware acceleration in the browser settings.', gpuSlow: 'The GPU cannot keep up: FPS is low although the site itself spends only a few ms per frame. Try Auto resolution or turn off glow.', res_max: 'Max', perfHint: 'Frames are drawn only while something moves or animates. Glow, orbits, pulses, jitter and rotation cost the most - turn them off in Style.',
         lk_ref: 'reference (&fn)', lk_indirect: 'via pointer', viaPtr: 'pointer', maxFiles: 'Max files',
         tooManyHint: 'Narrow it down with “Search only in”.',
         stylePreset: 'Scene style', st_cosmos: 'Cosmos', st_classic: 'Classic', c_bloom: 'Glow (bloom)', c_stars: 'Stars and nebulae',
@@ -186,8 +186,8 @@ const t = k => (I18N[LANG] && I18N[LANG][k]) || I18N.en[k] || k;
    ====================================================================== */
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const fmt = n => (n == null ? '—' : Number(n).toLocaleString(LANG === 'ru' ? 'ru-RU' : 'en-US'));
-const pct = (a, b) => (b ? (100 * a / b).toFixed(1) + '%' : '—');
+const fmt = n => (n == null ? '-' : Number(n).toLocaleString(LANG === 'ru' ? 'ru-RU' : 'en-US'));
+const pct = (a, b) => (b ? (100 * a / b).toFixed(1) + '%' : '-');
 const dirname = p => { const i = p.lastIndexOf('/'); return i < 0 ? '' : p.slice(0, i); };
 const basename = p => p.slice(p.lastIndexOf('/') + 1);
 const extOf = p => { const b = basename(p); const i = b.lastIndexOf('.'); return i < 0 ? '' : b.slice(i).toLowerCase(); };
@@ -206,7 +206,7 @@ function hexToRgba(hex, a) {
     const h = hex.replace('#', ''); const n = parseInt(h.length === 3 ? h.split('').map(c => c + c).join('') : h, 16);
     return `rgba(${(n >> 16) & 255},${(n >> 8) & 255},${n & 255},${a})`;
 }
-// Показать/скрыть элемент с анимацией (появление — CSS-анимация, скрытие — класс .leaving)
+// Показать/скрыть элемент с анимацией (появление - CSS-анимация, скрытие - класс .leaving)
 const REDUCED_MOTION = matchMedia('(prefers-reduced-motion: reduce)');
 function setShown(el, show) {
     if (!el) return;
@@ -301,9 +301,9 @@ function makeWeb(owner, repo, ref) {
 
 async function sourceGitHub(spec, refIn) {
     const { owner, repo } = spec;
-    // Один запрос к API: дерево по ветке (или HEAD = ветка по умолчанию); содержимое — через raw (без лимита API)
+    // Один запрос к API: дерево по ветке (или HEAD = ветка по умолчанию); содержимое - через raw (без лимита API)
     let ref = refIn || spec.ref || 'HEAD';
-    // Ветка с '/' в имени: если URL вида tree/feature/x/dir — пробуем сокращать
+    // Ветка с '/' в имени: если URL вида tree/feature/x/dir - пробуем сокращать
     let tree = null, refTry = ref, subdir = '';
     for (let k = 0; k < 6; k++) {
         try { tree = await ghApi(`/repos/${owner}/${repo}/git/trees/${encodeURIComponent(refTry)}?recursive=1`); break; } catch (e) {
@@ -356,7 +356,7 @@ async function sourceDirHandle(handle, ignoreRes) {
         }
     }
     await walk(handle, '');
-    // listAgain — повторный обход папки (наблюдатель замечает новые и удалённые файлы)
+    // listAgain - повторный обход папки (наблюдатель замечает новые и удалённые файлы)
     const listAgain = async () => { const keep = entries; entries = []; try { await walk(handle, ''); return entries; } finally { entries = keep; } };
     return { name: handle.name, entries, watchable: true, listAgain, async read(e) { const f = await e.handle.getFile(); return f.text(); } };
 }
@@ -365,10 +365,12 @@ async function sourceDirHandle(handle, ignoreRes) {
 async function loadScript(src) {
     return new Promise((res, rej) => { const s = document.createElement('script'); s.src = src; s.onload = res; s.onerror = () => rej(new Error('load ' + src)); document.head.appendChild(s); });
 }
+
+
 async function sourceZip(file) {
     if (!window.fflate) await loadScript('https://cdn.jsdelivr.net/npm/fflate@0.8.2/umd/index.js');
     const buf = new Uint8Array(await file.arrayBuffer());
-    // Распаковываем файлы всех поддерживаемых языков — иначе автоопределение языка не сработает
+    // Распаковываем файлы всех поддерживаемых языков - иначе автоопределение языка не сработает
     const cfg = readCfg();
     const exts = new Set(cfg.exts.split(/[\s,]+/).filter(Boolean).map(s => (s.startsWith('.') ? s : '.' + s).toLowerCase()));
     if (window.CodriftLangs) for (const L of CodriftLangs.all) for (const e of L.exts) exts.add(e);
@@ -400,7 +402,7 @@ async function runSource(makeSource, opts) {
     const cfg = readCfg();
     const ignoreRes = compileGlobs(cfg.ignore), onlyRes = compileGlobs(cfg.only);
     let exts = cfg.exts.split(/[\s,]+/).filter(Boolean).map(s => (s.startsWith('.') ? s : '.' + s).toLowerCase());
-    // Выбрано хоть одно расширение языка — берём все его расширения (.cpp без .hpp потерял бы заголовки)
+    // Выбрано хоть одно расширение языка - берём все его расширения (.cpp без .hpp потерял бы заголовки)
     if (window.CodriftLangs) for (const L of CodriftLangs.all) if (L.exts.some(e => exts.includes(e))) exts = [...new Set([...exts, ...L.exts])];
     try {
         setProgress(t('listing'), 0);
@@ -423,12 +425,12 @@ async function runSource(makeSource, opts) {
         };
         pickFiles(exts);
         const cppL = window.CodriftLangs && CodriftLangs.byId('cpp');
-        // Проект на C++ с заголовками .h: файлов .c нет, а .cpp/.hpp есть — открываем как C++
+        // Проект на C++ с заголовками .h: файлов .c нет, а .cpp/.hpp есть - открываем как C++
         if (cppL && picked.length && !picked.some(e => extOf(e.path) === '.c') && src.entries.some(e => !e.dirOnly && cppL.exts.includes(extOf(e.path)) && !anyMatch(ignoreRes, e.path))) {
             pickFiles([...new Set([...exts, ...cppL.exts])]); toast(t('autoLangs') + ' C++', 4000);
         }
         if (!picked.length && window.CodriftLangs) {
-            // Нет файлов выбранных расширений — определяем языки проекта сами (самые частые)
+            // Нет файлов выбранных расширений - определяем языки проекта сами (самые частые)
             const cnt = new Map();
             for (const e of src.entries) { if (e.dirOnly || anyMatch(ignoreRes, e.path)) continue; const L = CodriftLangs.forPath(e.path); if (L) cnt.set(L, (cnt.get(L) || 0) + 1); }
             const max = Math.max(0, ...cnt.values());
@@ -441,7 +443,7 @@ async function runSource(makeSource, opts) {
         if (picked.length > LIMIT) { toast(`${t('tooMany')} ${fmt(LIMIT)} / ${fmt(picked.length)}. ${t('tooManyHint')}`, 9000); picked = picked.slice(0, LIMIT); }
         // Чтение с ограничением параллельности
         const texts = new Array(picked.length); let doneN = 0, next = 0;
-        const conc = src.web ? 12 : 24; // сеть — меньше параллельных запросов, локальные файлы — больше
+        const conc = src.web ? 12 : 24; // сеть - меньше параллельных запросов, локальные файлы - больше
         async function worker() {
             while (next < picked.length) {
                 const i = next++;
@@ -455,9 +457,9 @@ async function runSource(makeSource, opts) {
         for (let i = 0; i < picked.length; i++) {
             if (texts[i] == null) continue;
             try {
-                // Парсер выбирается по расширению файла (плагины языков — langs.js)
+                // Парсер выбирается по расширению файла (плагины языков - langs.js)
                 let L = window.CodriftLangs && CodriftLangs.forPath(picked[i].path);
-                if (L && L.id === 'c' && hasCpp && /\.h$/i.test(picked[i].path)) L = cppL; // .h в C++-проекте — заголовок C++
+                if (L && L.id === 'c' && hasCpp && /\.h$/i.test(picked[i].path)) L = cppL; // .h в C++-проекте - заголовок C++
                 const pf = L ? L.parse(picked[i].path, texts[i]) : CParser.parseFile(picked[i].path, texts[i]);
                 pf.lang = L ? L.id : 'c'; pf.text = texts[i]; files.push(pf);
             } catch (err) { console.warn('parse', picked[i].path, err); }
@@ -487,7 +489,7 @@ function paramNames(fn) {
     const sig = fn.sig || '', i = sig.indexOf('('); if (i < 0) return new Set();
     let d = 0, j = i; for (; j < sig.length; j++) { if (sig[j] === '(') d++; else if (sig[j] === ')') { d--; if (!d) break; } }
     const inner = sig.slice(i + 1, j); const out = new Set();
-    // Делим по запятым верхнего уровня: void (*cb)(int, int) — один параметр
+    // Делим по запятым верхнего уровня: void (*cb)(int, int) - один параметр
     const parts = []; let depth = 0, from = 0;
     for (let k = 0; k <= inner.length; k++) {
         const ch = inner[k];
@@ -532,7 +534,7 @@ function buildModel(parsed, ctx) {
         const d = ensureDir(f.dir); d.files.push(f);
         for (let x = d; x; x = x.path === '' ? null : M.dirs.get(dirname(x.path))) { for (const k in x.stats) x.stats[k] += f.stats[k]; x.nFiles++; }
     }
-    // Модули — для раскраски: группы по первым значимым сегментам пути
+    // Модули - для раскраски: группы по первым значимым сегментам пути
     computeModules(M);
 
     // Корни include
@@ -571,7 +573,7 @@ function buildModel(parsed, ctx) {
     for (const f of M.files.values()) {
         const L = langOf(f);
         for (const inc of f.includes) {
-            // #include — общая логика C/C++; импорты других языков — правило плагина
+            // #include - общая логика C/C++; импорты других языков - правило плагина
             let rs = L && L.resolveImport && inc.kind !== undefined ? L.resolveImport(f, inc, langCtx) : null;
             if (!rs || !rs.length) rs = [resolve(f.path, inc)];
             inc.res = rs[0];
@@ -636,7 +638,7 @@ function buildModel(parsed, ctx) {
     for (const V of M.vars.values()) { const d = V.decls.concat(V.defs).find(x => x.doc); V.doc = d ? d.doc : ''; }
 
     // Разрешение вызовов
-    // Семейство языка: C и C++ видят друг друга, остальные — только свой язык
+    // Семейство языка: C и C++ видят друг друга, остальные - только свой язык
     const family = f => (f.lang === 'c' || f.lang === 'cpp' ? 'c' : f.lang === 'js' ? 'js' : f.lang);
     function resolveFn(name, from, container) {
         let defs = M.fnByName.get(name); if (!defs) return null;
@@ -644,7 +646,7 @@ function buildModel(parsed, ctx) {
         if (container) { const own = defs.find(d => d.container === container && d.file === from) || defs.find(d => d.container === container); if (own) return own; }
         const free = defs.filter(d => !d.container);
         return free.find(d => d.file === from) || free.find(d => !d.isStatic) || free.find(d => d.file.isH)
-            // Метод другого класса — только если он единственный с таким именем
+            // Метод другого класса - только если он единственный с таким именем
             || (defs.length === 1 && !defs[0].isStatic && defs[0].container && langOf(from) && langOf(from).oop ? defs[0] : null)
             || defs.find(d => d.file === from) || null;
     }
@@ -679,7 +681,7 @@ function buildModel(parsed, ctx) {
     for (const fn of M.fns.values()) {
         const map = new Map(); const called = new Set();
         const oop = langOf(fn.file) && langOf(fn.file).oop;
-        // Вызов параметра-колбэка (fn(), cb(), handler()) — это не вызов одноимённой функции проекта
+        // Вызов параметра-колбэка (fn(), cb(), handler()) - это не вызов одноимённой функции проекта
         const params = paramNames(fn);
         for (const c of fn.calls) {
             if (params.has(c.name)) { called.add(c.name); continue; }
@@ -695,7 +697,7 @@ function buildModel(parsed, ctx) {
             if (tf) addEdge(fn, map, tf.id, { kind: 'ref', target: tf }, line);
             else { const mc = M.macroByName.get(name) && resolveMacro(name, fn.file); if (mc && mc.params == null && mc.calls.length) addEdge(fn, map, mc.id, { kind: 'macro', target: mc }, line); }
         }
-        // Методы объектов (ООП-языки): this.f()/self.f() — метод своего класса; obj.f() — метод с таким именем, если он почти уникален
+        // Методы объектов (ООП-языки): this.f()/self.f() - метод своего класса; obj.f() - метод с таким именем, если он почти уникален
         if (oop) for (const mc of fn.memberCalls || []) {
             let targets = [];
             if (fn.container && (mc.recv === 'this' || mc.recv === 'self' || mc.recv === 'cls' || mc.recv === 'base' || mc.recv === 'super')) { const own = resolveFn(mc.field, fn.file, fn.container); if (own && own.container) targets = [own]; }
@@ -733,7 +735,7 @@ function buildModel(parsed, ctx) {
 }
 
 
-// Подходит ли функция под вызов с argc аргументами (по сигнатуре; f(void) — 0, «...» — не меньше)
+// Подходит ли функция под вызов с argc аргументами (по сигнатуре; f(void) - 0, «...» - не меньше)
 function paramInfo(fn) {
     if (fn._params) return fn._params;
     const sig = fn.sig || ''; const close = sig.lastIndexOf(')'); let depth = 0, open = -1;
@@ -744,6 +746,8 @@ function paramInfo(fn) {
     if (variadic) n--;
     return (fn._params = { n, variadic });
 }
+
+
 function argsFit(fn, argc) {
     if (argc == null || argc < 0) return true;
     const p = paramInfo(fn); return p.variadic ? argc >= p.n : argc === p.n;
@@ -804,7 +808,7 @@ vis.labelKinds = Object.assign({}, VIS_DEF.labelKinds, vis.labelKinds || {});
 vis.png = Object.assign({}, VIS_DEF.png, vis.png || {});
 // Старый стиль «Классика» → пресет «Простой»
 if (vis.style === 'classic') Object.assign(vis, { style: 'simple', palette: 'theme', shape: 'sphere', material: 'flat', sky: 'none', orbits: false, electrons: false, pulses: false, bloom: false, wobble: 0, autoRotate: false, fog: false, additive: false });
-// Новые значения по умолчанию (свободное вращение, подписи внешних узлов и макросов) — один раз и для уже сохранённых настроек
+// Новые значения по умолчанию (свободное вращение, подписи внешних узлов и макросов) - один раз и для уже сохранённых настроек
 if (!store.get('defaults3', false)) {
     vis.freeRotate = true; Object.assign(vis.labelKinds, { ext: true, vendor: true, macro: true });
     store.set('defaults3', true); store.set('vis', vis);
@@ -821,14 +825,18 @@ function fileKind(f) { return f.isH ? 'h' : 'c'; }
 function fileNode(f) {
     return { id: f.id, label: basename(f.path), sub: f.path, kind: fileKind(f), mod: model.moduleOf(f.path), val: 1 + Math.sqrt(f.stats.code) / 3, lines: f.stats.code, doc: f.fileDoc, ref: f };
 }
+
+
 function fnNode(fn) {
     const len = fn.endLine - fn.startLine + 1;
     return { id: fn.id, label: fn.qual || fn.name, sub: fn.file.path + ':' + fn.line, kind: 'fn', mod: model.moduleOf(fn.file.path), val: 1 + Math.sqrt(len) / 2, lines: len, doc: fn.doc, ref: fn };
 }
+
+
 function macroNode(m) { return { id: m.id, label: m.name, sub: m.file.path + ':' + m.line, kind: 'macro', mod: model.moduleOf(m.file.path), val: 1.2, lines: m.endLine - m.line + 1, doc: m.doc, ref: m }; }
 function extNode(id, name, kind) { return { id, label: name, sub: kind === 'vendor' ? t('vendor') : t('external'), kind: kind === 'vendor' ? 'vendor' : 'ext', mod: '…', val: 0.8, ref: null }; }
 
-// Живой фильтр: «src/cgdf !opengl» — показывать только совпадения, «!» исключает; скрытые модули — по чипам
+// Живой фильтр: «src/cgdf !opengl» - показывать только совпадения, «!» исключает; скрытые модули - по чипам
 const liveFilter = { text: store.get('lfText', ''), hidden: new Set(store.get('lfHidden', [])), _res: null, _text: null };
 function liveTerms() {
     if (liveFilter._text !== liveFilter.text) {
@@ -845,6 +853,8 @@ function liveKeep(path, mod) {
     if (r.exc.some(re => re.test(path))) return false;
     return !r.inc.length || r.inc.some(re => re.test(path));
 }
+
+
 function nodePath(n) {
     const r = n.ref; if (!r) return null;
     if (n.kind === 'dir') return r.path;
@@ -920,7 +930,7 @@ function buildView(view) {
             const sn = add(n); links.push({ source: h.id, target: sn.id, kind: kind || 'decl' }); return sn;
         };
         for (const f of model.files.values()) {
-            if (!f.api && !o.includeC) continue; // «API» — заголовки (C/C++) или любой файл в языках без заголовков
+            if (!f.api && !o.includeC) continue; // «API» - заголовки (C/C++) или любой файл в языках без заголовков
             const hn = add(fileNode(f)); let any = false;
             if (o.fn) {
                 const seen = new Set();
@@ -965,7 +975,7 @@ function buildView(view) {
             for (const f of d.files) { add(fileNode(f)); links.push({ source: d.id, target: f.id, kind: 'tree' }); }
         }
     }
-    // Живой фильтр файлов: узлы из отфильтрованных файлов/модулей убираются, внешние — если не осталось связей
+    // Живой фильтр файлов: узлы из отфильтрованных файлов/модулей убираются, внешние - если не осталось связей
     if (liveFilterActive()) {
         const keptDirs = new Set(['']);
         for (const [id, n] of nodes) {
@@ -1054,12 +1064,12 @@ function readColors() {
     for (const k of ['--s1', '--s2', '--s3', '--s4', '--s5', '--s6', '--s7', '--s8', '--ext', '--hl', '--graph-bg', '--muted', '--ink', '--line-2']) colorCache[k] = cssVar(k);
     colorCache.dark = document.documentElement.getAttribute('data-theme') === 'dark' ||
         (document.documentElement.getAttribute('data-theme') !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches);
-    // Палитра сцены (кроме «как у темы») — граф всегда на своём тёмном фоне
+    // Палитра сцены (кроме «как у темы») - граф всегда на своём тёмном фоне
     const pal = PALETTES[vis.palette];
     if (pal) { Object.assign(colorCache, pal); colorCache.dark = true; }
 }
 const MOD_SLOTS = ['--s1', '--s2', '--s3', '--s4', '--s5', '--s6', '--s7'];
-// Последовательная шкала (один оттенок): в тёмной теме малые значения тёмные, в светлой — светлые
+// Последовательная шкала (один оттенок): в тёмной теме малые значения тёмные, в светлой - светлые
 const SEQ_RAMP = ['#cde2fb', '#b7d3f6', '#9ec5f4', '#86b6ef', '#6da7ec', '#5598e7', '#3987e5', '#2a78d6', '#256abf', '#1c5cab', '#184f95', '#104281', '#0d366b'];
 
 
@@ -1082,6 +1092,8 @@ function baseColor(n) {
     }
     return colorCache[KIND_COLORS[n.kind] || '--ext'];
 }
+
+
 function nodeVal(n) {
     const k = vis.sizeBy;
     if (k === 'uniform') return isExtNode(n) ? 0.8 : 1.5;
@@ -1091,7 +1103,7 @@ function nodeVal(n) {
 }
 const LINK_KIND_COLOR = { ref: '--s7', macro: '--s4', impl: '--s1', ext: '--ext', indirect: '--s5' };
 function linkBase(l) { return colorCache[LINK_KIND_COLOR[l.kind]] || colorCache['--muted']; }
-// Цвет выделенных связей (их рисует сама библиотека — со стрелками и частицами)
+// Цвет выделенных связей (их рисует сама библиотека - со стрелками и частицами)
 function hlLinkColor(l) { return (l.source.id || l.source) === selId ? colorCache['--hl'] : colorCache['--s1']; }
 
 /* ----- Рендер только по необходимости -----
@@ -1099,7 +1111,7 @@ function hlLinkColor(l) { return (l.source.id || l.source) === selId ? colorCach
    (шаг раскладки + рендер), когда что-то меняется: камера, раскладка, анимация, выделение. */
 let needRender = true, engineActive = false, lastRender = 0;
 const requestRender = () => { needRender = true; };
-// Анимация с плавной остановкой: ts — масштаб времени (1 — идёт, 0 — уснула), animT — «время анимации»
+// Анимация с плавной остановкой: ts - масштаб времени (1 - идёт, 0 - уснула), animT - «время анимации»
 const anim = { ts: 1, t: 0 };
 const wantsAnimation = () => vis.wobble > 0 || vis.orbits || vis.pulses || vis.autoRotate || (!!selId && vis.particles);
 let growUntil = 0, growOrder = null;
@@ -1111,8 +1123,10 @@ function growOf(n, t) {
     const k = Math.min(1, Math.max(0, (t - n.__born) / GROW_DUR));
     return 1 - Math.pow(1 - k, 3);
 }
+
+
 // Порядок появления при построении вида: волнами от самого связанного узла каждой компоненты по связям.
-// Узел «вырастает» из своего родителя в обходе и выезжает на своё место — граф разворачивается, как кристалл
+// Узел «вырастает» из своего родителя в обходе и выезжает на своё место - граф разворачивается, как кристалл
 function planGrowth(nodes, t0) {
     const byId = new Map(nodes.map((n, i) => [n.id, i])), N = nodes.length;
     const deg = i => (adj.out.get(nodes[i].id) || []).length + (adj.inn.get(nodes[i].id) || []).length;
@@ -1130,7 +1144,7 @@ function planGrowth(nodes, t0) {
             }
         }
     }
-    // Время рождения — по месту в обходе (волна идёт плавно при любой «глубине» графа); родитель всегда раньше ребёнка
+    // Время рождения - по месту в обходе (волна идёт плавно при любой «глубине» графа); родитель всегда раньше ребёнка
     const total = N < 50 ? 0.8 : N < 300 ? 1.4 : 1.9;
     order.forEach((i, q) => {
         const n = nodes[i], base = t0 + total * Math.pow(q / Math.max(1, N - 1), 0.85);
@@ -1143,9 +1157,9 @@ function planGrowth(nodes, t0) {
 }
 
 /* ----- Камера -----
-   Ориентация — кватернион (свободное вращение без «верха/низа»), расстояние и цель — отдельно.
+   Ориентация - кватернион (свободное вращение без «верха/низа»), расстояние и цель - отдельно.
    Ввод меняет только цели, текущие значения догоняют их экспоненциально, как в CameraOrbitController3D CGDF:
-   alpha = 1 - exp(-dt / (1 - friction)). Программный перелёт к узлу — отдельная плавная кривая (ease-in-out).
+   alpha = 1 - exp(-dt / (1 - friction)). Программный перелёт к узлу - отдельная плавная кривая (ease-in-out).
    Проекция плавно переходит от перспективы к изометрии («долли-зум»: угол обзора уменьшается,
    камера отъезжает так, что масштаб в центре не меняется). */
 const DEG = Math.PI / 180, FOV_PERSP = 50, FOV_ISO = 1.2;
@@ -1175,11 +1189,12 @@ const cancelFly = () => { orbit.fly = null; };
 // Изометрический ракурс: поворот 45° и наклон 35.26° (arctan(1/√2))
 function isoOrientation() { return new THREE.Quaternion().setFromEuler(new THREE.Euler(-Math.atan(1 / Math.SQRT2), -Math.PI / 4, 0, 'YXZ')); }
 
-// Динамическое разрешение: при просадке FPS pixel ratio понижается (до ×0.5), при запасе — возвращается
+// Динамическое разрешение: при просадке FPS pixel ratio понижается (до ×0.5), при запасе - возвращается
 const dyn = { scale: 1, ema: 0, lastAdj: 0, good: 0, chain: false };
-const fpsMeter = { n: 0, t: 0, val: 0 };
+const fpsMeter = { n: 0, t: 0, val: 0, ms: 0 };
+const pace = { last: 0, acc: 0 }; // такты монитора и накопленное время для ограничения кадров
 function adaptResolution(interval, targetMs, now) {
-    if (interval > 250) return; // пауза, фоновая вкладка, отладка — это не нехватка GPU
+    if (interval > 250) return; // пауза, фоновая вкладка, отладка - это не нехватка GPU
     dyn.ema = dyn.ema ? dyn.ema * 0.9 + interval * 0.1 : interval;
     if (vis.res !== 'auto' || now - dyn.lastAdj < 1000) return;
     dyn.lastAdj = now;
@@ -1197,6 +1212,7 @@ const _eq = new THREE.Euler(), _eg = new THREE.Euler();
 function renderStep(now) {
     if (!G || curView === 'stats' || document.hidden || G.width() < 2 || G.height() < 2) { orbit.last = now; dyn.chain = false; return; }
     const dt = Math.max(0, Math.min(0.1, (now - (orbit.last || now)) / 1000)); orbit.last = Math.max(orbit.last, now);
+    const tick = Math.max(0, now - (pace.last || now)); pace.last = Math.max(pace.last, now);
     const o = orbit;
     const idle = (now - cz.lastInput) / 1000;
     // Энергосбережение: после долгого бездействия анимация плавно замедляется и засыпает (любое движение мыши будит)
@@ -1208,15 +1224,29 @@ function renderStep(now) {
     const [gsx, gsy] = viewShiftGoal();
     const moving = !!o.fly || 1 - Math.abs(o.q.dot(o.gq)) > 1e-9 || Math.abs(Math.log(o.gdist / o.dist)) > 1e-4 ||
         o.t.distanceTo(o.gt) > o.dist * 1e-4 || Math.abs(gsx - o.sx) > 0.3 || Math.abs(gsy - o.sy) > 0.3 || Math.abs(projGoal() - o.p) > 1e-3;
-    if (!(needRender || moving || engineActive || posDirty || animating)) { dyn.chain = false; return; } // простой — ничего не рисуем
+    if (!(needRender || moving || engineActive || posDirty || animating)) { dyn.chain = false; pace.acc = 0; return; } // простой - ничего не рисуем
     // Пока пользователь не трогает сцену, фоновая анимация идёт на 30 к/с
     let cap = vis.fps > 0 ? vis.fps : 0;
     if (idle > 3 && !engineActive && !needRender && !o.fly) cap = cap ? Math.min(cap, 30) : 30;
-    if (cap && now - lastRender < 1000 / cap - 2) return;
+    // Ограничение кадров «бюджетом»: время между тактами монитора копится, кадр рисуется, когда набрался интервал,
+    // остаток переносится. Раньше кадр ждал целый лишний такт: на 75 Гц предел 60 давал 37 к/с, на 144 Гц - 48
+    if (cap) {
+        const iv = 1000 / cap;
+        pace.acc += tick;
+        if (pace.acc < iv - 1) return;
+        pace.acc = Math.min(pace.acc - iv, iv);
+    } else pace.acc = 0;
+    const t0 = performance.now();
     if (dyn.chain) adaptResolution(now - lastRender, cap ? 1000 / cap : 1000 / 60, now);
     dyn.chain = true;
-    if (vis.showFps) { fpsMeter.n++; if (now - fpsMeter.t > 500) { fpsMeter.val = Math.round(fpsMeter.n * 1000 / (now - fpsMeter.t)); fpsMeter.n = 0; fpsMeter.t = now; const el = $('#fpsVal'); if (el) el.textContent = `${fpsMeter.val} FPS · ×${(G.renderer().getPixelRatio()).toFixed(2)}`; } }
-    const rdt = Math.max(0, Math.min(0.1, (now - (lastRender || now)) / 1000)); // таймер может «скакнуть» назад — шаг не бывает отрицательным
+    // Счётчик: кадры в секунду и сколько миллисекунд кадр занимает у самого сайта (JS + отправка в GPU).
+    // Если FPS низкий, а миллисекунд мало - время уходит не сюда (браузер, композитинг, вкладка в фоне)
+    if (fpsMeter.val && fpsMeter.val < 40 && idle < 1 && fpsMeter.ms < 8 && (!cap || cap > 40)) { gpu.lowSince = gpu.lowSince || now; if (!gpu.warned && now - gpu.lowSince > 4000) { gpu.warned = true; toast(t('gpuSlow') + (gpu.kind === 'integrated' || gpu.kind === 'software' ? ' ' + t(gpu.kind === 'software' ? 'gpuSoftwareHint' : 'gpuIntegratedHint') : ''), 12000); } }
+    else gpu.lowSince = 0;
+    // FPS считается всегда (нужен для уведомления); на экран выводится, только если показ включён (#fpsVal есть в легенде)
+    fpsMeter.n++;
+    { if (now - fpsMeter.t > 500) { fpsMeter.val = Math.round(fpsMeter.n * 1000 / (now - fpsMeter.t)); fpsMeter.n = 0; fpsMeter.t = now; const el = $('#fpsVal'); if (el) el.textContent = `${fpsMeter.val} FPS · ${fpsMeter.ms.toFixed(1)} ${LANG === 'ru' ? 'мс' : 'ms'} · ×${(G.renderer().getPixelRatio()).toFixed(2)}`; } }
+    const rdt = Math.max(0, Math.min(0.1, (now - (lastRender || now)) / 1000)); // таймер может «скакнуть» назад - шаг не бывает отрицательным
     lastRender = Math.max(lastRender, now); needRender = false;
     // Время анимации: плавно замедляется до остановки и так же плавно разгоняется
     anim.ts += (tsGoal - anim.ts) * Math.min(1, rdt * 2.2); if (anim.ts < 0.002 && tsGoal === 0) anim.ts = 0;
@@ -1225,7 +1255,7 @@ function renderStep(now) {
     const a = fr > 0.001 ? 1 - Math.exp(-rdt / (fr * 0.6)) : 1;
     if (vis.freeRotate) o.q.slerp(o.gq, a);
     else {
-        // Классическое вращение: поворот и наклон сглаживаются по отдельности — slerp кватернионов наклонял бы горизонт на полпути
+        // Классическое вращение: поворот и наклон сглаживаются по отдельности - slerp кватернионов наклонял бы горизонт на полпути
         levelQuat(o.gq);
         _eq.setFromQuaternion(o.q, 'YXZ'); _eg.setFromQuaternion(o.gq, 'YXZ');
         const dyaw = Math.atan2(Math.sin(_eg.y - _eq.y), Math.cos(_eg.y - _eq.y));
@@ -1238,14 +1268,14 @@ function renderStep(now) {
         o.dist = Math.exp(Math.log(o.fly.fd) + (Math.log(o.fly.td) - Math.log(o.fly.fd)) * e);
         if (k >= 1) { o.fly = null; scheduleLabels(); }
     } else {
-        // Дистанцию сглаживаем в логарифме — зум ощущается равномерным на любом масштабе
+        // Дистанцию сглаживаем в логарифме - зум ощущается равномерным на любом масштабе
         o.dist = Math.exp(Math.log(o.dist) + (Math.log(o.gdist) - Math.log(o.dist)) * a);
         o.t.lerp(o.gt, a);
     }
     o.p += (projGoal() - o.p) * Math.min(1, rdt * 3.2); if (Math.abs(projGoal() - o.p) < 1e-3) o.p = projGoal();
     const cam = G.camera();
     const fov = camFov(o.p);
-    // «Долли-зум»: в изометрии камера далеко и с узким углом — масштаб в точке цели тот же
+    // «Долли-зум»: в изометрии камера далеко и с узким углом - масштаб в точке цели тот же
     o.deff = o.dist * Math.tan(FOV_PERSP * DEG / 2) / Math.tan(fov * DEG / 2);
     cam.fov = fov;
     cam.quaternion.copy(o.q);
@@ -1262,6 +1292,7 @@ function renderStep(now) {
     if (moving) scheduleLabels(400);
     frameSync(anim.t, rdt, cam);
     G.resumeAnimation(); G.pauseAnimation(); // ровно один кадр библиотеки
+    const spent = performance.now() - t0; fpsMeter.ms = fpsMeter.ms ? fpsMeter.ms * 0.9 + spent * 0.1 : spent;
 }
 // Без крена и с наклоном в пределах ±89° (классическое вращение: «верх» всегда сверху)
 const _el = new THREE.Euler();
@@ -1282,7 +1313,7 @@ function bindOrbitInput(el) {
     const rotate = (dx, dy) => {
         const k = 0.0055 * vis.sens;
         if (vis.freeRotate) {
-            // Свободное вращение: вокруг локальных осей камеры — нет «верха» и «низа», можно перевернуть граф как угодно
+            // Свободное вращение: вокруг локальных осей камеры - нет «верха» и «низа», можно перевернуть граф как угодно
             orbit.gq.multiply(_qa.setFromAxisAngle(_wy, -dx * k)).multiply(_qa.setFromAxisAngle(new THREE.Vector3(1, 0, 0), -dy * k)).normalize();
         } else {
             // Классическое: горизонт сохраняется, наклон ограничен ±89°
@@ -1291,12 +1322,12 @@ function bindOrbitInput(el) {
             orbit.gq.setFromEuler(eu);
         }
     };
-    // Сброс ввода: палец, отпущенный над кнопкой или панелью, иначе «оставался» на экране —
+    // Сброс ввода: палец, отпущенный над кнопкой или панелью, иначе «оставался» на экране -
     // следующее касание считалось вторым пальцем, и камера залипала в режиме щипка
     const resetInput = () => { ptrs.clear(); mode = null; down = null; };
     el.addEventListener('pointerdown', e => {
         cz.lastInput = performance.now();
-        if (e.isPrimary) resetInput(); // первый палец нового жеста — старых касаний быть не может
+        if (e.isPrimary) resetInput(); // первый палец нового жеста - старых касаний быть не может
         try { el.setPointerCapture(e.pointerId); } catch { /* */ } // отпускание придёт сюда, где бы ни был палец
         ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
         if (ptrs.size === 1) { mode = (e.button === 2 || e.button === 1 || e.shiftKey || e.ctrlKey) ? 'pan' : 'rot'; down = { x: e.clientX, y: e.clientY, moved: false, type: e.pointerType }; }
@@ -1305,7 +1336,7 @@ function bindOrbitInput(el) {
     });
     el.addEventListener('pointermove', e => {
         const p = ptrs.get(e.pointerId);
-        if (!p) { // наведение мышью без нажатия — подсказка
+        if (!p) { // наведение мышью без нажатия - подсказка
             if (e.pointerType === 'mouse' && !hoverRaf) {
                 const x = e.clientX, y = e.clientY;
                 hoverRaf = requestAnimationFrame(() => { hoverRaf = 0; const n = pickNode(x, y, 4); if (n !== lastHover) { lastHover = n; el.style.cursor = n ? 'pointer' : ''; } if (n) showTip(n, x, y); else hideTip(); });
@@ -1328,19 +1359,19 @@ function bindOrbitInput(el) {
     });
     const up = e => {
         const had = ptrs.delete(e.pointerId);
-        // Клик/тап без сдвига — выбор узла (или снятие выделения по фону)
+        // Клик/тап без сдвига - выбор узла (или снятие выделения по фону)
         if (had && e.type === 'pointerup' && !ptrs.size && down && !down.moved) {
-            // Открыты настройки — простой тап по графу только закрывает их (как у остальных меню), узел не выбирается
+            // Открыты настройки - простой тап по графу только закрывает их (как у остальных меню), узел не выбирается
             if (isShown($('#opts'))) { setShown($('#opts'), false); down = null; mode = null; return; }
             const n = pickNode(e.clientX, e.clientY, down.type === 'touch' ? 16 : 6);
-            // Клик по узлу — камера плавно подлетает к нему; клик по фону — выделение снимается, камера остаётся и чуть отъезжает
+            // Клик по узлу - камера плавно подлетает к нему; клик по фону - выделение снимается, камера остаётся и чуть отъезжает
             if (n) selectNode(n.id, true);
             else if (selId) dropFocus();
         }
         if (ptrs.size === 1) mode = 'rot'; else if (!ptrs.size) { mode = null; down = null; }
     };
     el.addEventListener('pointerup', up); el.addEventListener('pointercancel', up);
-    // Захват потерян (системный жест, уведомление, сворачивание) — касание считается законченным
+    // Захват потерян (системный жест, уведомление, сворачивание) - касание считается законченным
     el.addEventListener('lostpointercapture', e => {
         if (!ptrs.delete(e.pointerId)) return;
         if (ptrs.size === 1) mode = 'rot'; else if (!ptrs.size) { mode = null; down = null; }
@@ -1384,7 +1415,7 @@ function pickNode(clientX, clientY, tol) {
         const rpx = nodeRadius(n) / Math.max(1e-3, dist) * k;
         const d = Math.hypot(sx - x, sy - y);
         if (d > rpx + tol) continue;
-        // Внутри сферы — побеждает ближайший к камере; в зоне допуска — ближайший к курсору
+        // Внутри сферы - побеждает ближайший к камере; в зоне допуска - ближайший к курсору
         const score = d <= rpx ? dist : 1e9 + d;
         if (score < bestScore) { bestScore = score; best = n; }
     }
@@ -1401,12 +1432,14 @@ function showTip(n, x, y) {
     tipEl.style.left = Math.min(x + 14, innerWidth - r.width - 8) + 'px';
     tipEl.style.top = Math.min(y + 14, innerHeight - r.height - 8) + 'px';
 }
+
+
 function hideTip() { if (tipEl) tipEl.hidden = true; }
 
 /* ----- Узлы: InstancedMesh (одна отрисовка на все узлы проекта + одна на внешние) ----- */
 let nodesObj = null, extObj = null;
 const nodeRadius = n => Math.cbrt(Math.max(0.01, nodeVal(n))) * 3.2 * vis.nodeSize * (isExtNode(n) ? 0.8 : 1);
-// Для библиотеки (стрелки выделенных связей упираются в поверхность узла) — тот же радиус, что рисуем мы
+// Для библиотеки (стрелки выделенных связей упираются в поверхность узла) - тот же радиус, что рисуем мы
 const nodeValLib = n => nodeVal(n) * (isExtNode(n) ? 0.512 : 1);
 const fadeUniform = { value: 0 }, rimUniform = { value: 0 };
 // Материал узлов: Ламберт + (по стилю) свечение цветом экземпляра, ободок (rim), растворение у камеры
@@ -1430,30 +1463,32 @@ function makeNodeMaterial() {
             .replace('#include <opaque_fragment>', `// Защита постобработки: NaN/Inf bloom размазывает в чёрные прямоугольники
     if (any(isnan(outgoingLight)) || any(isinf(outgoingLight))) outgoingLight = vec3(0.0);
     // Пересвет без сдвига оттенка: каналы не обрезаются по отдельности (иначе бирюзовый «становится» голубым
-    // в центре, а свечение вокруг остаётся зелёным) — весь цвет масштабируется, пока максимум не станет 1
+    // в центре, а свечение вокруг остаётся зелёным) - весь цвет масштабируется, пока максимум не станет 1
     { float mx = max(max(outgoingLight.r, outgoingLight.g), outgoingLight.b); if (mx > 1.0) outgoingLight /= mx; }
-    // Ободок — уже после нормировки (иначе она его съедала): к краю цвет узла светлеет до почти белого.
-    // У крошечных (дальних) граней нормаль из производных бывает нулевой — тогда ободка нет (иначе NaN)
+    // Ободок - уже после нормировки (иначе она его съедала): к краю цвет узла светлеет до почти белого.
+    // У крошечных (дальних) граней нормаль из производных бывает нулевой - тогда ободка нет (иначе NaN)
     if (uRim > 0.0 && dot(normal, normal) > 1e-12) {
         vec3 vp = vViewPosition + vec3(0.0, 0.0, 1e-5);
         float rim = pow(clamp(1.0 - abs(dot(normalize(normal), normalize(vp))), 0.0, 1.0), 3.0) * min(uRim, 2.0) * 0.8;
         vec3 edge = mix(diffuseColor.rgb, vec3(1.0), 0.3);
         outgoingLight = mix(outgoingLight, max(outgoingLight, edge), clamp(rim, 0.0, 1.0));
     }
-    // Ещё раз — последней строкой: что бы ни посчитали выше, в постобработку NaN не уйдёт
+    // Ещё раз - последней строкой: что бы ни посчитали выше, в постобработку NaN не уйдёт
     if (any(isnan(outgoingLight)) || any(isinf(outgoingLight))) outgoingLight = vec3(0.0);
 #include <opaque_fragment>`);
     };
     mat.customProgramCacheKey = () => 'drift-node';
     return mat;
 }
+
+
 function nodeGeometry() {
     const q = Math.round(vis.quality);
     if (vis.shape === 'crystal') return new THREE.IcosahedronGeometry(1, q >= 12 ? 2 : 1);
     if (vis.shape === 'wire') return new THREE.IcosahedronGeometry(1, q >= 12 ? 2 : 1);
     return new THREE.SphereGeometry(1, q, Math.max(3, Math.round(q * 0.75)));
 }
-// Цвета узлов и связей хранятся на CPU — в GPU уходят только видимые (отсечение по пирамиде камеры)
+// Цвета узлов и связей хранятся на CPU - в GPU уходят только видимые (отсечение по пирамиде камеры)
 let nodeCol = new Float32Array(0), linkCol = new Float32Array(0);
 function rebuildNodeMesh() {
     disposeObj(nodesObj); disposeObj(extObj); nodesObj = extObj = null;
@@ -1463,7 +1498,7 @@ function rebuildNodeMesh() {
     nodesObj.count = 0; nodesObj.frustumCulled = false; nodesObj.raycast = () => {};
     nodesObj.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
     G.scene().add(nodesObj);
-    // Внешние функции и заголовки — полупрозрачные каркасы, чтобы их не путать с кодом проекта
+    // Внешние функции и заголовки - полупрозрачные каркасы, чтобы их не путать с кодом проекта
     extObj = new THREE.InstancedMesh(new THREE.IcosahedronGeometry(1, 1), new THREE.MeshBasicMaterial({ wireframe: true, transparent: true, opacity: 0.45, depthWrite: false }), Math.max(1, ne));
     extObj.count = 0; extObj.frustumCulled = false; extObj.raycast = () => {};
     extObj.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
@@ -1486,7 +1521,9 @@ function recolorNodes() {
     }
     recolorCosmos(); posDirty = true; requestRender();
 }
-// Позиции узлов и связей переносятся в буферы (каждый кадр при анимации, иначе — когда что-то сдвинулось)
+
+
+// Позиции узлов и связей переносятся в буферы (каждый кадр при анимации, иначе - когда что-то сдвинулось)
 function syncPositions() { posDirty = true; requestRender(); }
 
 /* ----- Все связи одним буфером LineSegments (вместо сотен отдельных мешей) ----- */
@@ -1500,10 +1537,12 @@ function ensureLines() {
     linesObj = new THREE.LineSegments(geo, mat);
     linesObj.frustumCulled = false; linesObj.renderOrder = -1;
     linesObj.raycast = () => {};
-    // Вызывается в каждом кадре рендера с той же камерой — подписи всегда синхронны с узлами
+    // Вызывается в каждом кадре рендера с той же камерой - подписи всегда синхронны с узлами
     linesObj.onBeforeRender = (renderer, scene, camera) => placeLabels(camera);
     G.scene().add(linesObj);
 }
+
+
 function rebuildLineBuffers() {
     ensureLines();
     const n = Math.max(1, gdata.links.length);
@@ -1515,19 +1554,21 @@ function rebuildLineBuffers() {
     geo.setDrawRange(0, 0);
     recolorLines();
 }
+
+
 function recolorLines() {
     if (!linesObj) return;
     if (linkCol.length < gdata.links.length * 6) linkCol = new Float32Array(gdata.links.length * 6);
     const col = linkCol;
     const bg = _bg.set(colorCache['--graph-bg']); const c = new THREE.Color(), s = new THREE.Color();
-    const bonds = darkScene(); // в тёмных стилях связь окрашена цветами своих концов — как химическая связь
+    const bonds = darkScene(); // в тёмных стилях связь окрашена цветами своих концов - как химическая связь
     let i = 0;
     for (const l of gdata.links) {
         const src = typeof l.source === 'object' ? l.source : null, tgt = typeof l.target === 'object' ? l.target : null;
         if (bonds && src && tgt && l.kind !== 'ext') { c.set(baseColor(tgt)); s.set(baseColor(src)); if (l.kind !== 'call' && l.kind !== 'inc' && l.kind !== 'tree') c.set(linkBase(l)); }
         else { c.set(linkBase(l)); s.copy(c); }
         if (selId && !hlLinks.has(l)) { c.lerp(bg, bonds ? 0.93 : 0.88); s.lerp(bg, bonds ? 0.93 : 0.88); }
-        if (vis.gradient && l.kind !== 'tree') s.lerp(bg, bonds ? 0.7 : 0.8); // источник тусклее цели — направление видно без стрелок
+        if (vis.gradient && l.kind !== 'tree') s.lerp(bg, bonds ? 0.7 : 0.8); // источник тусклее цели - направление видно без стрелок
         col[i++] = s.r; col[i++] = s.g; col[i++] = s.b; col[i++] = c.r; col[i++] = c.g; col[i++] = c.b;
     }
     linesObj.material.opacity = vis.linkOpacity * (vis.additive ? 0.75 : 1);
@@ -1544,7 +1585,7 @@ const cz = { stars: null, background: null, grid: null, rings: null, ringDefs: [
 let posDirty = true;
 
 
-// Детерминированный генератор случайных чисел — одно и то же небо для одного зерна
+// Детерминированный генератор случайных чисел - одно и то же небо для одного зерна
 function mulberry32(a) { return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
 
 // Мягкое круглое пятно для точек
@@ -1595,7 +1636,7 @@ uniform float uSeed, uAmt; uniform vec3 uBg, uC1, uC2, uC3; varying vec2 vUv;
 float hash13(vec3 p3) { p3 = fract(p3 * 0.1031); p3 += dot(p3, p3.zyx + 31.32); return fract((p3.x + p3.y) * p3.z); }
 float n3(vec3 x) {
     vec3 i = floor(x), f = fract(x);
-    vec3 u = f * f * f * (f * (f * 6.0 - 15.0) + 10.0); // квинтика — без «рёбер» сетки
+    vec3 u = f * f * f * (f * (f * 6.0 - 15.0) + 10.0); // квинтика - без «рёбер» сетки
     return mix(mix(mix(hash13(i), hash13(i + vec3(1, 0, 0)), u.x), mix(hash13(i + vec3(0, 1, 0)), hash13(i + vec3(1, 1, 0)), u.x), u.y),
                           mix(mix(hash13(i + vec3(0, 0, 1)), hash13(i + vec3(1, 0, 1)), u.x), mix(hash13(i + vec3(0, 1, 1)), hash13(i + vec3(1, 1, 1)), u.x), u.y), u.z);
 }
@@ -1612,14 +1653,14 @@ void main() {
     float tint = smoothstep(0.3, 0.7, fbm(q * 0.8 + 3.0));
     vec3 nc = mix(uC1, uC2, tint);
     nc = mix(nc, uC3, smoothstep(0.55, 0.8, fbm(q * 1.9 + 11.0)) * 0.55);
-    float detail = mix(0.8, 1.12, fbm(q * 3.2 + w * 2.0));                    // тонкие волокна — только модуляция
+    float detail = mix(0.8, 1.12, fbm(q * 3.2 + w * 2.0));                    // тонкие волокна - только модуляция
     float dust = smoothstep(0.5, 0.85, fbm(q * 2.3 + w + 20.0)) * 0.3 * neb;  // едва заметная пыль
     vec3 col = uBg + nc * (neb * detail * 0.30 + glow * 0.10) * uAmt;
     col *= 1.0 - dust;
     gl_FragColor = vec4(max(col, 0.0), 1.0);
 }`;
 function buildNebula(seed) {
-    const rt = new THREE.WebGLRenderTarget(2048, 1024, { depthBuffer: false, type: THREE.HalfFloatType }) // float — без полос на плавных градиентах;
+    const rt = new THREE.WebGLRenderTarget(2048, 1024, { depthBuffer: false, type: THREE.HalfFloatType }) // float - без полос на плавных градиентах;
     const pal = PALETTES[vis.palette] || PALETTES.cosmos;
     const c = x => new THREE.Color(x);
     const mat = new THREE.ShaderMaterial({
@@ -1635,6 +1676,8 @@ function buildNebula(seed) {
     rt.texture.mapping = THREE.EquirectangularReflectionMapping; rt.texture.colorSpace = THREE.LinearSRGBColorSpace;
     return rt;
 }
+
+
 function buildGradient() {
     const cv = document.createElement('canvas'); cv.width = 4; cv.height = 512;
     const g = cv.getContext('2d'); const pal = PALETTES[vis.palette];
@@ -1671,6 +1714,8 @@ function rebuildSky() {
     }
     requestRender();
 }
+
+
 function placeGrid() {
     if (!cz.grid || !gdata.nodes.length) return;
     let minY = Infinity, r = 0;
@@ -1686,34 +1731,45 @@ function ensureBloom() {
     if (!cz.bloom && want) {
         const el = $('#graph');
         const pass = new window.UnrealBloomPass(new THREE.Vector2(el.clientWidth || 512, el.clientHeight || 512), vis.glow, 0.45, 0.24);
-        // Свечение считается в полном разрешении: в половинном мелкие уровни размытия давали «квадратные» пятна вокруг крупных узлов.
-        // На телефонах (высокая плотность пикселей, слабый GPU) — в 0.75: там ступеньки не видны
+        // Свечение: на экранах до 1080p - в полном разрешении (в половинном размытие давало «квадратные» пятна), на больших - с понижением.
+        // На телефонах (высокая плотность пикселей, слабый GPU) - в 0.75: там ступеньки не видны
         const orig = pass.setSize.bind(pass);
-        pass.setSize = (w, h) => { const k = IS_TOUCH && vis.res !== 'max' ? 0.75 : 1; orig(Math.max(1, Math.round(w * k)), Math.max(1, Math.round(h * k))); };
+        pass.setSize = (w, h) => {
+            // До ~2.2 Мпикс (1080p) - полное разрешение; больше - масштаб так, чтобы считалось примерно столько же пикселей
+            const big = Math.max(0.5, Math.min(1, Math.sqrt(2.2e6 / Math.max(1, w * h))));
+            const k = vis.res === 'max' ? 1 : Math.min(big, IS_TOUCH ? 0.75 : 1);
+            orig(Math.max(1, Math.round(w * k)), Math.max(1, Math.round(h * k)));
+        };
         G.postProcessingComposer().addPass(pass);
         cz.bloom = pass; applyRenderScale(); applyMsaa();
     }
     if (cz.bloom) { cz.bloom.enabled = want; cz.bloom.strength = vis.glow; }
     requestRender();
 }
-// Сменить pixel ratio, сохранив размеры, которые знает библиотека (а не DOM — они могут временно расходиться)
+
+
+// Сменить pixel ratio, сохранив размеры, которые знает библиотека (а не DOM - они могут временно расходиться)
 function setPixelRatio(pr) {
     const r = G.renderer(), comp = G.postProcessingComposer(), w = G.width(), h = G.height();
     if (Math.abs(r.getPixelRatio() - pr) < 1e-3) return;
     r.setPixelRatio(pr); r.setSize(w, h); comp.setPixelRatio(pr); comp.setSize(w, h);
     requestRender();
 }
+
+
 // Разрешение рендера (pixel ratio): авто = min(DPR, 1.5) и динамически ниже при просадке FPS
 function applyRenderScale() {
     if (!G) return;
     const dpr = window.devicePixelRatio || 1;
-    // «Максимум» — родное разрешение экрана (у телефонов ×3)
+    // «Максимум» - родное разрешение экрана (у телефонов ×3)
     const pr = vis.res === 'low' ? Math.min(dpr, 1) * 0.75 : vis.res === 'mid' ? Math.min(dpr, 1) : vis.res === 'high' ? Math.min(dpr, 2) : vis.res === 'max' ? Math.min(dpr, 3) : Math.min(dpr, 1.5);
     setPixelRatio(pr * (vis.res === 'auto' ? dyn.scale : 1));
     applyMsaa();
     requestRender();
 }
-// Сглаживание: при постобработке (bloom) сцена рисуется во внутренние буферы, у которых по умолчанию нет MSAA —
+
+
+// Сглаживание: при постобработке (bloom) сцена рисуется во внутренние буферы, у которых по умолчанию нет MSAA -
 // отсюда «лесенки». Включаем мультисэмплинг на буферах композитора.
 function applyMsaa() {
     if (!G) return;
@@ -1721,6 +1777,8 @@ function applyMsaa() {
     for (const rt of [comp.renderTarget1, comp.renderTarget2]) if (rt && rt.samples !== n) { rt.samples = n; rt.dispose(); }
     requestRender();
 }
+
+
 function r_maxSamples() { try { const gl = G.renderer().getContext(); return gl.getParameter(gl.MAX_SAMPLES) || 4; } catch { return 4; } }
 
 
@@ -1736,6 +1794,8 @@ function applyStyle() {
     if (model && gdata.nodes.length) { rebuildNodeMesh(); rebuildCosmos(); recolorLines(); updateLabels(); renderLegend(); }
     requestRender();
 }
+
+
 function applyPreset(name) {
     const p = STYLE_PRESETS[name]; if (!p) return;
     vis.style = name; for (const k of STYLE_KEYS) if (k in p) vis[k] = p[k];
@@ -1788,6 +1848,8 @@ function makePointsObj(capacity, size) {
     G.scene().add(pts);
     return pts;
 }
+
+
 // Буфер точек нужного размера (растёт по необходимости)
 function ensurePointsCapacity(obj, count) {
     const g = obj.geometry, cap = g.attributes.position.count;
@@ -1803,7 +1865,7 @@ function ensurePointsCapacity(obj, count) {
    Фоновые импульсы плавно скрываются при выделении узла и при сильном отдалении камеры.
    Пауза останавливает рождение новых импульсов: уже летящие долетают до конца связи. */
 let pulsePhase = new Float32Array(0), pulseBase = new Float32Array(0);
-// Интервалы времени анимации, в которые импульсы не рождаются (to = Infinity — пауза ещё идёт)
+// Интервалы времени анимации, в которые импульсы не рождаются (to = Infinity - пауза ещё идёт)
 const pulseGaps = [];
 function setPulseSpawn(on) {
     const t = anim.t, last = pulseGaps[pulseGaps.length - 1];
@@ -1848,7 +1910,7 @@ function frameSync(t, dt, cam) {
     const D = cz.disp, R = cz.rad, wob = vis.wobble, spin = darkScene() && vis.shape !== 'sphere', tNow = performance.now() / 1000, growing = tNow < growUntil;
     dt = dt || 0;
     const order = growing && growOrder && growOrder.length === N ? growOrder : null;
-    // 1. Позиции и радиусы (во время роста — родители раньше детей: ребёнок выезжает из позиции родителя)
+    // 1. Позиции и радиусы (во время роста - родители раньше детей: ребёнок выезжает из позиции родителя)
     for (let q = 0; q < N; q++) {
         const i = order ? order[q] : q;
         const n = ns[i]; let x = n.x || 0, y = n.y || 0, z = n.z || 0;
@@ -1914,7 +1976,7 @@ function frameSync(t, dt, cam) {
         geo.setDrawRange(0, k / 3);
         for (const at of [geo.attributes.position, geo.attributes.color]) { at.clearUpdateRanges(); at.addUpdateRange(0, k); at.needsUpdate = true; }
     }
-    // 3. Оболочки и электроны — только у видимых узлов
+    // 3. Оболочки и электроны - только у видимых узлов
     if (cz.rings) {
         let j = 0;
         for (const d of cz.ringDefs) {
@@ -1969,7 +2031,7 @@ function emitPulses(obj, D, t, gain, accept, colorFn) {
         let cr, cg, cb;
         if (colorFn) { _pc.set(colorFn(li)).lerp(_white, 0.25); cr = _pc.r; cg = _pc.g; cb = _pc.b; } else { cr = pulseBase[li * 3]; cg = pulseBase[li * 3 + 1]; cb = pulseBase[li * 3 + 2]; }
         const fade = Math.min(10, len / 3);
-        // Расстояние первого импульса от начала связи; следующие — через speed * period
+        // Расстояние первого импульса от начала связи; следующие - через speed * period
         for (let s = ((t / period + pulsePhase[li]) % 1) * step; s < len; s += step) {
             if (pulseGaps.length && bornInGap(t - s / speed)) continue; // родился бы во время паузы
             const k = Math.min(1, s / fade, (len - s) / fade) * gain, f = s / len;
@@ -1982,7 +2044,7 @@ function emitPulses(obj, D, t, gain, accept, colorFn) {
 }
 
 
-// Притяжение узлов одной группы (функции одного файла, файлы одной папки) — граф собирается в «молекулы»
+// Притяжение узлов одной группы (функции одного файла, файлы одной папки) - граф собирается в «молекулы»
 function clusterForce(k) {
     let nodes = [];
     const f = alpha => {
@@ -1996,6 +2058,8 @@ function clusterForce(k) {
     f.initialize = ns => (nodes = ns);
     return f;
 }
+
+
 function groupKey(n) {
     if (!n.ref) return null;
     if (n.kind === 'fn' || n.kind === 'macro' || n.kind === 'nodef') return n.ref.file && n.ref.file.path;
@@ -2010,6 +2074,24 @@ function arrowLen(l) {
     const n = hlLinks.size;
     return n > 80 ? 0 : n > 30 ? 2.2 : 3;
 }
+// Какая видеокарта рисует сайт. Браузер на ноутбуке/ПК с двумя видеокартами часто берёт встроенную -
+// тогда сам сайт тратит на кадр пару миллисекунд, а FPS низкий: не успевает видеокарта
+const gpu = { name: '', kind: 'unknown', warned: false, lowSince: 0 };
+function detectGpu() {
+    try {
+        const gl = G.renderer().getContext(), ext = gl.getExtension('WEBGL_debug_renderer_info');
+        let raw = ext ? gl.getParameter(ext.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER);
+        raw = String(raw || '');
+        // «ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 (0x00002882) Direct3D11 …)» → «NVIDIA GeForce RTX 4060»
+        const m = /ANGLE \(([^,]+),\s*(.+?)(?:\s*\(0x[0-9a-f]+\))?(?:\s+Direct3D|\s+OpenGL|\s+Vulkan|,|\)$)/i.exec(raw);
+        gpu.name = (m ? m[2] : raw).trim();
+        gpu.kind = /SwiftShader|llvmpipe|Basic Render|Software/i.test(raw) ? 'software'
+            : /NVIDIA|GeForce|RTX|GTX|Quadro|Radeon RX|Radeon Pro|Arc A\d/i.test(raw) ? 'discrete'
+            : /Intel|UHD|Iris|Radeon\(TM\) Graphics|Radeon Graphics|Vega \d+|Adreno|Mali/i.test(raw) ? 'integrated' : 'unknown';
+    } catch { /* без сведений о видеокарте */ }
+}
+
+
 function initGraph() {
     readColors();
     const el = $('#graph');
@@ -2022,7 +2104,7 @@ function initGraph() {
         .nodeVisibility(false)           // узлы рисует общий InstancedMesh
         .nodeRelSize(3.2 * vis.nodeSize)
         .nodeVal(nodeValLib)
-        // Библиотека рисует только выделенные связи (толще, со стрелками и частицами), остальные — общий буфер
+        // Библиотека рисует только выделенные связи (толще, со стрелками и частицами), остальные - общий буфер
         .linkVisibility(l => !!selId && hlLinks.has(l))
         .linkColor(hlLinkColor)
         .linkOpacity(0.9)
@@ -2037,22 +2119,23 @@ function initGraph() {
             if (fitDeferred && gdata.nodes.some(n => n.x != null)) fitView(fitDeferred === 'snap' ? true : undefined);
             if (softUntil && performance.now() > softUntil) { softUntil = 0; G.d3VelocityDecay(vis.decay); }
         })
-        // После остановки раскладки камера подстраивается под граф — но только если пользователь её не трогал и ничего не выделено
+        // После остановки раскладки камера подстраивается под граф - но только если пользователь её не трогал и ничего не выделено
         .onEngineStop(() => { engineActive = false; posDirty = true; placeGrid(); if (fitPending && !selId && cz.lastInput <= fitStamp && !orbit.fly) fitView(); fitPending = false; scheduleLabels(); })
         .cooldownTime(8000);
-    G.pauseAnimation(); // кадры даёт orbitFrame — только когда нужно
+    G.pauseAnimation(); // кадры даёт orbitFrame - только когда нужно
     // Камерой управляет только orbit: встроенные OrbitControls библиотеки в каждом кадре делали camera.lookAt(target),
-    // срезая крен — картинка расходилась с нашей камерой (странное вращение, неверное отсечение узлов и связей у краёв)
+    // срезая крен - картинка расходилась с нашей камерой (странное вращение, неверное отсечение узлов и связей у краёв)
     { const ctr = G.controls(); if (ctr) { ctr.enabled = false; ctr.update = () => false; } }
     if (G.onDagError) G.onDagError(() => { if (!dagWarned) { dagWarned = true; toast(t('dagCycle')); } });
     const ro = new ResizeObserver(() => {
         const w = el.clientWidth, h = el.clientHeight;
-        if (w < 2 || h < 2) return; // свёрнутое окно / скрытая вкладка — иначе у камеры aspect = NaN
+        if (w < 2 || h < 2) return; // свёрнутое окно / скрытая вкладка - иначе у камеры aspect = NaN
         if (w !== G.width() || h !== G.height()) { G.width(w).height(h); G.postProcessingComposer().setSize(w, h); }
         requestRender();
     });
     ro.observe(el);
     bindOrbitInput(G.renderer().domElement);
+    detectGpu();
     ensureLines();
     applyRenderScale();
     applyStyle();
@@ -2067,7 +2150,7 @@ function applyPhysics() {
     G.dagMode(lay).dagLevelDistance(lay ? (N > 400 ? 30 : 45) * vis.dagDist : null);
     G.d3Force('charge').strength((N > 1500 ? -25 : N > 500 ? -45 : -80) * vis.charge);
     const lf = G.d3Force('link').distance(l => (l.kind === 'tree' ? 18 : l.kind === 'decl' || l.kind === 'def' ? 16 : 32) * vis.linkDist);
-    // Сила связи как в d3 по умолчанию (1/min(степеней)), в иерархии — слабее, чтобы слои расходились
+    // Сила связи как в d3 по умолчанию (1/min(степеней)), в иерархии - слабее, чтобы слои расходились
     const deg = id => { const a = adj.inn.get(id), b = adj.out.get(id); return (a ? a.length : 0) + (b ? b.length : 0) || 1; };
     const lk = lay && curView !== 'dirs' ? 0.09 : 1;
     lf.strength(l => lk / Math.min(deg(l.source.id || l.source), deg(l.target.id || l.target)));
@@ -2078,6 +2161,8 @@ function applyPhysics() {
     G.d3Force('cluster', lay || vis.cluster <= 0 ? null : clusterForce(0.12 * vis.cluster));
     G.d3VelocityDecay(vis.decay);
 }
+
+
 function reheat() { if (G) { G.d3ReheatSimulation(); engineActive = true; requestRender(); } }
 
 
@@ -2087,16 +2172,16 @@ function applyView(keepSel) {
     $('#stats').hidden = !isStats; $('#graph').style.visibility = isStats ? 'hidden' : ''; $('#labels').hidden = isStats;
     $('#gtools').hidden = isStats; $('#legend').hidden = isStats;
     // Панель настроек остаётся открытой при перестройке графа (закрывается только на «Статистике», где она не нужна)
-    // Перерисовываем её только при смене вида (иначе фильтр/галочки пересобирали бы панель — дёргание и потеря фокуса)
+    // Перерисовываем её только при смене вида (иначе фильтр/галочки пересобирали бы панель - дёргание и потеря фокуса)
     if (isStats) setShown($('#opts'), false); else if (isShown($('#opts')) && $('#opts').dataset.view !== curView) setTimeout(renderOpts, 0);
     if (isStats) { renderStats(); closeDetails(); return; }
     const first = !G;
     if (!G) initGraph();
     // Перестройка того же вида (опции, фильтр, обновление файлов) сохраняет позиции узлов и камеру
     const viewChanged = lastAppliedView !== curView || first; lastAppliedView = curView;
-    // Другой проект или перечитанный тот же — после раскладки камера показывает граф целиком
+    // Другой проект или перечитанный тот же - после раскладки камера показывает граф целиком
     const modelChanged = lastAppliedModel !== model; lastAppliedModel = model;
-    // Пауза держится, пока это тот же вид того же проекта (фильтр, опции); другой вид или проект — раскладка снова идёт
+    // Пауза держится, пока это тот же вид того же проекта (фильтр, опции); другой вид или проект - раскладка снова идёт
     if (paused && (viewChanged || modelChanged)) { paused = false; setPauseIcon(); setPulseSpawn(true); }
     const prevPos = new Map();
     if (!viewChanged) for (const n of gdata.nodes) if (n.x != null) prevPos.set(n.id, n);
@@ -2109,7 +2194,7 @@ function applyView(keepSel) {
     const N = gdata.nodes.length;
     dagWarned = false;
     applyPhysics();
-    // Предрасчёт раскладки до первого кадра — камера сразу видит почти готовый граф
+    // Предрасчёт раскладки до первого кадра - камера сразу видит почти готовый граф
     // Раскладка из снимка: узлы встают на сохранённые места и фиксируются (кнопка ▶ отпускает их)
     let restored = false;
     if (layoutRestore && layoutRestore.view === curView && layoutRestore.pos) {
@@ -2118,9 +2203,9 @@ function applyView(keepSel) {
     }
     let reused = 0;
     if (!restored && prevPos.size) {
-        // Узел остаётся на месте и с той же фазой дрожания — перестройка (фильтр, опции) не дёргает граф
+        // Узел остаётся на месте и с той же фазой дрожания - перестройка (фильтр, опции) не дёргает граф
         for (const n of gdata.nodes) { const p = prevPos.get(n.id); if (p) { n.x = p.x; n.y = p.y; n.z = p.z || 0; n.__w = p.__w; reused++; } }
-        // Новые узлы появляются рядом с уже стоящим соседом, а не в центре; несколько проходов —
+        // Новые узлы появляются рядом с уже стоящим соседом, а не в центре; несколько проходов -
         // чтобы и цепочки новых узлов (сосед тоже новый) разворачивались от старых
         const byId = new Map(gdata.nodes.map(n => [n.id, n]));
         let placeSeq = 0;
@@ -2139,11 +2224,11 @@ function applyView(keepSel) {
             }
         }
     }
-    // Тот же вид — всегда «доводка» на месте (возвращённые фильтром узлы вырастают из соседей), иначе граф раскладывался бы заново
+    // Тот же вид - всегда «доводка» на месте (возвращённые фильтром узлы вырастают из соседей), иначе граф раскладывался бы заново
     const incremental = reused > 0 && (reused > gdata.nodes.length * 0.5 || !viewChanged);
     G.warmupTicks(restored || incremental ? 0 : N > 20000 ? 8 : N > 2000 ? 40 : N > 600 ? 80 : 120);
     G.cooldownTime(incremental ? 3000 : 8000);
-    // При перестройке раскладка только «доводится»: сильное трение первые секунды и быстрое затухание —
+    // При перестройке раскладка только «доводится»: сильное трение первые секунды и быстрое затухание -
     // стоящие узлы плавно сдвигаются, а не прыгают (раскладка стартует с полной силой)
     G.d3AlphaDecay(incremental ? 0.05 : 0.0228);
     G.d3VelocityDecay(incremental ? 0.88 : vis.decay);
@@ -2152,7 +2237,7 @@ function applyView(keepSel) {
     engineActive = true;
     if (restored) { paused = true; setPauseIcon(); setPulseSpawn(false); }
     else if (paused) for (const n of gdata.nodes) if (n.x != null) { n.fx = n.x; n.fy = n.y; n.fz = n.z; } // на паузе узлы остаются закреплёнными
-    // Появление: весь вид — волнами по связям; перестройка — растут только новые узлы (из соседа)
+    // Появление: весь вид - волнами по связям; перестройка - растут только новые узлы (из соседа)
     const now = performance.now() / 1000;
     gdata.nodes.forEach((n, i) => { n.__i = i; n.__par = -1; n.__born = null; });
     growOrder = null; growUntil = 0;
@@ -2163,7 +2248,7 @@ function applyView(keepSel) {
             for (const n of gdata.nodes) if (!prevPos.has(n.id)) { n.__born = now; const pi = n.__parId != null ? idx.get(n.__parId) : null; if (pi != null) n.__par = pi; }
             if (gdata.nodes.some(n => n.__born != null)) {
                 growUntil = now + GROW_DUR;
-                // Старые узлы — первыми, новые — в порядке размещения (родитель всегда раньше ребёнка)
+                // Старые узлы - первыми, новые - в порядке размещения (родитель всегда раньше ребёнка)
                 const key = n => (n.__born == null ? -1 : n.__pord || 1e9);
                 growOrder = Int32Array.from([...gdata.nodes.keys()].sort((a, b) => key(gdata.nodes[a]) - key(gdata.nodes[b])));
             }
@@ -2189,7 +2274,7 @@ let lastAppliedView = null, lastAppliedModel = null, fitStamp = 0, softUntil = 0
 function fitView(snap) {
     if (!G) return;
     const ns = gdata.nodes.filter(n => n.x != null);
-    // Граф только что заменён — координаты появятся на первом шаге раскладки, тогда и центрируем
+    // Граф только что заменён - координаты появятся на первом шаге раскладки, тогда и центрируем
     if (!ns.length) { fitDeferred = snap === true ? 'snap' : 'fly'; return; }
     fitDeferred = null;
     const q = (arr, p) => arr[Math.min(arr.length - 1, Math.max(0, Math.round(p * (arr.length - 1))))];
@@ -2201,7 +2286,7 @@ function fitView(snap) {
     const c = new THREE.Vector3((q(xs, lo) + q(xs, hi)) / 2, (q(ys, lo) + q(ys, hi)) / 2, (q(zs, lo) + q(zs, hi)) / 2);
     const d = clampDist(r / Math.sin(Math.min(vfov2, hfov2) / 2) * 0.95);
     lastFitDist = d;
-    if (snap === true) { orbit.gt.copy(c); orbit.gdist = d; orbitSnap(); orbit.dist = d * 2.2; } // первое появление — плавный «наезд»
+    if (snap === true) { orbit.gt.copy(c); orbit.gdist = d; orbitSnap(); orbit.dist = d * 2.2; } // первое появление - плавный «наезд»
     else flyCamera(c, d, 1000);
     requestRender();
 }
@@ -2221,6 +2306,8 @@ function refreshStyles() {
     G.linkVisibility(G.linkVisibility()).linkDirectionalArrowLength(arrowLen); // размер стрелок зависит от числа выделенных связей
     recolorNodes(); recolorLines(); requestRender();
 }
+
+
 function refreshVisual() {
     if (!G) return;
     G.nodeRelSize(3.2 * vis.nodeSize).nodeVal(nodeValLib)
@@ -2254,12 +2341,14 @@ function renderLegend() {
 }
 
 /* ----- Выделение ----- */
-// Последний явно выбранный объект — сохраняется между видами (функция → её файл в виде файлов и т.п.)
+// Последний явно выбранный объект - сохраняется между видами (функция → её файл в виде файлов и т.п.)
 let globalSel = null;
 function neighbors(id) {
     const out = (adj.out.get(id) || []), inn = (adj.inn.get(id) || []);
     return { out, inn };
 }
+
+
 // Найти в текущем виде узел, соответствующий выбранному объекту
 function mapSelection(id) {
     if (!id) return null;
@@ -2274,6 +2363,8 @@ function mapSelection(id) {
     }
     return null;
 }
+
+
 // Снятие выделения пользователем (клик по фону, Esc, ✕): камера остаётся на месте, лишь немного отдаляется
 function dropFocus() {
     if (!selId && !globalSel) return;
@@ -2282,6 +2373,8 @@ function dropFocus() {
     if (had) { cancelFly(); orbit.gdist = clampDist(orbit.gdist * 1.6); }
     requestRender();
 }
+
+
 function selectNode(id, fly, silent) {
     selId = id && adj.out.has(id) ? id : null;
     if (id && !silent) globalSel = selId || globalSel;
@@ -2300,7 +2393,9 @@ function selectNode(id, fly, silent) {
     else if (!silent) closeDetails();
     syncUrl();
 }
-// Плавный перелёт к узлу: центр — на узел, расстояние — чтобы были видны он и его соседи
+
+
+// Плавный перелёт к узлу: центр - на узел, расстояние - чтобы были видны он и его соседи
 function flyTo(id, centerOnly) {
     const n = gdata.nodes.find(x => x.id === id); if (!n || !G) return;
     const go = () => {
@@ -2320,9 +2415,9 @@ function flyTo(id, centerOnly) {
 /* ----- Подписи узлов (HTML-оверлей, позиционируются внутри кадра рендера) ----- */
 let labelItems = [], labelDying = [], labelTimer = 0;
 const labelVec = new THREE.Vector3();
-// Отложенное обновление подписей (камера, ползунки) — не чаще одного раза за delay мс
+// Отложенное обновление подписей (камера, ползунки) - не чаще одного раза за delay мс
 function scheduleLabels(delay = 200) { if (!labelTimer) labelTimer = setTimeout(() => { labelTimer = 0; updateLabels(); }, delay); }
-// Узлы рядом с камерой (крупные на экране) и их соседи — для подписей при приближении
+// Узлы рядом с камерой (крупные на экране) и их соседи - для подписей при приближении
 function nearbyNodes() {
     if (!G || !gdata.nodes.length) return [];
     const cam = G.camera(), h = G.height(), k = (h / 2) / Math.tan(cam.fov * DEG / 2), cp = cam.position;
@@ -2344,7 +2439,9 @@ function nearbyNodes() {
     for (const [n] of res.slice(0, 20)) for (const l of [...(adj.out.get(n.id) || []), ...(adj.inn.get(n.id) || [])]) { const m = l.source === n ? l.target : l.source; if (typeof m === 'object') out.add(m); if (out.size > 140) break; }
     return [...out];
 }
-// Подписи переиспользуются между обновлениями: оставшиеся — на месте, новые плавно проявляются, ушедшие — плавно гаснут
+
+
+// Подписи переиспользуются между обновлениями: оставшиеся - на месте, новые плавно проявляются, ушедшие - плавно гаснут
 function updateLabels() {
     const box = $('#labels');
     box.style.setProperty('--label-size', vis.labelSize + 'px');
@@ -2352,10 +2449,10 @@ function updateLabels() {
     let list = [];
     if (gdata.nodes.length) {
         const okKind = n => vis.labelKinds[n.kind] !== false && !n.__hidden;
-        // Окрестность выделенного узла подписывается всегда (фильтр типов — только для общих подписей)
+        // Окрестность выделенного узла подписывается всегда (фильтр типов - только для общих подписей)
         if (selId) list = gdata.nodes.filter(n => hlNodes.has(n.id)).sort((a, b) => (b.id === selId) - (a.id === selId) || nodeVal(b) - nodeVal(a)).slice(0, 100);
         else {
-            // Важность узла для подписи — число связей (+ размер как тай-брейк)
+            // Важность узла для подписи - число связей (+ размер как тай-брейк)
             const score = n => (adj.out.get(n.id) || []).length + (adj.inn.get(n.id) || []).length + n.val * 0.1;
             list = gdata.nodes.filter(okKind).sort((a, b) => score(b) - score(a)).slice(0, vis.labelCount);
         }
@@ -2380,26 +2477,30 @@ function updateLabels() {
     // Ушедшие подписи гаснут и удаляются после перехода
     for (const it of old.values()) fadeOutLabel(it);
     labelItems = next;
-    // Размеры меряем один раз (а не в каждом кадре — это форсировало бы перерасчёт раскладки страницы)
+    // Размеры меряем один раз (а не в каждом кадре - это форсировало бы перерасчёт раскладки страницы)
     for (const it of labelItems) if (it.fresh || it.el.classList.contains('sel') !== it.wasSel) { it.w = it.el.offsetWidth || 60; it.h = it.el.offsetHeight || 14; it.wasSel = it.el.classList.contains('sel'); }
 }
+
+
 function fadeOutLabel(it) {
     it.el.classList.add('off');
     labelDying.push(it);
     setTimeout(() => { it.el.remove(); const i = labelDying.indexOf(it); if (i >= 0) labelDying.splice(i, 1); }, 320);
 }
+
+
 function placeLabels(camera) {
     if (!labelItems.length && !labelDying.length) return;
     // Размер берём у самого холста: при открытии панели деталей он меняется не мгновенно
     const cv = G.renderer().domElement; const w = cv.clientWidth, h = cv.clientHeight;
     const proj = n => { dispPos(n, labelVec).project(camera); return labelVec.z > -1 && labelVec.z < 1 && Math.abs(labelVec.x) < 1.2 && Math.abs(labelVec.y) < 1.2; };
-    // Подписи идут по убыванию важности; перекрывающую более важную — прячем (плавно, через прозрачность)
-    // Занятые места — в сетке ячеек 64 px: проверка перекрытия смотрит только соседние ячейки (1000 подписей — без тормозов)
+    // Подписи идут по убыванию важности; перекрывающую более важную - прячем (плавно, через прозрачность)
+    // Занятые места - в сетке ячеек 64 px: проверка перекрытия смотрит только соседние ячейки (1000 подписей - без тормозов)
     const CELL = 64, grid = new Map(), tNow = performance.now() / 1000;
     const cellsOf = (x0, y0, x1, y1, fn) => { for (let cy = Math.floor(y0 / CELL); cy <= Math.floor(y1 / CELL); cy++) for (let cx = Math.floor(x0 / CELL); cx <= Math.floor(x1 / CELL); cx++) if (fn(cx + ',' + cy) === false) return false; return true; };
     for (const it of labelItems) {
         const n = it.n;
-        // Узел ещё растёт — подпись появится, когда он почти вырос
+        // Узел ещё растёт - подпись появится, когда он почти вырос
         let show = n.x != null && !n.__hidden && growOf(n, tNow) > 0.6 && proj(n), sx = 0, sy = 0;
         if (show) {
             sx = (labelVec.x + 1) / 2 * w; sy = (1 - labelVec.y) / 2 * h;
@@ -2431,6 +2532,8 @@ function listHtml(items, cap = 150) {
         (it.ct != null ? `<span class="ct">${esc(it.ct)}</span>` : '') + `</button></li>`).join('') + `</ul>` +
         (items.length > cap ? `<div class="muted small">… ${t('more')} ${items.length - cap}</div>` : '');
 }
+
+
 function linkItems(links, end) {
     const m = new Map();
     for (const l of links) {
@@ -2444,16 +2547,20 @@ function linkItems(links, end) {
     }
     return [...m.values()].sort((a, b) => b.n - a.n || a.it.label.localeCompare(b.it.label)).map(x => x.it);
 }
+
+
 function sec(title, count, html) { return `<div class="dsec"><h5>${esc(title)} <span class="n">${count != null ? count : ''}</span></h5>${html}</div>`; }
 function kv(rows) { return `<dl class="kv">${rows.filter(Boolean).map(([k, v]) => `<dt>${esc(k)}</dt><dd>${v}</dd>`).join('')}</dl>`; }
 function statRows(s) {
     return [[t('lines'), fmt(s.total)], [t('code'), fmt(s.code)], [t('comments'), `${fmt(s.comment)} <span class="muted">(${pct(s.comment, s.code + s.comment)})</span>`], [t('blank'), fmt(s.blank)]];
 }
+
+
 function ghLink(path, a, b) { return model.web ? `<a class="iconbtn" target="_blank" rel="noopener" href="${esc(model.web(path, a, b))}">${t('openGH')} ↗</a>` : ''; }
 
 
 function codeBlock(file, a, b) {
-    if (typeof file.text !== 'string') return ''; // снимок без исходников — кода нет (раньше панель деталей падала)
+    if (typeof file.text !== 'string') return ''; // снимок без исходников - кода нет (раньше панель деталей падала)
     const lines = file.text.split('\n');
     b = Math.min(b, a + 400, lines.length);
     let out = '';
@@ -2576,11 +2683,11 @@ function showDetails(n) {
         h += kv([[t('kind'), esc(n.sub)]]) + acts + `</div>`;
         h += sec(t('usedBy'), inn.length, listHtml(linkItems(inn, 'source')));
     }
-    // Описание из комментариев — сразу под заголовком
+    // Описание из комментариев - сразу под заголовком
     const doc = n.doc || (r && r.doc) || '';
     if (doc) h = `<div class="doc">${docHtml(doc)}</div>` + h;
     const body = $('#detBody');
-    // Тот же узел (перестройка вида, фильтр) — обновляем без анимации и с той же прокруткой; другой — проявляется заново
+    // Тот же узел (перестройка вида, фильтр) - обновляем без анимации и с той же прокруткой; другой - проявляется заново
     const same = body.dataset.node === n.id, y = body.scrollTop;
     body.innerHTML = h; body.dataset.node = n.id; body.scrollTop = same ? y : 0;
     body.classList.remove('swap'); // класс оставил бы анимацию и новым элементам
@@ -2612,9 +2719,9 @@ function goTo(id, view) {
         focus = null; setView(view, true);
     }
     if (!adj.out.has(id)) {
-        // Узел скрыт фильтрами — показываем его окрестность
+        // Узел скрыт фильтрами - показываем его окрестность
         focus = { id, depth: 1 }; applyView();
-        if (!adj.out.has(id)) { toast('—'); return; }
+        if (!adj.out.has(id)) { toast('-'); return; }
     }
     selectNode(id, true);
 }
@@ -2642,7 +2749,7 @@ function renderStats() {
         card('#include', fmt(incEdges), t('includeEdges')) +
         card(t('ignored'), fmt(M.ignoredCount), M.large ? `> ${readCfg().maxKB} KB: ${M.large}` : '') + `</div>`;
 
-    // По директориям — дерево
+    // По директориям - дерево
     const legend = `<span class="legend-inline"><span><i style="background:${colorCache['--s1']}"></i>${t('code')}</span><span><i style="background:${colorCache['--s2']}"></i>${t('comments')}</span><span><i style="background:${colorCache['--s3']}"></i>${t('blank')}</span></span>`;
     const maxTotal = Math.max(1, ...[...M.dirs.values()].filter(d => d.path !== '').map(d => d.stats.total), ...[...M.files.values()].map(f => f.stats.total));
     const bar = s => { const w = 160 * s.total / maxTotal; const seg = (v, c) => (v ? `<i style="width:${(w * v / s.total).toFixed(1)}px;background:${colorCache[c]}"></i>` : ''); return `<span class="sbar" title="${t('code')} ${s.code} · ${t('comments')} ${s.comment} · ${t('blank')} ${s.blank}">${seg(s.code, '--s1')}${seg(s.comment, '--s2')}${seg(s.blank, '--s3')}</span>`; };
@@ -2660,7 +2767,7 @@ function renderStats() {
     walk(M.dirs.get(''), 0);
     h += `<div class="panel"><h3>${t('dirStats')} <span class="grow"></span>${legend}</h3><div class="tablewrap"><table class="t"><thead><tr><th>${t('path')}</th><th>${t('files')}</th><th>${t('code')}</th><th>${t('comments')}</th><th>${t('blank')}</th><th>${t('total')}</th><th></th></tr></thead><tbody>${rows.join('')}</tbody></table></div></div>`;
 
-    // По файлам — сортируемая таблица
+    // По файлам - сортируемая таблица
     const cols = [['path', t('path')], ['code', t('code')], ['comment', t('comments')], ['blank', t('blank')], ['total', t('total')], ['funcs', t('funcs')], ['inc', '#include'], ['incBy', t('includedBy')]];
     const val = (f, k) => (k === 'path' ? f.path : k === 'funcs' ? f.funcs.length : k === 'inc' ? f.incOut.length : k === 'incBy' ? f.incIn.length : f.stats[k]);
     const [rowsHtml, rowsN] = statFileRows();
@@ -2709,6 +2816,8 @@ function statFileRows() {
         .sort((a, b) => { const x = val(a, statSort.key), y = val(b, statSort.key); return (x < y ? -1 : x > y ? 1 : 0) * statSort.dir; });
     return [flist.map(f => `<tr class="clk" data-file="${esc(f.id)}"><td title="${esc(f.path)}">${esc(f.path)}</td>${cols.slice(1).map(([k]) => `<td>${fmt(val(f, k))}</td>`).join('')}</tr>`).join(''), flist.length];
 }
+
+
 function includeCycles(M) {
     // Тарьян: компоненты сильной связности размера > 1
     let idx = 0; const index = new Map(), low = new Map(), on = new Set(), stack = [], res = [];
@@ -2750,7 +2859,7 @@ function generateMarkdown(opts = {}) {
     const date = new Date().toISOString().slice(0, 10);
     const single = opts.only && opts.only.size === 1;
     if (!single) {
-        out.push(`# ${M.name} — ${apiOnly ? t('md_titleApi') : t('md_title')}`, '');
+        out.push(`# ${M.name} - ${apiOnly ? t('md_titleApi') : t('md_title')}`, '');
         out.push(`> ${t('md_generated')} ${date}${M.ref ? ` · \`${M.ref}\`` : ''}. ${t('md_fromComments')}`, '');
         out.push(`## ${t('md_toc')}`, '', `1. [${t('views_stats')}](#stats)`, `2. [${t('md_tree')}](#tree)`, `3. [${t('files')}](#files)`);
         for (const f of files) out.push(`   - [${mdCode(f.path)}](#${mdAnchor(f.path)})`);
@@ -2785,13 +2894,13 @@ function mdFile(f, out, apiOnly) {
     const M = model;
     out.push(`<a id="${mdAnchor(f.path)}"></a>`, '', `### ${mdCode(f.path)}`, '');
     if (f.fileDoc) out.push(mdQuote(f.fileDoc), '');
-    out.push(`*${t('lines')}: ${f.stats.total} — ${t('code').toLowerCase()} ${f.stats.code}, ${t('comments').toLowerCase()} ${f.stats.comment}, ${t('blank').toLowerCase()} ${f.stats.blank}*` + (M.web ? ` · [${t('md_source')}](${M.web(f.path)})` : ''), '');
+    out.push(`*${t('lines')}: ${f.stats.total} - ${t('code').toLowerCase()} ${f.stats.code}, ${t('comments').toLowerCase()} ${f.stats.comment}, ${t('blank').toLowerCase()} ${f.stats.blank}*` + (M.web ? ` · [${t('md_source')}](${M.web(f.path)})` : ''), '');
     const inc = f.includes.map(i => i.res && i.res.kind === 'project' ? mdFileLink(M.files.get(i.res.path)) : mdCode(i.sys ? `<${i.path}>` : `"${i.path}"`));
     if (inc.length) out.push(`**${t('includes')}:** ${inc.join(', ')}  `);
     if (f.incIn.length) out.push(`**${t('includedBy')} (${f.incIn.length}):** ${f.incIn.slice(0, 20).map(e => mdFileLink(e.file)).join(', ')}${f.incIn.length > 20 ? ', …' : ''}`);
     if (inc.length || f.incIn.length) out.push('');
 
-    // Функции: для заголовка — прототипы + inline-определения; для .c — определения
+    // Функции: для заголовка - прототипы + inline-определения; для .c - определения
     const items = []; const seen = new Set();
     for (const d of f.decls) {
         if (seen.has(d.name)) continue; seen.add(d.name);
@@ -2883,6 +2992,8 @@ async function gzipText(text) {
     if (typeof CompressionStream === 'undefined') return new Blob([text], { type: 'application/json' });
     return new Response(new Blob([text]).stream().pipeThrough(new CompressionStream('gzip'))).blob();
 }
+
+
 async function readMaybeGzip(buf) {
     const u8 = new Uint8Array(buf);
     if (u8[0] === 0x1f && u8[1] === 0x8b) {
@@ -2891,6 +3002,8 @@ async function readMaybeGzip(buf) {
     }
     return new TextDecoder().decode(u8);
 }
+
+
 function downloadBlob(blob, name) {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a'); a.href = url; a.download = name; a.click();
@@ -2928,7 +3041,7 @@ async function openSnapshot(getBuffer, label) {
         const snap = JSON.parse(text);
         if (snap && (snap.format === 'codrift-graph' || snap.format === 'c-codeviz-graph')) throw new Error(t('graphNotSnap'));
         if (!snap || (snap.format !== SNAP_FORMAT && snap.format !== SNAP_FORMAT_OLD) || !Array.isArray(snap.files)) throw new Error(t('snapBad'));
-        // Настройки снимка, поверх — параметры исходной ссылки (они важнее)
+        // Настройки снимка, поверх - параметры исходной ссылки (они важнее)
         if (snap.state) applyUrlState(new URLSearchParams(snap.state));
         applyUrlState(START_QUERY);
         readColors(); applyLang();
@@ -2979,9 +3092,9 @@ function exportGraph(fmt) {
     if (fmt === 'json') {
         downloadBlob(new Blob([JSON.stringify({ format: 'codrift-graph', version: 1, project: model.name, view: curView, nodes, links }, null, 1)], { type: 'application/json' }), base + '.graph.json');
     } else if (fmt === 'gexf') {
-        // GEXF (Gephi): с позициями, цветами и размерами — раскладка открывается как есть
+        // GEXF (Gephi): с позициями, цветами и размерами - раскладка открывается как есть
         const rgb = c => { const x = new THREE.Color(c); return `r="${Math.round(x.r * 255)}" g="${Math.round(x.g * 255)}" b="${Math.round(x.b * 255)}"`; };
-        let x = `<?xml version="1.0" encoding="UTF-8"?>\n<gexf xmlns="http://gexf.net/1.3" xmlns:viz="http://gexf.net/1.3/viz" version="1.3">\n<meta><creator>Codrift</creator><description>${xmlEsc(model.name + ' — ' + curView)}</description></meta>\n<graph defaultedgetype="directed">\n<attributes class="node"><attribute id="kind" title="kind" type="string"/><attribute id="module" title="module" type="string"/><attribute id="file" title="file" type="string"/><attribute id="line" title="line" type="integer"/></attributes>\n<attributes class="edge"><attribute id="kind" title="kind" type="string"/></attributes>\n<nodes>\n`;
+        let x = `<?xml version="1.0" encoding="UTF-8"?>\n<gexf xmlns="http://gexf.net/1.3" xmlns:viz="http://gexf.net/1.3/viz" version="1.3">\n<meta><creator>Codrift</creator><description>${xmlEsc(model.name + ' - ' + curView)}</description></meta>\n<graph defaultedgetype="directed">\n<attributes class="node"><attribute id="kind" title="kind" type="string"/><attribute id="module" title="module" type="string"/><attribute id="file" title="file" type="string"/><attribute id="line" title="line" type="integer"/></attributes>\n<attributes class="edge"><attribute id="kind" title="kind" type="string"/></attributes>\n<nodes>\n`;
         for (const n of nodes) x += `<node id="${xmlEsc(n.id)}" label="${xmlEsc(n.label)}"><attvalues><attvalue for="kind" value="${xmlEsc(n.kind)}"/><attvalue for="module" value="${xmlEsc(n.module)}"/><attvalue for="file" value="${xmlEsc(n.file)}"/>${n.line ? `<attvalue for="line" value="${n.line}"/>` : ''}</attvalues><viz:color ${rgb(n.color)}/><viz:position x="${n.x}" y="${n.y}" z="${n.z}"/><viz:size value="${n.size}"/></node>\n`;
         x += `</nodes>\n<edges>\n`;
         links.forEach((l, i) => { x += `<edge id="${i}" source="${xmlEsc(l.source)}" target="${xmlEsc(l.target)}" weight="${l.count}"><attvalues><attvalue for="kind" value="${xmlEsc(l.kind)}"/></attvalues></edge>\n`; });
@@ -3004,23 +3117,23 @@ function exportGraph(fmt) {
 }
 
 
-// 3D-модель (glTF binary) — открывается в Blender, Windows 3D Viewer, онлайн-просмотрщиках
+// 3D-модель (glTF binary) - открывается в Blender, Windows 3D Viewer, онлайн-просмотрщиках
 async function exportGlb(nodes, base) {
     toast(t('glbBuilding'), 2000); await sleep0();
     try {
         const { GLTFExporter } = await import('https://cdn.jsdelivr.net/npm/three@0.174.0/examples/jsm/exporters/GLTFExporter.js/+esm');
-        const scene = new THREE.Scene(); const root = new THREE.Group(); root.name = `${model.name} — ${curView}`; root.scale.setScalar(0.01); scene.add(root);
+        const scene = new THREE.Scene(); const root = new THREE.Group(); root.name = `${model.name} - ${curView}`; root.scale.setScalar(0.01); scene.add(root);
         const mats = new Map();
         const matFor = hex => { if (!mats.has(hex)) { const c = new THREE.Color(hex); mats.set(hex, new THREE.MeshStandardMaterial({ color: c, emissive: c, emissiveIntensity: 0.35, roughness: 0.45, metalness: 0.1, name: hex })); } return mats.get(hex); };
         if (nodes.length <= 6000) {
-            // Отдельный объект на узел — в Blender его видно по имени в Outliner
+            // Отдельный объект на узел - в Blender его видно по имени в Outliner
             const geo = new THREE.IcosahedronGeometry(1, 2);
             for (const n of nodes) {
                 const m = new THREE.Mesh(geo, matFor(n.color)); m.name = n.label; m.position.set(n.x, n.y, n.z); m.scale.setScalar(Math.max(0.5, n.size));
                 m.userData = { id: n.id, kind: n.kind, file: n.file || '', line: n.line || 0 }; root.add(m);
             }
         } else {
-            // Огромный граф — узлы одного цвета объединены в один меш
+            // Огромный граф - узлы одного цвета объединены в один меш
             const unit = new THREE.IcosahedronGeometry(1, 1).toNonIndexed(), up = unit.attributes.position.array, un = unit.attributes.normal.array;
             const byColor = new Map(); for (const n of nodes) { if (!byColor.has(n.color)) byColor.set(n.color, []); byColor.get(n.color).push(n); }
             for (const [hex, list] of byColor) {
@@ -3049,24 +3162,28 @@ function renderTabs() {
     $('#tabs').innerHTML = VIEW_IDS.map(v => `<button role="tab" data-view="${v}" aria-selected="${v === curView}" ${model ? '' : 'disabled'}>${t('views_' + v)}</button>`).join('');
     placeTabIndicator();
 }
-// Подложка выбранной вкладки — одна на всю полосу, плавно переезжает (первый раз — без анимации)
+
+
+// Подложка выбранной вкладки - одна на всю полосу, плавно переезжает (первый раз - без анимации)
 function placeTabIndicator() {
     const nav = $('#tabs'), b = nav.querySelector('[aria-selected="true"]');
     if (!b || !b.offsetWidth) return;
     nav.style.setProperty('--ix', b.offsetLeft + 'px'); nav.style.setProperty('--iw', b.offsetWidth + 'px');
     if (!nav.classList.contains('ready')) requestAnimationFrame(() => nav.classList.add('ready'));
 }
+
+
 function setView(v, noApply) {
     curView = v; focus = null; renderTabs(); store.set('view', v);
     syncUrl();
     applyView();
 }
 
-/* Подсказки к настройкам (ключ — ключ опции или ключ подписи из I18N) */
+/* Подсказки к настройкам (ключ - ключ опции или ключ подписи из I18N) */
 const HINTS = {
     ru: {
-        layout: 'Как расставляются узлы. «Силы» — физическая модель: связанные узлы притягиваются, остальные отталкиваются. «Дерево ↓/→» — уровнями по направлению связей (кто кого включает/вызывает). «Радиально» — уровни расходятся кольцами от центра.',
-        colorBy: 'Чем раскрашены узлы: по типу (файл, функция, макрос…), по модулю (папке проекта) или по метрике — чем больше строк/связей, тем ярче.',
+        layout: 'Как расставляются узлы. «Силы» - физическая модель: связанные узлы притягиваются, остальные отталкиваются. «Дерево ↓/→» - уровнями по направлению связей (кто кого включает/вызывает). «Радиально» - уровни расходятся кольцами от центра.',
+        colorBy: 'Чем раскрашены узлы: по типу (файл, функция, макрос…), по модулю (папке проекта) или по метрике - чем больше строк/связей, тем ярче.',
         sizeBy: 'От чего зависит размер узла: сумма размеров по строкам и по связям, только строки кода, только число связей или одинаковый размер у всех.',
         gran: 'Уровень детализации графа вызовов: отдельные функции или целые файлы (связь = «функции файла A вызывают функции файла B»).',
         showIndirect: 'Вызовы через указатели на функции: obj->field(...) связывается с функциями, которые присваиваются этому полю (например, колбэки сцены start/update/render).',
@@ -3078,46 +3195,45 @@ const HINTS = {
         kinds: 'Какие объявления из заголовков показывать в виде API.',
         fn: 'Функции, объявленные или определённые в заголовках.', macro: 'Макросы #define из заголовков.', type: 'struct / union / enum / typedef.', var: 'Глобальные переменные (extern).',
         includeC: 'Показывать в API и символы, определённые только в .c файлах (не static).',
-        palette: 'Набор цветов сцены. «Тема» — спокойные цвета под светлую/тёмную тему сайта, остальные — собственный тёмный фон и яркие цвета.',
+        palette: 'Набор цветов сцены. «Тема» - спокойные цвета под светлую/тёмную тему сайта, остальные - собственный тёмный фон и яркие цвета.',
         shape: 'Форма узлов: гладкая сфера, огранённый кристалл или проволочный каркас.',
         material: 'Как узел освещён: матовый (обычный свет), мягкий (с контурным ободком) или светящийся (светится своим цветом).',
         selfGlow: 'Насколько узлы светятся собственным цветом (без учёта освещения).',
-        rim: 'Светлый контур по краю узла — делает узлы объёмнее, «как атомы». Работает при любом материале.',
+        rim: 'Светлый контур по краю узла - делает узлы объёмнее, «как атомы». Работает при любом материале.',
         bloom: 'Свечение вокруг ярких объектов (bloom). Красиво, но это самый дорогой эффект для видеокарты.',
         glow: 'Сила свечения bloom.',
         orbits: 'Электронные оболочки (кольца-орбиты) вокруг крупных узлов.',
         electrons: 'Электроны, бегущие по орбитам.',
         pulses: 'Светящиеся импульсы, бегущие по связям от вызывающего к вызываемому.',
-        fog: 'Дальние узлы плавно растворяются в фоне — легче понять глубину.',
+        fog: 'Дальние узлы плавно растворяются в фоне - легче понять глубину.',
         additive: 'Связи складываются по яркости: там, где их много, получается свечение. Выключите, если граф слишком «засвечен».',
-        gradient: 'Связь темнее у источника и ярче у цели — направление видно без стрелок.',
+        gradient: 'Связь темнее у источника и ярче у цели - направление видно без стрелок.',
         autoRotate: 'Сцена медленно вращается, если её не трогать 5 секунд.',
-        wobble: 'Лёгкое «тепловое» дрожание узлов — граф выглядит живым. 0 — выключено.',
+        wobble: 'Лёгкое «тепловое» дрожание узлов - граф выглядит живым. 0 - выключено.',
         pulseSpeed: 'С какой скоростью импульс бежит по связи (одинаково для коротких и длинных связей).',
         pulseRate: 'Сколько импульсов в секунду выпускает каждая связь. Кнопка паузы останавливает рождение новых.',
         sky: 'Фон сцены: градиент, звёзды, процедурная туманность или сетка.',
         skyAmt: 'Яркость фона (звёзд, туманности, сетки).',
         nodeSize: 'Общий масштаб всех узлов.', nodeOpacity: 'Непрозрачность узлов проекта.', linkOpacity: 'Яркость линий связей.',
-        quality: 'Число граней у сфер. Больше — глаже, но тяжелее для больших графов.',
+        quality: 'Число граней у сфер. Больше - глаже, но тяжелее для больших графов.',
         arrows: 'Стрелки на связях выделенного узла.', particles: 'Бегущие импульсы на связях выделенного узла.',
         nearFade: 'Узлы, оказавшиеся вплотную к камере, растворяются и не закрывают обзор.',
         labelCount: 'Сколько самых связанных узлов подписывать, когда ничего не выделено.', labelSize: 'Размер шрифта подписей.',
         labelKinds: 'Узлы каких типов подписывать. Соседи выделенного узла подписываются всегда.',
-        smooth: 'Инерция камеры: 0 — мгновенно, ближе к 1 — плавнее и «тяжелее».',
+        smooth: 'Инерция камеры: 0 - мгновенно, ближе к 1 - плавнее и «тяжелее».',
         freeRotate: 'Вращать граф в любую сторону, без привязки к горизонту. Выключите, чтобы «верх» всегда оставался сверху.',
-        projection: 'Перспектива — как глазами: дальнее меньше. Изометрия — без перспективных искажений, размеры не зависят от глубины. Переход плавный. «Изометрический ракурс» ставит классический угол 45°/35°.',
-        labelNear: 'Когда приближаетесь, подписываются крупные на экране узлы и их соседи — удобно разбирать плотные места.',
-        liveFilter: 'Показывать только файлы, подходящие под шаблоны: «src/cgdf» — только эта папка, «!opengl» — исключить. Несколько условий — через пробел. Чипы ниже прячут целые модули. Работает сразу во всех видах.', sens: 'Чувствительность вращения и масштаба.',
+        projection: 'Перспектива - как глазами: дальнее меньше. Изометрия - без перспективных искажений, размеры не зависят от глубины. Переход плавный. «Изометрический ракурс» ставит классический угол 45°/35°.',
+        labelNear: 'Когда приближаетесь, подписываются крупные на экране узлы и их соседи - удобно разбирать плотные места.',
+        liveFilter: 'Показывать только файлы, подходящие под шаблоны: «src/cgdf» - только эта папка, «!opengl» - исключить. Несколько условий - через пробел. Чипы ниже прячут целые модули. Работает сразу во всех видах.', sens: 'Чувствительность вращения и масштаба.',
         fpsCap: 'Максимум кадров в секунду. 30 заметно снижает нагрузку.',
-        resScale: 'Разрешение рендера. «Авто» само снижает его, если кадры не успевают отрисоваться. «Максимум» — родное разрешение экрана (на телефонах ×3).',
-        maxQuality: 'Одной кнопкой: родное разрешение экрана, сглаживание MSAA, самые гладкие узлы и частота кадров без ограничения (на iPhone Pro — до 120 Гц). Для мощных устройств.',
-        msaa: 'Сглаживание краёв (MSAA). Выше — меньше «лесенок», но тяжелее.',
-        idleStop: 'Через сколько секунд бездействия остановить фоновую анимацию (рендер замрёт до следующего движения мыши). 0 — никогда.',
+        resScale: 'Разрешение рендера. «Авто» само снижает его, если кадры не успевают отрисоваться. «Максимум» - родное разрешение экрана (на телефонах ×3).',
+        msaa: 'Сглаживание краёв (MSAA). Выше - меньше «лесенок», но тяжелее.',
+        idleStop: 'Через сколько секунд бездействия остановить фоновую анимацию (рендер замрёт до следующего движения мыши). 0 - никогда.',
         showFps: 'Показывать в легенде частоту кадров и текущий масштаб разрешения.',
         theme: 'Тема интерфейса: как в системе, светлая или тёмная.',
-        charge: 'Сила взаимного отталкивания узлов. Больше — граф просторнее.', linkDist: 'Желаемая длина связей.',
-        gravity: 'Притяжение к центру — не даёт отдельным частям графа разлетаться.',
-        cluster: 'Насколько функции одного файла (и файлы одной папки) собираются в плотные группы — «молекулы».',
+        charge: 'Сила взаимного отталкивания узлов. Больше - граф просторнее.', linkDist: 'Желаемая длина связей.',
+        gravity: 'Притяжение к центру - не даёт отдельным частям графа разлетаться.',
+        cluster: 'Насколько функции одного файла (и файлы одной папки) собираются в плотные группы - «молекулы».',
         decay: 'Трение: чем больше, тем быстрее раскладка успокаивается (но может застрять в неудачной форме).',
         dagDist: 'Расстояние между уровнями в раскладках «Дерево» и «Радиально».',
         pngScale: 'Во сколько раз разрешение картинки больше экрана.',
@@ -3133,13 +3249,13 @@ const HINTS = {
         showRefs: 'Function references without a call (&fn), e.g. passed as a callback.',
         showExt: 'Show external nodes (libc, SDL, OpenGL…) as translucent wireframes.',
         showVendor: '3rd-party headers that are inside the project but excluded by filters.',
-        hideIsolated: 'Hide nodes with no links in this view — removes noise around the graph.',
+        hideIsolated: 'Hide nodes with no links in this view - removes noise around the graph.',
         kinds: 'Which header declarations to show in the API view.',
         fn: 'Functions declared/defined in headers.', macro: '#define macros from headers.', type: 'struct / union / enum / typedef.', var: 'Global (extern) variables.',
         includeC: 'Also show non-static symbols defined only in .c files.',
         palette: 'Scene colors. Theme = calm colors matching the UI theme; others use their own dark background.',
         shape: 'Node shape: sphere, faceted crystal or wireframe.', material: 'Lighting: matte, soft (rim light) or glowing.',
-        selfGlow: 'How much nodes glow with their own color.', rim: 'Rim light brightness — makes nodes look volumetric.',
+        selfGlow: 'How much nodes glow with their own color.', rim: 'Rim light brightness - makes nodes look volumetric.',
         bloom: 'Glow around bright objects. The most expensive effect for the GPU.', glow: 'Bloom strength.',
         orbits: 'Orbit rings around big nodes.', electrons: 'Electrons moving along orbits.', pulses: 'Glowing pulses flowing from caller to callee.',
         fog: 'Far nodes fade into the background.', additive: 'Links add up in brightness; turn off if the graph looks washed out.',
@@ -3149,7 +3265,7 @@ const HINTS = {
         arrows: 'Arrows on links of the selected node.', particles: 'Pulses on links of the selected node.', nearFade: 'Nodes right in front of the camera dissolve.',
         labelCount: 'How many most-connected nodes get labels.', labelSize: 'Label font size.', labelKinds: 'Which node kinds get labels (the selection always does).',
         smooth: 'Camera inertia.', sens: 'Rotate/zoom sensitivity.', fpsCap: 'Frame rate limit; 30 lowers load a lot.',
-        resScale: 'Render resolution; Auto lowers it when frames are late, Max is the native screen resolution.', maxQuality: 'One tap: native resolution, MSAA, smoothest nodes and uncapped frame rate (up to 120 Hz on ProMotion). For powerful devices.', msaa: 'Edge anti-aliasing.',
+        resScale: 'Render resolution; Auto lowers it when frames are late, Max is the native screen resolution.', msaa: 'Edge anti-aliasing.',
         idleStop: 'Stop background animation after this many idle seconds. 0 = never.', showFps: 'Show FPS and resolution scale in the legend.',
         theme: 'UI theme.', charge: 'Node repulsion.', linkDist: 'Preferred link length.', gravity: 'Pull to the center.',
         cluster: 'How tightly functions of one file (and files of one folder) group into “molecules”.', decay: 'Friction: higher settles faster.',
@@ -3226,7 +3342,7 @@ function renderOpts() {
         }
         if (curView === 'api') h += field(t('kinds'), chk('fn', t('funcs')) + chk('macro', t('macros')) + chk('type', t('types')) + chk('var', t('vars'))) + chk('includeC', t('includeC'));
     } else if (optsTab === 'style') {
-        // Пресеты — карточки; дальше все параметры пресета можно менять по отдельности
+        // Пресеты - карточки; дальше все параметры пресета можно менять по отдельности
         h += `<div class="presets">${Object.keys(STYLE_PRESETS).map(k => `<button class="preset ${vis.style === k ? 'on' : ''}" data-preset="${k}"><i class="pv pv-${k}"></i><span>${esc(t('st_' + k))}</span></button>`).join('')}</div>`;
         if (vis.styleEdited) h += `<div class="row small muted" style="margin:4px 0 6px">${t('presetEdited')} <button class="chip" data-oact="resetPreset">${t('resetPreset')}</button></div>`;
         h += field(t('palette'), vseg('palette', [['theme', t('pal_theme')], ['vivid', t('pal_vivid')], ['cosmos', t('pal_cosmos')], ['neon', t('pal_neon')], ['blueprint', t('pal_blueprint')]]));
@@ -3236,7 +3352,7 @@ function renderOpts() {
         h += hr + `<h4>${t('effects')}</h4>`;
         h += chk('bloom', t('c_bloom'), 'c') + (vis.bloom ? slider('glow') : '');
         h += chk('orbits', t('c_orbits'), 'c') + (vis.orbits ? chk('electrons', t('c_electrons'), 'c') : '') + chk('pulses', t('c_pulses'), 'c');
-        // Скорость и частота — общие для фоновых импульсов и импульсов выделенного узла
+        // Скорость и частота - общие для фоновых импульсов и импульсов выделенного узла
         if (vis.pulses || vis.particles) h += slider('pulseSpeed') + slider('pulseRate');
         h += chk('fog', t('c_fog'), 'c') + chk('additive', t('c_additive'), 'c') + chk('gradient', t('gradient'), 'c') + chk('autoRotate', t('c_autoRotate'), 'c');
         h += slider('wobble');
@@ -3253,10 +3369,11 @@ function renderOpts() {
         h += field(t('projection'), vseg('proj', [['persp', t('proj_persp')], ['iso', t('proj_iso')]]) + `<button class="iconbtn" data-oact="isoView" style="margin-top:6px">${t('isoView')}</button>`, 'projection');
         h += hr + `<h4>${t('perf')}</h4>`;
         h += field(t('fpsCap'), vseg('fps', [[0, t('fps_auto')], [60, '60'], [30, '30']]));
-        h += `<button class="iconbtn primary btn-wide" data-oact="maxQuality" style="margin-bottom:10px" data-hint="${esc(hintFor('maxQuality'))}">${t('maxQuality')}</button>`;
         h += field(t('resScale'), vseg('res', [['low', t('res_low')], ['mid', t('res_mid')], ['auto', t('res_auto')], ['high', t('res_high')], ['max', t('res_max')]]));
         h += field(t('msaa'), vseg('msaa', [[0, t('fps_auto') === 'Нет' ? 'Выкл' : 'Off'], [2, '2×'], [4, '4×'], [8, '8×']]));
         h += slider('idleStop') + chk('showFps', t('showFps'), 'c');
+        if (gpu.name) h += `<div class="field"><span class="lbl">${t('gpuLabel')}</span><div class="mono small">${esc(gpu.name)}</div>` +
+            (gpu.kind === 'integrated' || gpu.kind === 'software' ? `<p class="small" style="margin:2px 0 0;color:var(--warn)">${t(gpu.kind === 'software' ? 'gpuSoftwareHint' : 'gpuIntegratedHint')}</p>` : '') + `</div>`;
         h += `<p class="small muted" style="margin:4px 0 0">${t('perfHint')}</p>`;
         h += field(t('theme'), `<div class="seg" data-theme-seg>${[['auto', 'Auto'], ['light', '☀'], ['dark', '☾']].map(([v, l]) => `<button data-v="${v}" aria-pressed="${(store.get('theme', 'auto')) === v}">${l}</button>`).join('')}</div>`);
     } else if (optsTab === 'phys') {
@@ -3291,6 +3408,8 @@ function renderOpts() {
     if (tabChanged) el.querySelector('.obody').classList.add('tabswap');
     if (focusLf) { const i = el.querySelector('#lfInput'); if (i) { i.focus(); i.setSelectionRange(focusLf, focusLf); } }
 }
+
+
 function fmtSlider(k, v) {
     if (k === 'quality' || k === 'labelCount' || k === 'labelSize') return String(Math.round(v));
     if (k === 'pulseSpeed') return `${Math.round(v)} ${LANG === 'ru' ? 'ед/с' : 'u/s'}`;
@@ -3380,13 +3499,6 @@ function optsAction(a) {
         for (const k of ['nodeSize', 'nodeOpacity', 'linkOpacity', 'quality', 'arrows', 'particles', 'nearFade', 'labelCount', 'labelSize', 'labelKinds', 'smooth', 'sens', 'fps', 'res', 'msaa', 'idleStop', 'showFps', 'freeRotate', 'proj', 'labelNear']) vis[k] = JSON.parse(JSON.stringify(VIS_DEF[k]));
         saveVis(); renderOpts(); applyRenderScale(); refreshVisual();
     }
-    if (a === 'maxQuality') {
-        // Всё на максимум: родное разрешение, сглаживание, гладкие узлы, без ограничения кадров (120 Гц на ProMotion)
-        Object.assign(vis, { res: 'max', msaa: Math.min(8, r_maxSamples()) >= 4 ? 4 : 2, quality: 24, fps: 0 });
-        saveVis(); applyRenderScale(); applyMsaa(); refreshVisual(); renderOpts();
-        toast(t('maxQualityDone'), 2500);
-        return;
-    }
     if (a === 'isoView') { orbit.gq.copy(isoOrientation()); if (vis.proj !== 'iso') { vis.proj = 'iso'; saveVis(); renderOpts(); updateProjBtn(); } requestRender(); return; }
     if (a === 'resetTab') {
         if (optsTab === 'view') { viewOpts[curView] = JSON.parse(JSON.stringify(defOpts[curView] || {})); store.set('viewOpts', viewOpts); vis.sizeBy = VIS_DEF.sizeBy; saveVis(); renderOpts(); if (curView !== 'stats') applyView(true); }
@@ -3403,7 +3515,7 @@ function optsAction(a) {
         try { for (const k of Object.keys(localStorage)) if (k.startsWith('drift.') && !['drift.repo', 'drift.ref', 'drift.lang'].includes(k)) localStorage.removeItem(k); } catch { /* */ }
         const u = new URL(location.href), keepQ = new URLSearchParams();
         if (model) {
-            // Проект открыт — сбрасываем на месте (перезагрузка потеряла бы локальную папку и не работает под file://)
+            // Проект открыт - сбрасываем на месте (перезагрузка потеряла бы локальную папку и не работает под file://)
             for (const k of Object.keys(vis)) delete vis[k];
             Object.assign(vis, JSON.parse(JSON.stringify(VIS_DEF)));
             for (const v in defOpts) viewOpts[v] = JSON.parse(JSON.stringify(defOpts[v]));
@@ -3465,7 +3577,7 @@ async function savePng() {
         }
         const pad = 14 * k;
         if (o.title) {
-            const title = `${model.name}${model.ref && model.ref !== 'HEAD' ? ' @ ' + model.ref : ''} — ${t('views_' + curView)}`;
+            const title = `${model.name}${model.ref && model.ref !== 'HEAD' ? ' @ ' + model.ref : ''} - ${t('views_' + curView)}`;
             const sub = `${fmt(gdata.nodes.length)} ${t('nodes')} · ${fmt(gdata.links.length)} ${t('links')} · Codrift`;
             ctx.textAlign = 'left'; ctx.textBaseline = 'top';
             ctx.font = `700 ${18 * k}px system-ui, sans-serif`; const tw1 = ctx.measureText(title).width;
@@ -3475,7 +3587,7 @@ async function savePng() {
             ctx.globalAlpha = 0.7; ctx.font = `400 ${12 * k}px system-ui, sans-serif`; ctx.fillText(sub, pad + 10 * k, pad + 32 * k); ctx.globalAlpha = 1;
         }
         if (o.legend) {
-            // Легенда — те же пункты, что и на экране
+            // Легенда - те же пункты, что и на экране
             const items = [...document.querySelectorAll('#legend > span')].filter(x => x.id !== 'gcount').map(x => {
                 const i = x.querySelector('i'); return { text: x.textContent.trim(), color: i ? (i.style.background || i.style.backgroundColor) : ink, line: i && i.classList.contains('lk') };
             });
@@ -3517,11 +3629,11 @@ function setTheme(v) {
     if (model) { renderLegend(); if (curView === 'stats') renderStats(); const sel = selId && gdata.nodes.find(n => n.id === selId); if (sel) showDetails(sel); }
 }
 
-// Поиск и список всех узлов: пустой запрос — весь вид списком; сортировка по имени, длине имени, строкам, связям
+// Поиск и список всех узлов: пустой запрос - весь вид списком; сортировка по имени, длине имени, строкам, связям
 let searchHits = [], searchAct = 0, searchShown = 0;
 let searchSort = store.get('searchSort', 'az'), searchDir = store.get('searchDir', 1);
 const SEARCH_SORTS = ['az', 'len', 'lines', 'links'], SEARCH_CHUNK = 200;
-// Порядок сортировки; searchDir = 1 — «естественный» (А→Я, короткие имена, больше строк/связей — выше)
+// Порядок сортировки; searchDir = 1 - «естественный» (А→Я, короткие имена, больше строк/связей - выше)
 function searchCompare(mode) {
     const az = (a, b) => a.label.localeCompare(b.label, undefined, { sensitivity: 'base', numeric: true });
     if (mode === 'len') return (a, b) => a.label.length - b.label.length || az(a, b);
@@ -3529,7 +3641,9 @@ function searchCompare(mode) {
     if (mode === 'links') return (a, b) => (b.__deg || 0) - (a.__deg || 0) || az(a, b);
     return az;
 }
-// Узлы, по которым ищем: на «Статистике» графа нет — файлы и функции модели
+
+
+// Узлы, по которым ищем: на «Статистике» графа нет - файлы и функции модели
 function searchPool() {
     if (curView !== 'stats') {
         for (const n of gdata.nodes) n.__deg = (adj.out.get(n.id) || []).length + (adj.inn.get(n.id) || []).length;
@@ -3539,6 +3653,8 @@ function searchPool() {
     const fns = [...model.fns.values()].map(fn => ({ ...fnNode(fn), view: 'calls', __deg: fn.out.length + fn.inn.length }));
     return files.concat(fns);
 }
+
+
 function doSearch() {
     const q = $('#search').value.trim().toLowerCase(); const box = $('#results');
     if (!model) { setShown(box, false); return; }
@@ -3546,7 +3662,7 @@ function doSearch() {
     let hits = q ? pool.filter(n => n.label.toLowerCase().includes(q) || (n.sub || '').toLowerCase().includes(q)) : pool.slice();
     const cmp = searchCompare(searchSort);
     hits.sort((a, b) => cmp(a, b) * searchDir);
-    // Точное совпадение имени — всегда первым
+    // Точное совпадение имени - всегда первым
     if (q) { const k = hits.findIndex(n => n.label.toLowerCase() === q); if (k > 0) hits.unshift(hits.splice(k, 1)[0]); }
     // Глобальный поиск, если в текущем виде почти ничего не нашлось
     if (q && hits.length < 5 && curView !== 'stats') {
@@ -3563,6 +3679,8 @@ function doSearch() {
     box.scrollTop = 0;
     setShown(box, true);
 }
+
+
 // Следующая порция списка (длинные списки рисуются по мере прокрутки)
 function renderSearchChunk(cascade) {
     const list = $('#results .rlist'); if (!list) return;
@@ -3577,6 +3695,8 @@ function renderSearchChunk(cascade) {
     }).join(''));
     searchShown = to;
 }
+
+
 function pickSearch(i) {
     const n = searchHits[i]; if (!n) return;
     setShown($('#results'), false); $('#search').blur();
@@ -3639,15 +3759,19 @@ function renderSource() {
         </details>
     </div>`;
 }
+
+
 function saveCfgFromUI() {
     const v = id => $(id) && $(id).value;
     if (!$('#inIgnore')) return;
     store.set('ignore', v('#inIgnore')); store.set('only', v('#inOnly')); store.set('exts', v('#inExts'));
     store.set('roots', v('#inRoots') || 'auto'); store.set('maxKB', Math.max(1, parseInt(v('#inMaxKB'), 10) || DEFAULTS.maxKB));
     store.set('maxFiles', Math.max(50, parseInt(v('#inMaxFiles'), 10) || DEFAULTS.maxFiles));
-    cfgOverride = {}; // пользователь сохранил свои фильтры — они важнее ссылки
+    cfgOverride = {}; // пользователь сохранил свои фильтры - они важнее ссылки
     syncUrl();
 }
+
+
 function openSource(open) { if (open) renderSource(); setShown($('#srcpanel'), open); }
 
 
@@ -3665,6 +3789,8 @@ function startGitHub(repoStr, ref) {
         return s;
     });
 }
+
+
 function clearRepoParam() { curRepo = null; const u = new URL(location.href); u.searchParams.delete('repo'); u.searchParams.delete('ref'); setAddress(u); }
 
 
@@ -3674,6 +3800,8 @@ function refreshProject(silent) {
     if (!silent) toast(t('refreshing'), 1200);
     runSource(lastSource, { refresh: true });
 }
+
+
 // Слежение за локальной папкой (File System Access API): изменённые файлы → обновление графа
 function startWatch() {
     clearInterval(watchTimer); watchTimer = 0;
@@ -3681,10 +3809,10 @@ function startWatch() {
     if (!src || !src.watchable || !store.get('watch', true)) return;
     const exts = readCfg().exts.split(/[\s,]+/).filter(Boolean).map(s => (s.startsWith('.') ? s : '.' + s).toLowerCase());
     const sigOf = list => list.filter(e => !e.dirOnly && exts.includes(extOf(e.path))).map(e => e.path).sort().join('|');
-    // Опорный список — тот, что был при загрузке (иначе файл, созданный в первые секунды, не заметили бы)
+    // Опорный список - тот, что был при загрузке (иначе файл, созданный в первые секунды, не заметили бы)
     let last = null, busyCheck = false, tick = 1, listSig = sigOf(src.entries);
     const stamp = async () => {
-        // Раз в ~10 с — список файлов нужных расширений (появились новые / пропали старые)
+        // Раз в ~10 с - список файлов нужных расширений (появились новые / пропали старые)
         if (src.listAgain && tick++ % 4 === 0) listSig = sigOf(await src.listAgain());
         const parts = [listSig];
         for (const e of src.entries) if (e.handle) { try { const f = await e.handle.getFile(); parts.push(e.path + ':' + f.lastModified + ':' + f.size); } catch { parts.push(e.path + ':gone'); } }
@@ -3696,12 +3824,14 @@ function startWatch() {
     };
     check(); watchTimer = setInterval(check, 2500);
 }
+
+
 function onModelReady() {
     $('#welcome').hidden = true;
     startWatch();
     if (refreshing) { refreshing = false; renderTabs(); applyView(true); toast(t('refreshed'), 1500); return; }
     $('#projName').textContent = model.name + (model.ref ? ' @ ' + model.ref : '');
-    document.title = model.name + ' — Codrift';
+    document.title = model.name + ' - Codrift';
     if (window.matchMedia('(max-width: 760px)').matches) openSource(false);
     else setTimeout(() => openSource(false), 400);
     renderTabs();
@@ -3742,7 +3872,9 @@ function updateProjBtn() {
     b.title = vis.proj === 'iso' ? t('proj_persp') : t('proj_iso'); b.setAttribute('aria-label', b.title);
     b.classList.toggle('on', vis.proj === 'iso');
 }
-// Свайп по шторке деталей (телефон): вверх — развернуть, вниз — свернуть, из свёрнутой вниз — закрыть
+
+
+// Свайп по шторке деталей (телефон): вверх - развернуть, вниз - свернуть, из свёрнутой вниз - закрыть
 function bindSheetSwipe() {
     const det = $('#details'); let y0 = null, h0 = 0, dy = 0, id = null;
     const grab = e => !!e.target.closest('#detHandle, #details .phead') && !e.target.closest('#detClose');
@@ -3766,7 +3898,7 @@ function bindSheetSwipe() {
         if (dy < -40 && !exp) { det.classList.add('expanded'); document.body.classList.add('det-expanded'); }
         else if (dy > 40 && exp) { det.classList.remove('expanded'); document.body.classList.remove('det-expanded'); }
         else if (dy > 60 && !exp) dropFocus();
-        // Клик сразу после перетаскивания не должен срабатывать как тап по ручке; если браузер его не прислал —
+        // Клик сразу после перетаскивания не должен срабатывать как тап по ручке; если браузер его не прислал -
         // перехватчик снимается сам, иначе он «съел» бы следующий настоящий тап (например, по пункту списка)
         const swallow = ev => { ev.stopPropagation(); ev.preventDefault(); det.removeEventListener('click', swallow, true); };
         det.addEventListener('click', swallow, true);
@@ -3774,6 +3906,8 @@ function bindSheetSwipe() {
     };
     det.addEventListener('pointerup', end); det.addEventListener('pointercancel', end);
 }
+
+
 function setPauseIcon() {
     const b = $('#btnPause'); b.title = paused ? t('resume') : t('pause'); b.setAttribute('aria-label', b.title);
     $('#btnPause').innerHTML = paused ? '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>' : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 5v14M15 5v14"/></svg>';
@@ -3809,12 +3943,12 @@ function bind() {
         tipEl.style.left = left + 'px'; tipEl.style.top = top + 'px'; };
     const hideHint = () => { if (tipEl) { tipEl.hidden = true; tipEl.className = 'gtip'; } };
     let hintTimer = 0;
-    // Подсказки — только для мыши: на телефоне тап эмулирует наведение, и подсказка закрывала элементы
+    // Подсказки - только для мыши: на телефоне тап эмулирует наведение, и подсказка закрывала элементы
     opts.addEventListener('pointerover', e => {
         if (e.pointerType !== 'mouse') return;
         const el = e.target.closest('[data-hint]'); clearTimeout(hintTimer);
         if (!el || !opts.contains(el)) { hideHint(); return; }
-        // На значке «?» — сразу, на остальной строке — с небольшой задержкой, чтобы не мешать
+        // На значке «?» - сразу, на остальной строке - с небольшой задержкой, чтобы не мешать
         if (e.target.closest('.hint')) showHint(el, e.clientX); else hintTimer = setTimeout(() => showHint(el, e.clientX), 450);
     });
     opts.addEventListener('mouseleave', () => { clearTimeout(hintTimer); hideHint(); });
@@ -3847,10 +3981,10 @@ function bind() {
         if (e.target.closest('[data-w="snap"]')) { store.set('srcTab', 'snap'); openSource(true); }
         const ch = e.target.closest('[data-repo]');
         if (ch) { if ($('#srcpanel').hidden) { store.set('srcTab', 'github'); openSource(true); } $('#inRepo').value = ch.dataset.repo; $('#inRef').value = ''; saveCfgFromUI(); startGitHub(ch.dataset.repo, ''); }
-        // composedPath — путь на момент клика (кнопка могла уже исчезнуть после перерисовки панели)
+        // composedPath - путь на момент клика (кнопка могла уже исчезнуть после перерисовки панели)
         const path = e.composedPath();
         if (!path.some(x => x.classList && x.classList.contains('searchwrap'))) setShown($('#results'), false);
-        // Вращение и масштаб графа панель не закрывают — можно настраивать и сразу смотреть результат;
+        // Вращение и масштаб графа панель не закрывают - можно настраивать и сразу смотреть результат;
         // простой тап по графу закрывает её в обработчике ввода графа (bindOrbitInput)
         if (!path.includes($('#opts')) && !path.includes($('#btnOpts')) && !path.includes($('#graph')) && !path.includes($('#gtools')) && !path.includes($('#tabs')) && !path.includes($('#mdmodal'))) setShown($('#opts'), false);
     });
@@ -4018,18 +4152,22 @@ function buildStateParams(withCamera) {
     q.set('lang', LANG);
     return q;
 }
+
+
 function stateUrl(withCamera) {
     const u = new URL(location.href); u.search = buildStateParams(withCamera).toString();
     return u.toString().replace(/%2F/gi, '/').replace(/%3A/gi, ':').replace(/%2C/gi, ',').replace(/%3B/gi, ';');
 }
-// Адресная строка всегда содержит актуальное состояние (без камеры — она меняется постоянно)
+// Адресная строка всегда содержит актуальное состояние (без камеры - она меняется постоянно)
 let urlTimer = 0;
-// Страница, открытая как file://, не может менять свой адрес — состояние тогда живёт только в памяти (кнопка «ссылка» работает)
+// Страница, открытая как file://, не может менять свой адрес - состояние тогда живёт только в памяти (кнопка «ссылка» работает)
 const URL_WRITABLE = location.protocol === 'http:' || location.protocol === 'https:';
 function setAddress(u) {
     if (!URL_WRITABLE) return;
-    try { history.replaceState(null, '', u); } catch { /* браузер запретил — не критично */ }
+    try { history.replaceState(null, '', u); } catch { /* браузер запретил - не критично */ }
 }
+
+
 function syncUrl() {
     clearTimeout(urlTimer);
     urlTimer = setTimeout(() => { if (!urlPending) setAddress(stateUrl(false)); }, 350);
@@ -4064,6 +4202,8 @@ function applyUrlState(q) {
     if (q.has('cam')) urlPending.cam = q.get('cam').split(',').map(Number);
     if (q.get('embed') === '1') document.body.classList.add('embed');
 }
+
+
 // После построения графа: выделение, окрестность, камера из ссылки
 function applyUrlPending() {
     const p = urlPending; urlPending = null;
@@ -4101,7 +4241,7 @@ const START_QUERY = new URLSearchParams(location.search);
     if (typeof ForceGraph3D === 'undefined') { toast('3d-force-graph CDN failed to load', 10000); }
     const repo = q.get('repo'), snapUrl = q.get('snap');
     if (snapUrl) {
-        // Снимок по ссылке (например, лежит рядом с сайтом проекта) — без GitHub API и без разбора
+        // Снимок по ссылке (например, лежит рядом с сайтом проекта) - без GitHub API и без разбора
         loadSnapUrl(snapUrl);
     } else if (repo) {
         store.set('srcTab', 'github');

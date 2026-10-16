@@ -181,7 +181,7 @@ body.dragging main::after { content: ""; position: absolute; inset: 10px; border
 #legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex: none; }
 #gcount { color: var(--muted); }
 
-/* Панель настроек: фиксированная высота — вкладки сверху и кнопки сброса снизу не «прыгают» от содержимого */
+/* Панель настроек: фиксированная высота - вкладки сверху и кнопки сброса снизу не «прыгают» от содержимого */
 .popover {
     position: absolute; right: 60px; bottom: 12px; z-index: 30; width: 320px; max-width: calc(100vw - 80px);
     height: min(620px, calc(100% - 24px)); display: flex; flex-direction: column; overflow: hidden;
@@ -356,7 +356,7 @@ table.t tr.clk:hover td { background: var(--surface-2); }
     }
     .iconbtn:active, .chip:active, .preset:active, #tabs button:active, .seg button:active { transform: scale(.95); }
     @media (hover: hover) { #gtools .iconbtn:hover, .preset:hover { transform: translateY(-1px); } }
-    /* Шторка деталей на телефоне: высота меняется плавно, при перетаскивании — следует за пальцем */
+    /* Шторка деталей на телефоне: высота меняется плавно, при перетаскивании - следует за пальцем */
     #details { transition: height .3s cubic-bezier(.2, .8, .2, 1); }
     #details.dragging { transition: none; }
     .leaving { animation-duration: .17s !important; animation-timing-function: ease-in !important; animation-fill-mode: forwards !important; pointer-events: none; }
@@ -379,7 +379,7 @@ table.t tr.clk:hover td { background: var(--surface-2); }
     #gtools:not([hidden]) .iconbtn { animation: popIn .34s cubic-bezier(.2, .8, .2, 1) both; }
     #gtools .iconbtn:nth-child(2) { animation-delay: .04s; } #gtools .iconbtn:nth-child(3) { animation-delay: .08s; }
     #gtools .iconbtn:nth-child(4) { animation-delay: .12s; } #gtools .iconbtn:nth-child(n+5) { animation-delay: .16s; }
-    /* Смена вкладки настроек — содержимое мягко въезжает */
+    /* Смена вкладки настроек - содержимое мягко въезжает */
     .popover .obody.tabswap > * { animation: fadeUp .24s cubic-bezier(.2, .8, .2, 1) both; }
     .popover .obody.tabswap > *:nth-child(2) { animation-delay: .02s; } .popover .obody.tabswap > *:nth-child(3) { animation-delay: .04s; }
     .popover .obody.tabswap > *:nth-child(n+4) { animation-delay: .06s; }
@@ -406,7 +406,7 @@ table.t tr.clk:hover td { background: var(--surface-2); }
 }
 /* ---------- Мобильная раскладка ---------- */
 @media (max-width: 760px) {
-    /* Сверху — отступ под строку состояния и Dynamic Island (веб-приложение на экране «Домой») */
+    /* Сверху - отступ под строку состояния и Dynamic Island (веб-приложение на экране «Домой») */
     header { flex-wrap: wrap; gap: 6px; padding: max(6px, env(safe-area-inset-top)) max(10px, env(safe-area-inset-right)) 6px max(10px, env(safe-area-inset-left)); }
     .brand small { display: none; }
     #tabs { order: 5; width: 100%; }
@@ -423,7 +423,7 @@ table.t tr.clk:hover td { background: var(--surface-2); }
     #details .handle { display: block; width: 100%; height: 22px; border: 0; background: transparent; position: relative; flex: none; }
     #details .handle::after { content: ""; position: absolute; left: 50%; top: 8px; width: 44px; height: 5px; margin-left: -22px; border-radius: 3px; background: var(--line-2); }
     #details .phead { padding-top: 0; }
-    /* Шторку тянут за ручку и заголовок — браузер не должен перехватывать это как прокрутку */
+    /* Шторку тянут за ручку и заголовок - браузер не должен перехватывать это как прокрутку */
     #details .handle, #details .phead { touch-action: none; }
     #legend { max-width: calc(100% - 76px); font-size: 11px; }
     /* Панель настроек не закрывает колонку кнопок справа (иначе её нечем закрыть на телефоне) */
@@ -495,20 +495,20 @@ table.t tr.clk:hover td { background: var(--surface-2); }
         <div id="mdmodal" hidden></div>
     </main>
 </div>
-<script src="parser.js?v=78"></script>
-<script src="langs.js?v=78"></script>
-<!-- three.js и 3d-force-graph как ES-модули с одного CDN: three@0.174.0 — та же копия, что импортирует сам граф,
-          поэтому собственные объекты сцены (общий буфер связей) совместимы. app.js — обычный скрипт, чтобы работал и file:// -->
+<script src="parser.js?v=81"></script>
+<script src="langs.js?v=81"></script>
+<!-- three.js и 3d-force-graph как ES-модули с одного CDN: three@0.174.0 - та же копия, что импортирует сам граф,
+          поэтому собственные объекты сцены (общий буфер связей) совместимы. app.js - обычный скрипт, чтобы работал и file:// -->
 <script type="module">
     import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.174.0/+esm';
     import ForceGraph3D from 'https://cdn.jsdelivr.net/npm/3d-force-graph@1.77.0/+esm';
     import { UnrealBloomPass } from 'https://cdn.jsdelivr.net/npm/three@0.174.0/examples/jsm/postprocessing/UnrealBloomPass.js/+esm';
     window.THREE = THREE; window.ForceGraph3D = ForceGraph3D; window.UnrealBloomPass = UnrealBloomPass;
-    const s = document.createElement('script'); s.src = 'app.js?v=78'; document.body.appendChild(s);
+    const s = document.createElement('script'); s.src = 'app.js?v=81'; document.body.appendChild(s);
 </script>
 <script nomodule>document.body.textContent = 'This browser is too old for Codrift.';</script>
 <script>
-    // Если CDN недоступен — сообщаем, а не показываем пустую страницу
+    // Если CDN недоступен - сообщаем, а не показываем пустую страницу
     setTimeout(() => { if (!window.ForceGraph3D) { const t = document.getElementById('toast'); t.textContent = 'CDN (jsdelivr) unavailable: three.js / 3d-force-graph not loaded'; t.hidden = false; } }, 15000);
 </script>
 </body>
