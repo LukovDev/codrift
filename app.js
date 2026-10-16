@@ -1221,6 +1221,9 @@ function renderStep(now) {
     const animating = isGrowing() || anim.ts > 0.002 || tsGoal > 0;
     // Медленное вращение вокруг вертикали мира, пока пользователь ничего не трогает
     if (vis.autoRotate && idle > 5 && anim.ts > 0.002) o.gq.premultiply(_qa.setFromAxisAngle(_wy, dt * 0.045 * anim.ts));
+    // Камера не заходит внутрь узла, на который смотрит: изнутри сферы узел не виден, пропадало и его свечение,
+    // а экран заливали цветом связи, сходящиеся в центре узла
+    if (o.gdist < 400) { const md = minOrbitDist(); if (o.gdist < md) { o.gdist = md; if (o.fly) o.fly.td = Math.max(o.fly.td, md); } }
     const [gsx, gsy] = viewShiftGoal();
     const moving = !!o.fly || 1 - Math.abs(o.q.dot(o.gq)) > 1e-9 || Math.abs(Math.log(o.gdist / o.dist)) > 1e-4 ||
         o.t.distanceTo(o.gt) > o.dist * 1e-4 || Math.abs(gsx - o.sx) > 0.3 || Math.abs(gsy - o.sy) > 0.3 || Math.abs(projGoal() - o.p) > 1e-3;
@@ -1388,6 +1391,21 @@ function bindOrbitInput(el) {
     el.addEventListener('contextmenu', e => e.preventDefault());
 }
 const clampDist = d => Math.max(5, Math.min(60000, d));
+// Минимальное расстояние камеры: если цель внутри узла (или рядом с его поверхностью) — не ближе 2.4 радиуса от центра
+// (узел тогда почти во весь кадр); выделенный узел учитывается всегда, даже если цель чуть сдвинута панорамой
+const _md = new THREE.Vector3();
+function minOrbitDist() {
+    let md = 5;
+    const t = orbit.gt;
+    for (const n of gdata.nodes) {
+        if (n.x == null || n.__hidden) continue;
+        const r = nodeRadius(n);
+        dispPos(n, _md);
+        const d = _md.distanceTo(t);
+        if (d < r * 1.3 || n.id === selId && d < r * 2) md = Math.max(md, r * 2.4 + d);
+    }
+    return md;
+}
 
 
 // Отображаемая (с «дрожанием») позиция узла
@@ -3387,7 +3405,7 @@ function renderOpts() {
         h += `<div class="field"><button class="iconbtn primary" data-oact="mdAll">${t('mdAll')}</button><button class="iconbtn" data-oact="mdApi">${t('mdApi')}</button></div>`;
         h += hr + `<h4>${t('png')}</h4>`;
         h += field(t('pngScale'), `<div class="seg" data-pngscale>${[1, 2, 3, 4].map(v => `<button data-v="${v}" aria-pressed="${vis.png.scale === v}">${v}×</button>`).join('')}</div>`);
-        const cv = G && G.renderer().domElement, ps = cv ? Math.min(vis.png.scale, 8192 / Math.max(cv.clientWidth, cv.clientHeight)) : 1;
+        const cv = G && G.renderer().domElement, ps = cv ? pngScale(cv.clientWidth, cv.clientHeight) : 1;
         if (cv) h += `<div class="small muted" style="margin:-4px 0 6px">${Math.round(cv.clientWidth * ps)} × ${Math.round(cv.clientHeight * ps)} px</div>`;
         h += ['labels', 'legend', 'title'].map(k => { const hn = hintFor('png_' + k); return `<label class="check" data-hint="${esc(hn)}"><input type="checkbox" data-png="${k}" ${vis.png[k] ? 'checked' : ''}><span class="grow">${esc(t('png_' + k))}</span>${hintIcon(hn)}</label>`; }).join('');
         h += `<div class="field" style="margin-top:6px"><button class="iconbtn primary" data-oact="png">${t('pngSave')}</button></div>`;
@@ -3542,16 +3560,27 @@ function optsAction(a) {
 }
 
 
+// Масштаб PNG: выбранный (1×–4×), но не больше 8192 px по стороне и ~16.7 Мпикс по площади (4096²) —
+// больше видеокарта может не выделить буферы, и картинка выйдет чёрной
+const PNG_MAX_PIXELS = 4096 * 4096;
+function pngScale(w, h) {
+    return Math.max(0.5, Math.min(vis.png.scale, 8192 / Math.max(w, h), Math.sqrt(PNG_MAX_PIXELS / Math.max(1, w * h))));
+}
+
+
 // Экспорт PNG: рендер в повышенном разрешении + подписи, легенда и заголовок, дорисованные на 2D-холсте
 async function savePng() {
     if (!G) return;
     const o = vis.png, r = G.renderer(), comp = G.postProcessingComposer(), cv = r.domElement;
     const w = G.width(), h = G.height(), prOld = r.getPixelRatio();
     // Ограничиваем итоговый размер (видеопамять и лимиты браузера на размер холста)
-    const pr = Math.max(0.5, Math.min(o.scale, 8192 / Math.max(w, h)));
+    const pr = pngScale(w, h);
     toast(t('pngRendering'), 1500);
     await sleep0();
     try {
+        // MSAA на время экспорта выключено: картинка в 2–4 раза больше экрана уже сглажена размером, а многосэмпловые
+        // буферы такого размера занимают гигабайты — видеокарта их не выделяла, и сцена в PNG выходила чёрной
+        for (const rt of [comp.renderTarget1, comp.renderTarget2]) if (rt && rt.samples) { rt.samples = 0; rt.dispose(); }
         r.setPixelRatio(pr); r.setSize(w, h, false); comp.setPixelRatio(pr); comp.setSize(w, h);
         G.camera().clearViewOffset(); G.camera().updateProjectionMatrix(); G.camera().updateMatrixWorld();
         frameSync(anim.t, 0, G.camera());
@@ -3619,6 +3648,7 @@ async function savePng() {
     } catch (err) { toast(String(err && err.message || err), 6000); }
     finally {
         r.setPixelRatio(prOld); r.setSize(w, h, false); comp.setPixelRatio(prOld); comp.setSize(w, h);
+        applyMsaa(); // сглаживание — обратно, как в настройках
         requestRender();
     }
 }
