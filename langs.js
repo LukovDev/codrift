@@ -141,7 +141,7 @@ function makeBraceLang(cfg) {
         let clean = s.clean, includes = [], macros = [];
         if (cfg.cpp) { const pp = P.preprocess(s.noComm, s.clean); clean = pp.clean; includes = pp.includes; macros = pp.macros; for (const m of macros) { m.calls = []; m.ids = []; } }
         else clean = clean.replace(/^[ \t]*#.*$/gm, m => ' '.repeat(m.length)); // C# #region/#if, JS shebang
-        if (cfg.imports) includes = includes.concat(cfg.imports(s.noComm));
+        if (cfg.imports) includes = includes.concat(cfg.imports(s.noComm, s.clean));
         const toks = P.tokenize(clean);
         const match = P.braceMatch(toks);
         const di = P.docIndex(s.comments);
@@ -275,15 +275,26 @@ register({
         js: true, oopStatic: true,
         keywords: ['const', 'let', 'var', 'async', 'static', 'get', 'set', 'public', 'private', 'protected', 'readonly', 'export', 'default', 'from', 'as', 'type', 'interface', 'enum', 'declare', 'abstract', 'implements', 'extends', 'null', 'undefined', 'true', 'false', 'arguments', 'console', 'window', 'document'],
         notCall: ['require'],
-        imports: src => {
+        // clean - тот же текст с вырезанными строками: «import ... from» внутри строки или шаблона (код, собранный
+        // в строку, как исходник потока раскладки в самом Codrift) - не импорт файла
+        imports: (src, clean) => {
             const out = []; const li = lineIndex(src);
             const res = [/(?:^|[^\w$.])import\s+(?:type\s+)?(?:[\w$*{}\s,]+?\s+from\s+)?['"]([^'"]+)['"]/g, /\bexport\s+(?:type\s+)?(?:\*(?:\s+as\s+\w+)?|\{[^}]*\})\s*from\s*['"]([^'"]+)['"]/g, /\brequire\s*\(\s*['"]([^'"]+)['"]\s*\)/g, /\bimport\s*\(\s*['"]([^'"]+)['"]\s*\)/g];
-            for (const re of res) { let m; while ((m = re.exec(src))) out.push({ path: m[1], sys: !/^[./]/.test(m[1]), line: li(m.index), kind: 'import' }); }
+            for (const re of res) {
+                let m;
+                while ((m = re.exec(src))) {
+                    const kw = m.index + m[0].search(/import|export|require/);
+                    if (clean && clean.charCodeAt(kw) !== src.charCodeAt(kw)) continue;
+                    out.push({ path: m[1], sys: !/^[./]/.test(m[1]), line: li(m.index), kind: 'import' });
+                }
+            }
             return out;
         },
     }),
     resolveImport(f, imp, ctx) {
         const spec = imp.path;
+        // Импорт по адресу (CDN) - внешний узел с адресом без протокола, а не «https:»
+        if (/^https?:\/\//.test(spec)) return [{ kind: 'external', path: spec.replace(/^https?:\/\//, '').replace(/[?#].*$/, '').replace(/\/\+esm$/, '') }];
         if (!/^[./]/.test(spec)) return [{ kind: 'external', path: spec.split('/').slice(0, spec.startsWith('@') ? 2 : 1).join('/') }];
         const base = normPath(spec.startsWith('/') ? spec.slice(1) : dirname(f.path) + '/' + spec);
         if (base == null) return [{ kind: 'external', path: spec }];

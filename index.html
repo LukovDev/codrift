@@ -11,7 +11,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Codrift">
 <!-- Обычная строка состояния (не «translucent»): страница начинается под ней, цвет строки берётся из theme-color.
-     В режиме black-translucent iOS размывала шапку - страница заходила под строку состояния и её край -->
+     В режиме black-translucent страница заходит под строку состояния, и iOS размывает её край -->
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="theme-color" content="#fcfcfb" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#161a22" media="(prefers-color-scheme: dark)">
@@ -130,8 +130,7 @@ body.scene-dark .nlabel { color: #e4ecff; background: rgba(6, 10, 26, .55); bord
     text-shadow: 0 0 6px rgba(110, 170, 255, .85); letter-spacing: .03em; }
 body.scene-dark .nlabel.sel { outline: 1.5px solid #ffe066; color: #fff6cf; text-shadow: 0 0 8px rgba(255, 224, 102, .9); }
 body.scene-dark #graph { background: #03040a; }
-/* Подписи внешних - курсивом и чуть прозрачнее; скрытые (.off) - полностью: раньше это правило перебивало .off,
-   и ещё не размещённые подписи внешних функций висели в левом верхнем углу */
+/* Подписи внешних - курсивом и чуть прозрачнее; скрытые (.off) - полностью */
 .nlabel.ext { font-style: italic; }
 .nlabel.ext:not(.off) { opacity: .7; }
 /* Карточки пресетов стиля */
@@ -428,7 +427,7 @@ main { --lpad: 0px; --rpad: 0px; }
 #rbar #rbarCancel { padding: 1px 8px; font-size: 11px; }
 #rbar .rtrack { height: 3px; border-radius: 2px; background: var(--line); overflow: hidden; }
 #rbar #rbarFill { height: 100%; width: 0; background: var(--accent); transition: width .2s; }
-/* Запись ролика: шкала - без анимации ширины (кадры редкие, анимация отставала от хода), а квадратный кадр записи
+/* Запись ролика: шкала - без анимации ширины (кадры редкие, анимация отставала бы от хода), а квадратный кадр записи
    виден на экране целиком и без растягивания - как превью ролика */
 body.recording #rbar #rbarFill { transition: none; }
 body.recording #graph canvas { object-fit: contain; }
@@ -621,8 +620,8 @@ body.recording #graph canvas { object-fit: contain; }
 <div id="boot" hidden role="status" aria-live="polite"><div class="bcard"><div class="spin"></div><div class="btitle" id="bootTitle"></div><div class="small muted" id="bootText"></div><div class="bbar"><div id="bootBar"></div></div><button class="chip" id="bootCancel" type="button">✕</button></div></div>
 <!-- Ссылка с проектом: экран загрузки сразу, ещё до загрузки библиотек с CDN (заголовок допишет app.js) -->
 <script>if (/[?&](repo|snap)=/.test(location.search)) document.getElementById('boot').hidden = false;</script>
-<script src="parser.js?v=137"></script>
-<script src="langs.js?v=137"></script>
+<script src="parser.js?v=142"></script>
+<script src="langs.js?v=142"></script>
 <!-- three.js и 3d-force-graph как ES-модули с одного CDN: three@0.174.0 - та же копия, что импортирует сам граф,
      поэтому собственные объекты сцены (общий буфер связей) совместимы. app.js - обычный скрипт, чтобы работал и file:// -->
 <!-- Сборка three/webgpu не нужна (рендер - WebGL): заглушка вместо ~880 КБ второй копии Three.js -->
@@ -632,7 +631,7 @@ body.recording #graph canvas { object-fit: contain; }
     import ForceGraph3D from 'https://cdn.jsdelivr.net/npm/3d-force-graph@1.77.0/+esm';
     import { UnrealBloomPass } from 'https://cdn.jsdelivr.net/npm/three@0.174.0/examples/jsm/postprocessing/UnrealBloomPass.js/+esm';
     window.THREE = THREE; window.ForceGraph3D = ForceGraph3D; window.UnrealBloomPass = UnrealBloomPass;
-    const s = document.createElement('script'); s.src = 'app.js?v=137'; document.body.appendChild(s);
+    const s = document.createElement('script'); s.src = 'app.js?v=142'; document.body.appendChild(s);
 </script>
 <script nomodule>document.body.textContent = 'This browser is too old for Codrift.';</script>
 <script>

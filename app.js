@@ -14,34 +14,34 @@ const I18N = {
         ref: 'Ветка / тег / коммит (пусто - по умолчанию)', token: 'Токен GitHub (необязательно, хранится только в памяти вкладки)',
         load: 'Загрузить и разобрать', pickDir: 'Выбрать папку…', pickZip: 'Открыть .zip…', pickFiles: 'Выбрать файлы…',
         filters: 'Фильтры файлов', ignore: 'Игнорировать (glob, по строке)', includeOnly: 'Искать только в (glob, пусто - везде)',
-        exts: 'Расширения', incRoots: 'Каталоги include (через пробел, auto - сами)', maxSize: 'Макс. размер файла, КБ',
+        exts: 'Расширения', incRoots: 'Каталоги подключаемых файлов C/C++ (через пробел, auto - сами)', maxSize: 'Макс. размер файла, КБ',
         resetDefaults: 'Сбросить по умолчанию', examples: 'Примеры:', welcomeTitle: '3D-карта кода проекта',
-        welcomeText: 'Разбирает код прямо в браузере (C, C++, Java, C#, JS/TS, Python): граф #include и импортов, граф вызовов, API, дерево директорий и статистика строк. Ничего не отправляется на сервер, кроме запросов к GitHub.',
+        welcomeText: 'Разбирает код прямо в браузере (C, C++, Java, C#, JS/TS, Python): граф подключений файлов, граф вызовов, API, дерево директорий и статистика строк. Ничего не отправляется на сервер, кроме запросов к GitHub.',
         openGithub: 'GitHub-репозиторий…', openLocal: 'Локальная папка…', listing: 'Получаю список файлов…', reading: 'Читаю файлы',
         parsing: 'Разбираю', building: 'Строю граф…', done: 'Готово', files: 'Файлы', lines: 'Строк', code: 'Код', comments: 'Комментарии',
         blank: 'Пустые', funcs: 'Функции', macros: 'Макросы', types: 'Типы', vars: 'Переменные', ignored: 'Пропущено (игнор)',
         layout: 'Раскладка', lay_force: 'Силы', lay_td: 'Дерево', lay_radial: 'Радиально', colorBy: 'Цвет',
         col_kind: 'по типу', col_module: 'по модулю', labelsAll: 'Подписи у всех узлов', showExt: 'Внешние (системные/сторонние)',
-        showVendor: 'Заголовки сторонних библиотек', showMacros: 'Макросы как узлы', showRefs: 'Ссылки на функции (callback)',
+        showVendor: 'Файлы сторонних библиотек', showMacros: 'Макросы как узлы', showRefs: 'Ссылки на функции (callback)',
         hideIsolated: 'Скрыть изолированные', gran: 'Детализация', gran_fn: 'Функции', gran_file: 'Файлы', kinds: 'Показывать',
         includeC: 'Символы из .c файлов тоже', arrows: 'Стрелки', particles: 'Анимация связей у выделенного',
-        includes: 'Включает', includedBy: 'Включён в', calls: 'Вызывает', calledBy: 'Вызывается из', declares: 'Объявляет',
+        includes: 'Подключает', includedBy: 'Подключён в', calls: 'Вызывает', calledBy: 'Вызывается из', declares: 'Объявляет',
         declaredIn: 'Объявлен в', definedIn: 'Определён в', children: 'Содержимое', parent: 'Родитель', definedHere: 'Функции в файле',
         path: 'Путь', kind: 'Тип', where: 'Где', length: 'Длина', flyTo: 'Камера к узлу', focus: 'Только окрестность', unfocus: 'Показать всё',
-        openGH: 'Открыть на GitHub', showCode: 'Код', transIncl: 'Транзитивно включает', usedBy: 'Используется в',
+        openGH: 'Открыть на GitHub', showCode: 'Код', transIncl: 'Подключает транзитивно', usedBy: 'Используется в',
         noDef: 'нет определения', static: 'static', inline: 'inline', external: 'внешний', vendor: 'сторонняя библиотека',
         nodes: 'узлов', links: 'связей', dirStats: 'По директориям', fileStats: 'По файлам', filter: 'фильтр',
-        longestFns: 'Самые длинные функции', mostIncluded: 'Чаще всего включаемые', mostCalled: 'Чаще всего вызываемые',
+        longestFns: 'Самые длинные функции', mostIncluded: 'Чаще всего подключаемые', mostCalled: 'Чаще всего вызываемые',
         fanOut: 'Больше всего исходящих вызовов', diag: 'Диагностика', protoNoDef: 'Прототипы без определения',
         noProto: 'Не-static функции без прототипа в заголовке', unused: 'Функции, которые не вызываются внутри проекта',
-        cycles: 'Циклы #include', headersUnused: 'Заголовки, которые никто не включает', ratio: 'Плотность комментариев',
+        cycles: 'Циклы подключений', headersUnused: 'Заголовки, которые никто не подключает', ratio: 'Плотность комментариев',
         avgFn: 'средняя длина функции', maxFn: 'макс.', filterEmpty: 'Фильтр на лету скрыл все узлы - очистите его во вкладке «Вид».', rateFallback: 'Лимит GitHub API исчерпан - список файлов взят через jsDelivr.', rateBig: 'Запасной путь через jsDelivr не подходит: репозиторий больше 50 МБ.', rateLimit: 'Лимит GitHub API исчерпан. Укажите токен или подождите до',
         notFound: 'Репозиторий или ветка не найдены (или он приватный - нужен токен).', truncated: 'GitHub обрезал список файлов (очень большой репозиторий) - часть файлов не попала.',
         noFiles: 'Не найдено ни одного подходящего файла. Проверьте фильтры.', dagCycle: 'В графе есть циклы - иерархия приблизительная.',
         tooMany: 'Файлов слишком много, взяты первые', fsUnsupported: 'Браузер не поддерживает выбор папки - используйте zip или выбор файлов.',
         selectNode: 'Нажмите на узел, чтобы увидеть детали', more: 'ещё', total: 'Всего', dir: 'директория', file: 'файл', header: 'заголовок',
         func: 'функция', macro: 'макрос', type: 'тип', variable: 'переменная', proj: 'Проект', size: 'Размер', theme: 'Тема',
-        includeEdges: 'связей #include', depth: 'Глубина окрестности', cancel: 'Отмена', ok: 'ОК',
+        includeEdges: 'связей между файлами', incCard: 'Подключения', extIncludes: 'Внешние подключения', arr_apiPub: 'файл → объявленные в нём классы и методы', depth: 'Глубина окрестности', cancel: 'Отмена', ok: 'ОК',
         implIn: 'Реализован в', params: 'Параметры', body: 'Тело', module: 'Модуль', other: 'Прочее', none: 'нет',
         clickHint: 'Тап по узлу - детали, один палец - вращение, два - масштаб/сдвиг', loadedFrom: 'Загружено', viaMacro: 'через макрос',
         o_view: 'Вид', o_phys: 'Физика', o_style: 'Стиль', o_export: 'Экспорт', col_metric: 'по метрике', sizeBy: 'Размер узлов',
@@ -68,10 +68,10 @@ const I18N = {
         o_screen: 'Экран', st_simple: 'Простой', st_cosmos: 'Космос', st_neon: 'Неон', presetEdited: 'Пресет изменён.', resetPreset: 'Вернуть пресет',
         palette: 'Палитра', pal_theme: 'Тема', pal_vivid: 'Сочная', pal_cosmos: 'Космос', pal_neon: 'Неон', pal_blueprint: 'Чертёж',
         shape: 'Форма узлов', sh_sphere: 'Сфера', sh_crystal: 'Кристалл', sh_wire: 'Каркас', material: 'Материал', m_flat: 'Матовый', m_soft: 'Мягкий', m_glow: 'Светящийся',
-        v_rim: 'Ободок (контур)', effects: 'Эффекты', colorShade: 'Яркость по метрике', canceled: 'Отменено', video: 'Видео и GIF', vidFormat: 'Формат', vidSize: 'Размер (квадрат, px)', vidFps: 'Кадров в секунду', v_vidDur: 'Длительность', v_vidSpeed: 'Скорость вращения', vidLoop: 'Ровно один оборот (бесшовный повтор)', vidSave: 'Записать', vidRec: 'Запись: кадр', vidDone: 'Видео сохранено', vidNoMp4: 'Браузер не умеет кодировать MP4 (нет WebCodecs) - запишется GIF.', arr_includes: 'A → B: A подключает B (#include / import - текст или модуль B нужен A при сборке)', arr_calls: 'A → B: A вызывает B', arr_callsFile: 'A → B: функции файла A вызывают функции B', arr_api: 'заголовок → объявление → файл реализации', arr_dirs: 'папка → содержимое', arrowHint: 'Направление связи: стрелки видны у выделенного узла, без выделения - градиент (темнее у источника, ярче у цели).', dirsFilter: 'Папки', g_nodes: 'Узлы', g_links: 'Связи', g_glow: 'Свечение', g_scene: 'Сцена', g_select: 'Выделение', v_linkGlow: 'Свечение связей', v_bloomRadius: 'Размер ореола', v_bloomThreshold: 'Порог свечения', c_orbits: 'Орбиты (оболочки)', c_fog: 'Туман глубины', c_additive: 'Сложение света (пучки ярче)',
+        v_rim: 'Ободок (контур)', effects: 'Эффекты', colorShade: 'Яркость по метрике', canceled: 'Отменено', video: 'Видео и GIF', vidFormat: 'Формат', vidSize: 'Размер (квадрат, px)', vidFps: 'Кадров в секунду', v_vidDur: 'Длительность', v_vidSpeed: 'Скорость вращения', vidLoop: 'Ровно один оборот (бесшовный повтор)', vidSave: 'Записать', vidRec: 'Запись: кадр', vidDone: 'Видео сохранено', vidNoMp4: 'Браузер не умеет кодировать MP4 (нет WebCodecs) - запишется GIF.', arr_includes: 'A → B: A подключает B (файл или модуль B нужен A)', arr_calls: 'A → B: A вызывает B', arr_callsFile: 'A → B: функции файла A вызывают функции B', arr_api: 'заголовок → объявление → файл реализации', arr_dirs: 'папка → содержимое', arrowHint: 'Направление связи: стрелки видны у выделенного узла, без выделения - градиент (темнее у источника, ярче у цели).', dirsFilter: 'Папки', g_nodes: 'Узлы', g_links: 'Связи', g_glow: 'Свечение', g_scene: 'Сцена', g_select: 'Выделение', v_linkGlow: 'Свечение связей', v_bloomRadius: 'Размер ореола', v_bloomThreshold: 'Порог свечения', c_orbits: 'Орбиты (оболочки)', c_fog: 'Туман глубины', c_additive: 'Сложение света (пучки ярче)',
         sky: 'Фон', sky_none: 'Нет', sky_gradient: 'Градиент', sky_stars: 'Звёзды', sky_nebula: 'Туманность', sky_grid: 'Сетка', v_skyAmt: 'Яркость фона', newSky: 'Сгенерировать новое небо',
         nearFade: 'Растворять узлы у камеры', perf: 'Производительность', fpsCap: 'Ограничение FPS', fps_auto: 'Нет', resScale: 'Разрешение рендера',
-        res_low: 'Низкое', res_mid: 'Среднее', res_auto: 'Авто', res_high: 'Высокое', gpuLabel: 'Видеокарта', gpuIntegratedHint: 'Похоже, браузер рисует на встроенной видеокарте. Если в компьютере есть дискретная (NVIDIA / AMD): Параметры Windows → Система → Дисплей → Графика → браузер → «Высокая производительность», затем перезапустите браузер.', gpuSoftwareHint: 'Браузер рисует без видеокарты (программно): включите аппаратное ускорение в настройках браузера.', gpuSlow: 'Не успевает видеокарта: FPS низкий, хотя сам сайт тратит на кадр несколько миллисекунд. Поможет разрешение «Авто» или выключенное свечение.', res_max: 'Максимум', perfHint: 'Кадры рисуются только при движении и анимации; без касаний - 30 к/с (автовращение - на полном FPS), после бездействия анимация засыпает (кроме автовращения). «Авто»-разрешение само снижается при просадке FPS. Больше всего нагрузки дают свечение, орбиты, импульсы и дрожание («Стиль»).',
+        res_low: 'Низкое', res_mid: 'Среднее', res_auto: 'Авто', res_high: 'Высокое', gpuLabel: 'Видеокарта', gpuIntegratedHint: 'Похоже, браузер рисует на встроенной видеокарте. Если в компьютере есть дискретная (NVIDIA / AMD): Параметры Windows → Система → Дисплей → Графика → браузер → «Высокая производительность», затем перезапустите браузер.', gpuSoftwareHint: 'Браузер рисует без видеокарты (программно): включите аппаратное ускорение в настройках браузера.', glLost: 'Видеокарта сбросила 3D-контекст (сбой драйвера или нехватка видеопамяти). Сцена вернётся сама; если нет - перезагрузите страницу.', glRestored: 'Видеокарта снова доступна', noWebGL: 'Браузер не дал WebGL - 3D-граф недоступен. Включите аппаратное ускорение в настройках браузера или обновите драйвер видеокарты; «Статистика» работает и без него.', gpuSlow: 'Не успевает видеокарта: FPS низкий, хотя сам сайт тратит на кадр несколько миллисекунд. Поможет разрешение «Авто» или выключенное свечение.', res_max: 'Максимум', perfHint: 'Кадры рисуются только при движении и анимации; без касаний - 30 к/с (автовращение - на полном FPS), после бездействия анимация засыпает (кроме автовращения). «Авто»-разрешение само снижается при просадке FPS. Больше всего нагрузки дают свечение, орбиты, импульсы и дрожание («Стиль»).',
         viaPtr: 'указатель', nodeMissing: 'Этого узла нет в текущем виде', showAll: 'Показать все', documented: 'Документировано', medianFn: 'Медиана функции', longFns: 'Функции > 50 строк', avgFile: 'Средний файл', codeLinesU: 'строк кода', ofProject: 'проекта',
         ch_tree: 'Карта кода', ch_treeHint: 'Площадь плитки - строки кода. Щелчок по папке - внутрь, по файлу - к файлу на графе; крупные папки сразу показывают содержимое.', tm_folders: 'папки', tm_comments: 'комментарии',
         ch_mix: 'Состав кода', ch_mixLang: 'Строки кода по языкам и из чего состоят все строки проекта.', ch_mixMod: 'Строки кода по модулям (папкам проекта) и из чего состоят все строки.',
@@ -91,7 +91,7 @@ const I18N = {
         pause: 'Пауза: раскладка и импульсы', resume: 'Продолжить раскладку и импульсы',
         showIndirect: 'Косвенные вызовы (через указатели на функции)',
         gradient: 'Направление связи градиентом', labels: 'Подписи', labelKinds: 'Подписывать типы узлов', camera: 'Камера',
-        mdHint: 'Текстовая документация из того же разбора: дерево, связи, описания из комментариев.', mdAll: 'Markdown: весь проект', mdApi: 'Markdown: только заголовки (API)',
+        mdHint: 'Текстовая документация из того же разбора: дерево, связи, описания из комментариев.', mdAll: 'Markdown: весь проект', mdApi: 'Markdown: только заголовки (API)', mdApiPub: 'Markdown: только публичное (API)', mdApiMixed: 'Markdown: только API',
         png: 'Картинка PNG', copyLink: 'Скопировать ссылку на вид', switchProject: 'Открыть другой проект…', copied: 'Скопировано',
         md_title: 'документация кода', md_titleApi: 'справочник API', md_generated: 'Сгенерировано Codrift', md_fromComments: 'Описания взяты из комментариев в исходниках.',
         md_toc: 'Содержание', md_tree: 'Структура директорий', md_source: 'исходник', md_desc: 'Описание', md_value: 'Значение', md_decl: 'Объявление',
@@ -103,34 +103,34 @@ const I18N = {
         ref: 'Branch / tag / commit (empty - default)', token: 'GitHub token (optional, kept only in this tab\'s memory)',
         load: 'Load and parse', pickDir: 'Choose folder…', pickZip: 'Open .zip…', pickFiles: 'Choose files…',
         filters: 'File filters', ignore: 'Ignore (glob per line)', includeOnly: 'Search only in (glob, empty - everywhere)',
-        exts: 'Extensions', incRoots: 'Include dirs (space-separated, auto - detect)', maxSize: 'Max file size, KB',
+        exts: 'Extensions', incRoots: 'C/C++ include dirs (space-separated, auto - detect)', maxSize: 'Max file size, KB',
         resetDefaults: 'Reset to defaults', examples: 'Examples:', welcomeTitle: '3D map of a code project',
-        welcomeText: 'Parses code right in your browser (C, C++, Java, C#, JS/TS, Python): #include/import graph, call graph, API, directory tree and line statistics. Nothing is sent anywhere except requests to GitHub.',
+        welcomeText: 'Parses code right in your browser (C, C++, Java, C#, JS/TS, Python): file import graph, call graph, API, directory tree and line statistics. Nothing is sent anywhere except requests to GitHub.',
         openGithub: 'GitHub repository…', openLocal: 'Local folder…', listing: 'Listing files…', reading: 'Reading files',
         parsing: 'Parsing', building: 'Building graph…', done: 'Done', files: 'Files', lines: 'Lines', code: 'Code', comments: 'Comments',
         blank: 'Blank', funcs: 'Functions', macros: 'Macros', types: 'Types', vars: 'Variables', ignored: 'Skipped (ignored)',
         layout: 'Layout', lay_force: 'Force', lay_td: 'Tree', lay_radial: 'Radial', colorBy: 'Color',
         col_kind: 'by kind', col_module: 'by module', labelsAll: 'Labels on all nodes', showExt: 'External (system/3rd-party)',
-        showVendor: '3rd-party library headers', showMacros: 'Macros as nodes', showRefs: 'Function references (callbacks)',
+        showVendor: '3rd-party library files', showMacros: 'Macros as nodes', showRefs: 'Function references (callbacks)',
         hideIsolated: 'Hide isolated', gran: 'Granularity', gran_fn: 'Functions', gran_file: 'Files', kinds: 'Show',
         includeC: 'Symbols from .c files too', arrows: 'Arrows', particles: 'Animate selected links',
-        includes: 'Includes', includedBy: 'Included by', calls: 'Calls', calledBy: 'Called by', declares: 'Declares',
+        includes: 'Imports', includedBy: 'Imported by', calls: 'Calls', calledBy: 'Called by', declares: 'Declares',
         declaredIn: 'Declared in', definedIn: 'Defined in', children: 'Contents', parent: 'Parent', definedHere: 'Functions in file',
         path: 'Path', kind: 'Kind', where: 'Where', length: 'Length', flyTo: 'Fly to node', focus: 'Neighborhood only', unfocus: 'Show all',
-        openGH: 'Open on GitHub', showCode: 'Code', transIncl: 'Transitively includes', usedBy: 'Used by',
+        openGH: 'Open on GitHub', showCode: 'Code', transIncl: 'Imports transitively', usedBy: 'Used by',
         noDef: 'no definition', static: 'static', inline: 'inline', external: 'external', vendor: '3rd-party library',
         nodes: 'nodes', links: 'links', dirStats: 'By directory', fileStats: 'By file', filter: 'filter',
-        longestFns: 'Longest functions', mostIncluded: 'Most included headers', mostCalled: 'Most called functions',
+        longestFns: 'Longest functions', mostIncluded: 'Most imported files', mostCalled: 'Most called functions',
         fanOut: 'Largest fan-out', diag: 'Diagnostics', protoNoDef: 'Prototypes without definition',
         noProto: 'Non-static functions without a header prototype', unused: 'Functions never called inside the project',
-        cycles: '#include cycles', headersUnused: 'Headers nobody includes', ratio: 'Comment density',
+        cycles: 'Import cycles', headersUnused: 'Headers nobody includes', ratio: 'Comment density',
         avgFn: 'avg function length', maxFn: 'max', filterEmpty: 'The live filter hid every node - clear it in the View tab.', rateFallback: 'GitHub API limit reached - the file list came from jsDelivr.', rateBig: 'The jsDelivr fallback cannot help: the repository is over 50 MB.', rateLimit: 'GitHub API rate limit exceeded. Add a token or wait until',
         notFound: 'Repository or ref not found (or it is private - a token is needed).', truncated: 'GitHub truncated the file list (very large repo) - some files are missing.',
         noFiles: 'No matching files found. Check the filters.', dagCycle: 'The graph has cycles - hierarchy is approximate.',
         tooMany: 'Too many files, took the first', fsUnsupported: 'This browser cannot pick folders - use zip or file selection.',
         selectNode: 'Tap a node to see details', more: 'more', total: 'Total', dir: 'directory', file: 'file', header: 'header',
         func: 'function', macro: 'macro', type: 'type', variable: 'variable', proj: 'Project', size: 'Size', theme: 'Theme',
-        includeEdges: '#include links', depth: 'Neighborhood depth', cancel: 'Cancel', ok: 'OK',
+        includeEdges: 'links between files', incCard: 'Imports', extIncludes: 'External imports', arr_apiPub: 'file → classes and methods declared in it', depth: 'Neighborhood depth', cancel: 'Cancel', ok: 'OK',
         implIn: 'Implemented in', params: 'Parameters', body: 'Body', module: 'Module', other: 'Other', none: 'none',
         clickHint: 'Tap a node for details, one finger rotates, two zoom/pan', loadedFrom: 'Loaded', viaMacro: 'via macro',
         o_view: 'View', o_phys: 'Physics', o_style: 'Style', o_export: 'Export', col_metric: 'by metric', sizeBy: 'Node size',
@@ -157,10 +157,10 @@ const I18N = {
         o_screen: 'Screen', st_simple: 'Simple', st_cosmos: 'Cosmos', st_neon: 'Neon', presetEdited: 'Preset modified.', resetPreset: 'Restore preset',
         palette: 'Palette', pal_theme: 'Theme', pal_vivid: 'Vivid', pal_cosmos: 'Cosmos', pal_neon: 'Neon', pal_blueprint: 'Blueprint',
         shape: 'Node shape', sh_sphere: 'Sphere', sh_crystal: 'Crystal', sh_wire: 'Wireframe', material: 'Material', m_flat: 'Matte', m_soft: 'Soft', m_glow: 'Glowing',
-        v_rim: 'Rim light', effects: 'Effects', colorShade: 'Brightness by metric', canceled: 'Cancelled', video: 'Video and GIF', vidFormat: 'Format', vidSize: 'Size (square, px)', vidFps: 'Frames per second', v_vidDur: 'Duration', v_vidSpeed: 'Rotation speed', vidLoop: 'Exactly one turn (seamless loop)', vidSave: 'Record', vidRec: 'Recording: frame', vidDone: 'Video saved', vidNoMp4: 'This browser cannot encode MP4 (no WebCodecs) - a GIF will be recorded.', arr_includes: 'A → B: A includes / imports B (B is needed to build A)', arr_calls: 'A → B: A calls B', arr_callsFile: 'A → B: functions of A call functions of B', arr_api: 'header → declaration → implementation file', arr_dirs: 'folder → contents', arrowHint: 'Link direction: arrows appear on the selected node, otherwise a gradient (darker at the source, brighter at the target).', dirsFilter: 'Folders', g_nodes: 'Nodes', g_links: 'Links', g_glow: 'Glow', g_scene: 'Scene', g_select: 'Selection', v_linkGlow: 'Link glow', v_bloomRadius: 'Glow radius', v_bloomThreshold: 'Glow threshold', c_orbits: 'Orbits (shells)', c_fog: 'Depth fog', c_additive: 'Additive light (bundles glow)',
+        v_rim: 'Rim light', effects: 'Effects', colorShade: 'Brightness by metric', canceled: 'Cancelled', video: 'Video and GIF', vidFormat: 'Format', vidSize: 'Size (square, px)', vidFps: 'Frames per second', v_vidDur: 'Duration', v_vidSpeed: 'Rotation speed', vidLoop: 'Exactly one turn (seamless loop)', vidSave: 'Record', vidRec: 'Recording: frame', vidDone: 'Video saved', vidNoMp4: 'This browser cannot encode MP4 (no WebCodecs) - a GIF will be recorded.', arr_includes: 'A → B: A imports B (file or module B is needed by A)', arr_calls: 'A → B: A calls B', arr_callsFile: 'A → B: functions of A call functions of B', arr_api: 'header → declaration → implementation file', arr_dirs: 'folder → contents', arrowHint: 'Link direction: arrows appear on the selected node, otherwise a gradient (darker at the source, brighter at the target).', dirsFilter: 'Folders', g_nodes: 'Nodes', g_links: 'Links', g_glow: 'Glow', g_scene: 'Scene', g_select: 'Selection', v_linkGlow: 'Link glow', v_bloomRadius: 'Glow radius', v_bloomThreshold: 'Glow threshold', c_orbits: 'Orbits (shells)', c_fog: 'Depth fog', c_additive: 'Additive light (bundles glow)',
         sky: 'Background', sky_none: 'None', sky_gradient: 'Gradient', sky_stars: 'Stars', sky_nebula: 'Nebula', sky_grid: 'Grid', v_skyAmt: 'Background brightness', newSky: 'Generate new sky',
         nearFade: 'Dissolve nodes near camera', perf: 'Performance', fpsCap: 'FPS limit', fps_auto: 'None', resScale: 'Render resolution',
-        res_low: 'Low', res_mid: 'Medium', res_auto: 'Auto', res_high: 'High', gpuLabel: 'Graphics card', gpuIntegratedHint: 'The browser seems to render on the integrated GPU. If the computer has a discrete one (NVIDIA / AMD): Windows Settings → System → Display → Graphics → your browser → "High performance", then restart the browser.', gpuSoftwareHint: 'The browser renders without a GPU (software): enable hardware acceleration in the browser settings.', gpuSlow: 'The GPU cannot keep up: FPS is low although the site itself spends only a few ms per frame. Try Auto resolution or turn off glow.', res_max: 'Max', perfHint: 'Frames are drawn only while something moves or animates. Glow, orbits, pulses, jitter and rotation cost the most - turn them off in Style.',
+        res_low: 'Low', res_mid: 'Medium', res_auto: 'Auto', res_high: 'High', gpuLabel: 'Graphics card', gpuIntegratedHint: 'The browser seems to render on the integrated GPU. If the computer has a discrete one (NVIDIA / AMD): Windows Settings → System → Display → Graphics → your browser → "High performance", then restart the browser.', gpuSoftwareHint: 'The browser renders without a GPU (software): enable hardware acceleration in the browser settings.', glLost: 'The GPU reset the 3D context (driver failure or out of video memory). The scene will come back by itself; if not, reload the page.', glRestored: 'The GPU is available again', noWebGL: 'The browser gave no WebGL, so the 3D graph is unavailable. Enable hardware acceleration in the browser settings or update the GPU driver; Statistics works without it.', gpuSlow: 'The GPU cannot keep up: FPS is low although the site itself spends only a few ms per frame. Try Auto resolution or turn off glow.', res_max: 'Max', perfHint: 'Frames are drawn only while something moves or animates. Glow, orbits, pulses, jitter and rotation cost the most - turn them off in Style.',
         viaPtr: 'pointer', nodeMissing: 'This node is not in the current view', showAll: 'Show all', documented: 'Documented', medianFn: 'Median function', longFns: 'Functions > 50 lines', avgFile: 'Average file', codeLinesU: 'lines of code', ofProject: 'of the project',
         ch_tree: 'Code map', ch_treeHint: 'Tile area is lines of code. Click a folder to zoom in, a file to open it on the graph; large folders show their contents.', tm_folders: 'folders', tm_comments: 'comments',
         ch_mix: 'Code mix', ch_mixLang: 'Lines of code by language and what all project lines consist of.', ch_mixMod: 'Lines of code by module (project folder) and what all lines consist of.',
@@ -172,7 +172,7 @@ const I18N = {
         ch_coupling: 'Function coupling', ch_couplingHint: 'Each dot is a function: right = how many it calls, up = how many call it. Top right are hubs: changing them affects a lot. Color is length.',
         ax_callees: 'calls functions', ax_callers: 'called by', q_hub: 'hubs', q_core: 'core: called by many', q_orch: 'orchestrators: call many',
         ch_pareto: 'Code concentration', ch_paretoHint: 'How much of the code sits in the largest files (Pareto curve). Dashed: if all files were equal.', ax_files: 'share of files, largest first', ax_codeShare: 'share of code',
-        pareto80: '80% of the code is in {p} of files', ch_deps: 'File dependencies', ch_depsHint: 'Each dot is a file: right = how many files it includes, up = how many include it. Top right are hubs: editing one rebuilds a lot, and it pulls in a lot.', ax_incs: 'includes files', ax_incBy: 'included by', q_stable: 'stable: included by many', q_dependent: 'dependent: include many', pareto50: 'half of the code is in {p} of files', maxFiles: 'Max files',
+        pareto80: '80% of the code is in {p} of files', ch_deps: 'File dependencies', ch_depsHint: 'Each dot is a file: right = how many files it imports, up = how many import it. Top right are hubs: editing one rebuilds a lot, and it pulls in a lot.', ax_incs: 'includes files', ax_incBy: 'included by', q_stable: 'stable: included by many', q_dependent: 'dependent: include many', pareto50: 'half of the code is in {p} of files', maxFiles: 'Max files',
         tooManyHint: 'Narrow it down with “Search only in”.',
         c_bloom: 'Enable glow (bloom)', c_stars: 'Stars and nebulae',
         c_electrons: 'Electron shells', c_pulses: 'Pulses along links', c_autoRotate: 'Auto-rotation', v_glow: 'Glow strength',
@@ -180,7 +180,7 @@ const I18N = {
         pause: 'Pause layout and pulses', resume: 'Resume layout and pulses',
         showIndirect: 'Indirect calls (via function pointers)',
         gradient: 'Link direction as gradient', labels: 'Labels', labelKinds: 'Label these node kinds', camera: 'Camera',
-        mdHint: 'Text documentation from the same parse: tree, relations, descriptions from comments.', mdAll: 'Markdown: whole project', mdApi: 'Markdown: headers only (API)',
+        mdHint: 'Text documentation from the same parse: tree, relations, descriptions from comments.', mdAll: 'Markdown: whole project', mdApi: 'Markdown: headers only (API)', mdApiPub: 'Markdown: public only (API)', mdApiMixed: 'Markdown: API only',
         png: 'PNG screenshot', copyLink: 'Copy link', switchProject: 'Open another project…', copied: 'Copied',
         md_title: 'code documentation', md_titleApi: 'API reference', md_generated: 'Generated by Codrift', md_fromComments: 'Descriptions are taken from source comments.',
         md_toc: 'Contents', md_tree: 'Directory structure', md_source: 'source', md_desc: 'Description', md_value: 'Value', md_decl: 'Declaration',
@@ -191,7 +191,7 @@ const store = {
     get(k, d) { try { const v = localStorage.getItem('drift.' + k); return v == null ? d : JSON.parse(v); } catch { return d; } },
     set(k, v) { try { localStorage.setItem('drift.' + k, JSON.stringify(v)); } catch { /* приватный режим */ } },
 };
-// Настройки со времён прежнего имени (ключи «ccv.*») переезжают на новые один раз
+// Перенос настроек со старым префиксом ключей «ccv.*» на «drift.*»
 try {
     for (const k of Object.keys(localStorage)) {
         if (!k.startsWith('ccv.')) continue;
@@ -230,9 +230,8 @@ const sleep0 = () => new Promise(r => setTimeout(r, 0));
 const _yc = new MessageChannel(), _yq = [];
 _yc.port1.onmessage = () => { const f = _yq.shift(); if (f) f(); };
 const yieldNow = () => new Promise(r => { _yq.push(r); _yc.port2.postMessage(0); });
-// Передышка с отрисовкой страницы: после yieldNow браузер не успевает нарисовать кадр, и при длинной работе (запись
-// GIF) экран замирал - шкала хода стояла на месте до конца. Ждём кадр (requestAnimationFrame); в фоновой вкладке он
-// не приходит - тогда хватает таймера
+// Передышка с отрисовкой страницы: ждёт кадр (requestAnimationFrame), чтобы при долгой работе (запись GIF) шкала хода
+// успевала перерисоваться; в фоновой вкладке кадров нет - тогда срабатывает таймер
 const yieldPaint = () => new Promise(r => { let done = false; const go = () => { if (!done) { done = true; r(); } }; requestAnimationFrame(() => setTimeout(go, 0)); setTimeout(go, 120); });
 // Отмена долгих операций (загрузка / обновление проекта, запись ролика)
 const CANCELED = 'drift-canceled';
@@ -280,7 +279,7 @@ const DEFAULT_IGNORE = [
 ].join('\n');
 // Языки по умолчанию не заданы - определяются по файлам проекта (самые частые)
 const DEFAULTS = { ignore: DEFAULT_IGNORE, only: '', exts: '', roots: 'auto', maxKB: 1024, maxFiles: 5000 };
-// Сохранённые прежние значения по умолчанию заменяются новыми (изменённые пользователем - остаются)
+// Сохранённые старые значения по умолчанию заменяются текущими (изменённые вручную не трогаются)
 if (store.get('exts', null) === '.c .h') store.set('exts', '');
 { const ig = store.get('ignore', null); if (ig && ((ig.startsWith('# Каталоги сторонних библиотек и сборки') && ig.trim().endsWith('cJSON_Utils.*')) || (ig.startsWith('# Служебные каталоги') && !ig.includes('SDL*/')))) store.set('ignore', DEFAULT_IGNORE); }
 
@@ -464,7 +463,7 @@ function setProgress(text, frac, isErr) {
     if (el) el.innerHTML = `<div class="${isErr ? 'err' : ''}">${esc(text)}</div>` + (frac != null ? `<div class="bar"><div style="width:${Math.round(frac * 100)}%"></div></div><button class="chip" data-cancel style="margin-top:6px">✕ ${esc(t('cancel'))}</button>` : '');
     const ld = $('#loading'); if (ld && !isErr && !refreshing) { ld.hidden = frac == null && !busy; ld.textContent = text; }
     if (!$('#boot').hidden && !isErr) { $('#bootText').textContent = text; if (frac != null) $('#bootBar').style.width = Math.round(frac * 100) + '%'; }
-    // Обновление проекта: граф остаётся на экране, ход - тонкой шкалой сверху (раньше было непонятно, идёт ли обновление)
+    // Обновление проекта: граф остаётся на экране, ход показывает тонкая шкала сверху
     const rb = $('#rbar'); bindCancelButtons();
     if (rb) { if (refreshing && !isErr) { rb.hidden = false; $('#rbarText').textContent = `${t('refreshing')} ${text}`; if (frac != null) $('#rbarFill').style.width = Math.round(frac * 100) + '%'; } else rb.hidden = true; }
     if (isErr && ld) ld.hidden = true;
@@ -573,7 +572,7 @@ async function runSource(makeSource, opts) {
         onModelReady();
     } catch (err) {
         busy = false; bootFail(); refreshing = false; $('#rbar').hidden = true; $('#loading').hidden = true;
-        // Отменили - не ошибка: проект (если был открыт) остаётся как был
+        // Отмена - не ошибка: открытый проект остаётся прежним
         if (err.message === CANCELED) { loadCancel = false; setProgress(t('canceled'), null); toast(t('canceled'), 2000); return; }
         console.error(err);
         setProgress(err.message || String(err), null, true);
@@ -891,9 +890,9 @@ for (const v in defOpts) viewOpts[v] = Object.assign({}, defOpts[v], viewOpts[v]
 // «Дерево →» убрано (камера свободная - направление ничего не меняет): сохранённое и из ссылок становится «Деревом»
 const normLayouts = () => { for (const v in viewOpts) if (viewOpts[v].layout === 'lr') viewOpts[v].layout = 'td'; };
 normLayouts();
-// «Скрыть изолированные» в «Вызовах» теперь выключено по умолчанию - один раз и для сохранённых настроек
-// «Сложение света» по умолчанию выключено - один раз и для сохранённого «Неона» (если стиль не меняли вручную)
-// «Дерево» по умолчанию в «API» и «Директориях», «Яркость по метрике» выключена - один раз и для сохранённых настроек
+// Обновление значений по умолчанию в сохранённых настройках (каждое - один раз): «Скрыть изолированные» в «Вызовах»
+// выключено; «Сложение света» в «Неоне» выключено (если стиль не меняли вручную); «Дерево» - раскладка «API»
+// и «Директорий»; «Яркость по метрике» выключена
 if (!store.get('defaults8', false)) {
     for (const v of ['api', 'dirs']) if (viewOpts[v].layout === 'force') viewOpts[v].layout = 'td';
     store.set('viewOpts', viewOpts);
@@ -903,8 +902,8 @@ if (!store.get('defaults8', false)) {
 if (!store.get('defaults7', false)) { const v0 = store.get('vis', null); if (v0 && v0.style === 'neon' && !v0.styleEdited && v0.additive) { v0.additive = false; store.set('vis', v0); } store.set('defaults7', true); }
 if (!store.get('defaults6', false)) { viewOpts.calls.hideIsolated = false; store.set('viewOpts', viewOpts); store.set('defaults6', true); }
 const IS_TOUCH = matchMedia('(pointer: coarse)').matches;
-// Сглаживание MSAA 4x теперь по умолчанию на компьютерах: тысячи однопиксельных линий плотного графа мерцали при
-// повороте камеры (линии перескакивали между пикселями, свечение это усиливало) - один раз и для сохранённых настроек
+// Сглаживание MSAA 4x по умолчанию на компьютерах (один раз и для сохранённых настроек): без него тысячи
+// однопиксельных линий плотного графа мерцают при повороте камеры
 if (!store.get('defaults9', false)) { const v0 = store.get('vis', null); if (v0 && !IS_TOUCH && !v0.msaa) { v0.msaa = 4; store.set('vis', v0); } store.set('defaults9', true); }
 const VIS_DEF = {
     sizeBy: 'both', colorShade: false, nodeSize: 1, nodeOpacity: 1, linkOpacity: 0.5, linkGlow: 1, bloomRadius: 0.45, bloomThreshold: 0.24, quality: 8, gradient: true, arrows: true, particles: true,
@@ -971,7 +970,7 @@ function macroNode(m) { return { id: m.id, label: m.name, sub: m.file.path + ':'
 function extNode(id, name, kind) { return { id, label: name, sub: kind === 'vendor' ? t('vendor') : t('external'), kind: kind === 'vendor' ? 'vendor' : 'ext', mod: '…', val: 0.8, ref: null }; }
 
 // Живой фильтр: «src/core !tests» - показывать только совпадения, «!» исключает; скрытые модули - по чипам
-// Фильтр относится к проекту: другой проект открывается без него (раньше «src/cgdf/» от CGDF оставлял Mindustry пустым)
+// Фильтр относится к проекту: другой проект открывается без него
 const liveFilter = { text: store.get('lfText', ''), hidden: new Set(store.get('lfHidden', [])), dirs: new Set(store.get('lfDirs', [])), _res: null, _text: null, fromUrl: false };
 function liveTerms() {
     if (liveFilter._text !== liveFilter.text) {
@@ -1177,8 +1176,8 @@ function expandOut(fn, o) {
    ====================================================================== */
 let G = null, gdata = { nodes: [], links: [] }, adj = { out: new Map(), inn: new Map() };
 let selId = null, hlNodes = new Set(), hlLinks = new Set();
-// Выделенные связи рисует библиотека по позициям раскладки, а узлы в это время ещё вырастают волной из соседей -
-// связи торчали к местам, где узлов пока нет. Пока граф собирается, они (и их импульсы) придержаны
+// Выделенные связи рисует библиотека по позициям раскладки, а узлы во время сборки графа ещё растут: до конца
+// сборки эти связи (и их импульсы) не показываются
 let hlHeld = false; // был ли рост на прошлом кадре: по окончании роста связи показываются заново
 let paused = false, fitPending = false;
 const colorCache = {};
@@ -1211,8 +1210,7 @@ function readColors() {
     // Палитра сцены (кроме «как у темы») - граф всегда на своём тёмном фоне
     const pal = PALETTES[vis.palette];
     if (pal) { Object.assign(colorCache, pal); colorCache.dark = true; }
-    // Внешние и «прочие» узлы (каркасы) на тёмном фоне - светло-серые: тёмных было не видно, а почти белые путались
-    // с яркими узлами кода
+    // Внешние и «прочие» узлы (каркасы) на тёмном фоне - светло-серые: заметные, но не спорят с яркими узлами кода
     if (colorCache.dark) colorCache['--ext'] = '#' + new THREE.Color(colorCache['--ext']).lerp(new THREE.Color('#9aa1ad'), 0.8).getHexString();
 }
 const MOD_SLOTS = ['--s1', '--s2', '--s3', '--s4', '--s5', '--s6', '--s7'];
@@ -1235,7 +1233,7 @@ function calcMetricMax() {
 
 
 // Ранг узла для «яркости по метрике» (0 - самый мелкий, 1 - самый крупный) - по той же величине, что и размер.
-// Ранг, а не доля от максимума: один гигантский метод на тысячи строк сжимал шкалу, и почти все узлы были одинаковыми
+// Ранг, а не доля от максимума: один гигантский узел не сжимает шкалу всех остальных
 function shadeRanks() {
     const ns = gdata.nodes, N = ns.length; if (!N) return;
     const val = n => (vis.sizeBy === 'uniform' ? n.val : nodeVal(n));
@@ -1292,8 +1290,8 @@ function linkBase(l) { return colorCache[LINK_KIND_COLOR[l.kind]] || colorCache[
 function hlLinkColor(l) { return (l.source.id || l.source) === selId ? colorCache['--hl'] : colorCache['--s1']; }
 
 /* ----- Рендер только по необходимости -----
-   Библиотека сама рисовала бы каждый кадр. Мы останавливаем её цикл и даём ровно один кадр
-   (шаг раскладки + рендер), когда что-то меняется: камера, раскладка, анимация, выделение. */
+   Собственный цикл библиотеки остановлен: ровно один кадр (шаг раскладки + рендер) рисуется,
+   когда что-то меняется: камера, раскладка, анимация, выделение. */
 let needRender = true, engineActive = false, lastRender = 0;
 const requestRender = () => { needRender = true; };
 // Анимация с плавной остановкой: ts - масштаб времени (1 - идёт, 0 - уснула), animT - «время анимации»
@@ -1301,10 +1299,8 @@ const anim = { ts: 1, t: 0 };
 const wantsAnimation = () => vis.wobble > 0 || vis.orbits || vis.pulses || vis.autoRotate || (!!selId && vis.particles);
 let growUntil = 0, growOrder = null;
 const GROW_DUR = 0.7;
-// Сборка графа: узел вырастает почти на своём месте (выезжает из родителя лишь на GROW_TRAVEL пути), а связь
-// проявляется, когда оба её конца выросли больше чем на LINK_GROW_FROM. Раньше узлы летели из родителя через весь
-// граф, и десятки тысяч связей к ещё не выросшим узлам сходились в несколько точек - граф во время сборки походил
-// на рваный кристалл, а полупрозрачные связи темнели поверх ореола
+// Сборка графа: узел вырастает почти на своём месте (выезжает из родителя лишь на долю GROW_TRAVEL пути), а связь
+// проявляется, когда оба её конца выросли больше чем на LINK_GROW_FROM: связи не тянутся к ещё пустым местам
 const GROW_TRAVEL = 0.3, LINK_GROW_FROM = 0.4;
 function linkGrow(a, b, t) {
     const g = Math.min(growOf(a, t), growOf(b, t)); if (g <= LINK_GROW_FROM) return 0;
@@ -1358,9 +1354,8 @@ function planGrowth(nodes, t0) {
 
 
 // Начальные места узлов для раскладки - от «главного» узла в порядке роста: каждый рядом со своим родителем, на
-// сфере тем большей, чем больше у родителя детей. Иначе d3 ставил узлы без координат на регулярную решётку, и первую
-// секунду сборки граф был плоским «бруском»; теперь он с самого начала разрастается из главного узла.
-// Места уходят только в поток раскладки (n.__seed), а не в узлы: камера, как и прежде, ждёт первых позиций раскладки
+// сфере тем большей, чем больше у родителя детей (иначе d3 ставит узлы без координат на регулярную решётку).
+// Места уходят только в поток раскладки (n.__seed), а не в узлы: камера ждёт первых позиций раскладки
 function seedPositions(nodes, order) {
     const kids = new Int32Array(nodes.length), R = 20 * Math.cbrt(Math.max(1, nodes.length)), rnd = () => Math.random() * 2 - 1;
     for (const n of nodes) if (n.__par >= 0) kids[n.__par]++;
@@ -1445,20 +1440,18 @@ function renderStep(now) {
     // Свободная камера - вокруг её вертикали (граф крутится по горизонтали экрана, как бы камеру ни повернули);
     // классическая - вокруг вертикали мира (горизонт и так ровный)
     if (rotating) { _qa.setFromAxisAngle(_wy, dt * 0.045 * vis.rotateSpeed * anim.ts); if (vis.freeRotate) o.gq.multiply(_qa); else o.gq.premultiply(_qa); }
-    // Камера не заходит внутрь узла, на который смотрит: изнутри сферы узел не виден, пропадало и его свечение,
-    // а экран заливали цветом связи, сходящиеся в центре узла
+    // Камера не заходит внутрь узла, на который смотрит: изнутри сферы не видны ни узел, ни его свечение
     if (o.gdist < 400) { const md = minOrbitDist(); if (o.gdist < md) { o.gdist = md; if (o.fly) o.fly.td = Math.max(o.fly.td, md); } }
     const [gsx, gsy] = viewShiftGoal();
     const moving = !!o.fly || 1 - Math.abs(o.q.dot(o.gq)) > 1e-9 || Math.abs(Math.log(o.gdist / o.dist)) > 1e-4 ||
         o.t.distanceTo(o.gt) > o.dist * 1e-4 || Math.abs(gsx - o.sx) > 0.3 || Math.abs(gsy - o.sy) > 0.3 || Math.abs(projGoal() - o.p) > 1e-3;
     const fading = selFade.v !== selGoal();
     if (!(needRender || moving || engineActive || posDirty || animating || fading || pinterp.active || hlHeld)) { dyn.chain = false; pace.acc = 0; return; } // простой - ничего не рисуем
-    // Пока пользователь не трогает сцену, фоновая анимация идёт на 30 к/с. Автовращение - на полном FPS:
-    // движется вся сцена, и на 30 к/с вращение заметно дёргалось
+    // Пока сцену не трогают, фоновая анимация идёт на 30 к/с; автовращение - на полном FPS (движется вся сцена)
     let cap = vis.fps > 0 ? vis.fps : 0;
     if (idle > 3 && !engineActive && !needRender && !o.fly && !rotating) cap = cap ? Math.min(cap, 30) : 30;
     // Ограничение кадров «бюджетом»: время между тактами монитора копится, кадр рисуется, когда набрался интервал,
-    // остаток переносится. Раньше кадр ждал целый лишний такт: на 75 Гц предел 60 давал 37 к/с, на 144 Гц - 48
+    // остаток переносится - предел точный при любой частоте монитора
     if (cap) {
         const iv = 1000 / cap;
         pace.acc += tick;
@@ -1568,8 +1561,8 @@ function bindOrbitInput(el) {
         const ang = orbit.q.angleTo(orbit.gq);
         if (ang > MAX_LEAD) orbit.q.slerp(orbit.gq, 1 - MAX_LEAD / ang);
     };
-    // Сброс ввода: палец, отпущенный над кнопкой или панелью, иначе «оставался» на экране -
-    // следующее касание считалось вторым пальцем, и камера залипала в режиме щипка
+    // Сброс ввода: палец, отпущенный над кнопкой или панелью, иначе «остаётся» на экране - следующее касание
+    // считается вторым пальцем, и камера залипает в режиме щипка
     const resetInput = () => { ptrs.clear(); mode = null; down = null; };
     el.addEventListener('pointerdown', e => {
         cz.lastInput = performance.now();
@@ -1713,7 +1706,7 @@ let nodesObj = null, extObj = null;
 // кэш сбрасывается при перестройке узлов (вид, размер, «размер по»)
 let radVer = 1;
 const nodeRadius = n => n.__rv === radVer ? n.__r : (n.__rv = radVer, n.__r = Math.cbrt(Math.max(0.01, nodeVal(n))) * 3.2 * vis.nodeSize * (isExtNode(n) ? 0.8 : 1));
-// Для библиотеки (стрелки выделенных связей упираются в поверхность узла) - тот же радиус, что рисуем мы
+// Для библиотеки (стрелки выделенных связей упираются в поверхность узла) - тот же радиус, что у общего меша узлов
 const nodeValLib = n => nodeVal(n) * (isExtNode(n) ? 0.512 : 1);
 const fadeUniform = { value: 0 }, rimUniform = { value: 0 };
 // Материал узлов: Ламберт + (по стилю) свечение цветом экземпляра, ободок (rim), растворение у камеры
@@ -1777,16 +1770,14 @@ let nodeCol = new Float32Array(0), nodeShade = new Float32Array(0), linkCol = ne
 // Гашение невыделенного: v плавно идёт к 1 при выделении и к 0 без него; hl / hlL - узлы и связи, которые не гаснут
 // (остаются от последнего выделения, пока идёт обратное проявление)
 const selFade = { v: 0, hl: null, hlL: null, dirty: false };
-// Погашенный узел в основном прозрачен (85% пикселей отброшены), а оставшиеся - приглушены, но не чёрные:
-// тёмные пятна поверх ярких связей выглядели «дырами»
+// Погашенный узел в основном прозрачен (85% пикселей отброшены), а оставшиеся - приглушены, но не чёрные
 const SEL_DIM_NODE = 0.85, SEL_DIM_LINK = 0.95;
-// Выделенные связи библиотека рисует отдельным объектом каждую и пересчитывает их в каждом кадре: у узла с сотнями
-// связей (Blocks.java в Mindustry - 646) кадр рос с 10 до 60 мс. Больше HL_LIB_MAX связей - библиотека их не рисует,
-// они идут одним слоем линий (hlLinesObj) со своей непрозрачностью, остальные связи гаснут как обычно
+// Выделенные связи библиотека рисует отдельным объектом каждую и пересчитывает их в каждом кадре - для узла с сотнями
+// связей это дорого. Больше HL_LIB_MAX связей - их рисует один слой линий (hlLinesObj) со своей непрозрачностью
 const HL_LIB_MAX = 120;
-// Гашение остального графа при выделении - только когда граф собрался: во время сборки выделенные связи ещё
-// не показаны, и погашенный граф выглядел тёмными линиями поверх ореола. После сборки остальное гаснет, а выделенные
-// связи (библиотеки, слой hlLinesObj, импульсы) проявляются вместе с этим гашением - одной плавной анимацией
+// Гашение остального графа при выделении - только когда граф собрался (во время сборки выделенные связи ещё
+// не показаны). После сборки остальное гаснет, а выделенные связи (библиотеки, слой hlLinesObj, импульсы)
+// проявляются вместе с этим гашением - одной плавной анимацией
 const selGoal = () => (selId && !isGrowing() ? 1 : 0);
 function setHlLibOpacity(f) {
     for (const l of hlLinks) {
@@ -1808,7 +1799,7 @@ function rebuildNodeMesh() {
     G.scene().add(nodesObj);
     // Внешние функции и заголовки - полупрозрачные каркасы, чтобы их не путать с кодом проекта
     const extMat = new THREE.MeshBasicMaterial({ wireframe: true, transparent: true, opacity: 0.6, depthWrite: false });
-    // Погашенный каркас - почти прозрачный (а не тёмный: чёрные точки поверх светящихся связей)
+    // Погашенный каркас - почти прозрачный, а не тёмный
     extMat.onBeforeCompile = sh => {
         sh.vertexShader = 'attribute float aDim;\nvarying float vDim;\n' + sh.vertexShader.replace('#include <begin_vertex>', '#include <begin_vertex>\n    vDim = aDim;');
         sh.fragmentShader = 'varying float vDim;\n' + sh.fragmentShader.replace('#include <opaque_fragment>', 'diffuseColor.a *= 1.0 - vDim * 0.85;\n#include <opaque_fragment>');
@@ -1835,7 +1826,7 @@ function recolorNodes() {
     for (const n of gdata.nodes) {
         const bc = baseColor(n); shadeColor(n, _col.set(bc), true);
         // Серые «прочие» узлы на тёмной сцене приглушаются уже после освещения: нормировка пересвета сохраняет только
-        // оттенок, и серый цвет со свечением становился почти белым - его путали с яркими узлами
+        // оттенок, и серый цвет со свечением иначе становится почти белым
         nodeShade[n.__i] = shadeMul(n) * (colorCache.dark && bc === colorCache['--ext'] ? 0.6 : 1);
         if (isExtNode(n) && !colorCache.dark) _col.lerp(_bg, 0.35); // на тёмной сцене внешние - светло-серые, без притемнения
         nodeCol[n.__i * 3] = _col.r; nodeCol[n.__i * 3 + 1] = _col.g; nodeCol[n.__i * 3 + 2] = _col.b;
@@ -1910,8 +1901,8 @@ function recolorLines() {
         col[i++] = s.r; col[i++] = s.g; col[i++] = s.b; col[i++] = c.r; col[i++] = c.g; col[i++] = c.b;
     }
     lineColVer++;
-    // Плотный граф (десятки связей на узел, как подключения Java-проекта): десятки тысяч линий складывались в сплошное
-    // пятно, за которым не видно узлов - каждая линия тем тусклее, чем больше связей на узел
+    // Плотный граф (десятки связей на узел, как подключения Java-проекта): чтобы десятки тысяч линий не сливались
+    // в сплошное пятно, каждая линия тем тусклее, чем больше связей на узел
     const perNode = gdata.links.length / Math.max(1, gdata.nodes.length), denseDim = Math.max(0.15, Math.min(1, Math.sqrt(4 / Math.max(1e-6, perNode))));
     linesObj.material.opacity = vis.linkOpacity * (vis.additive ? 0.75 : 1) * denseDim;
     // Свечение связей: цвет ярче 1 (кадр считается в буфере с плавающей точкой) - при сложении света густые пучки
@@ -2076,7 +2067,7 @@ function ensureBloom() {
     if (!cz.bloom && want) {
         const el = $('#graph');
         const pass = new window.UnrealBloomPass(new THREE.Vector2(el.clientWidth || 512, el.clientHeight || 512), vis.glow, vis.bloomRadius, vis.bloomThreshold);
-        // Свечение: на экранах до 1080p - в полном разрешении (в половинном размытие давало «квадратные» пятна), на больших - с понижением.
+        // Свечение: на экранах до 1080p - в полном разрешении (в половинном размытие даёт «квадратные» пятна), на больших - с понижением.
         // На телефонах (высокая плотность пикселей, слабый GPU) - в 0.75: там ступеньки не видны
         const orig = pass.setSize.bind(pass);
         pass.setSize = (w, h) => {
@@ -2288,8 +2279,8 @@ function syncHlLines(Lk, D, fl, fv) {
 // Дуга встречной связи li в её место буфера дуг; вершина кривой - в mutCP (по ней же бегут импульсы)
 function writeCurve(l, li, ia, ib, D, colDirty, growing, tNow, fl, kl, bgc) {
     const ax = D[ia], ay = D[ia + 1], az = D[ia + 2], vx = D[ib] - ax, vy = D[ib + 1] - ay, vz = D[ib + 2] - az;
-    // (v × кривизна) × ось - точно как в three-forcegraph (calcLinkCurve): ось (0, 0, 1), а для связи вдоль Z - (0, 1, 0).
-    // Раньше бралась ось Y: библиотека выгибала выделенную дугу в другую сторону, и стрелки шли мимо наших дуг
+    // (v × кривизна) × ось - точно как в three-forcegraph (calcLinkCurve): ось (0, 0, 1), а для связи вдоль Z - (0, 1, 0);
+    // выделенная дуга библиотеки и её стрелки ложатся точно на эту дугу
     let cx, cy, cz2;
     if (vx !== 0 || vy !== 0) { cx = vy * CURVE_K; cy = -vx * CURVE_K; cz2 = 0; } else { cx = -vz * CURVE_K; cy = 0; cz2 = vx * CURVE_K; }
     const px = ax + vx / 2 + cx, py = ay + vy / 2 + cy, pz = az + vz / 2 + cz2;
@@ -2429,9 +2420,8 @@ function frameSync(t, dt, cam) {
         geo.setDrawRange(0, Lk.length * 2);
         const at = geo.attributes.position; at.clearUpdateRanges(); at.addUpdateRange(0, n); at.needsUpdate = true;
         if (colDirty) { const ac = geo.attributes.color; ac.clearUpdateRanges(); ac.addUpdateRange(0, n); ac.needsUpdate = true; }
-        // Много выделенных связей (их не рисует библиотека) - свой слой поверх общего буфера со своей непрозрачностью.
-        // В плотном графе общий буфер почти прозрачен (denseDim), и выделенные связи были видны, только пока лежали
-        // пучком: стоило повернуть камеру, и они массово пропадали
+        // Много выделенных связей (их не рисует библиотека) - свой слой поверх общего буфера со своей непрозрачностью:
+        // в плотном графе общий буфер почти прозрачен (denseDim)
         if (fl && fl.size > HL_LIB_MAX && !growing) syncHlLines(Lk, D, fl, fv);
         else if (hlLinesObj) hlLinesObj.visible = false;
     }
@@ -2472,16 +2462,15 @@ function frameSync(t, dt, cam) {
 }
 // Импульсы на видимых связях: vis.pulseRate в секунду на связь, постоянная скорость, затухание у концов
 const _pc = new THREE.Color();
-// Бюджет точек импульсов: на огромных графах (30к связей) их были сотни тысяч - миллисекунды кадра и сплошная
-// «каша». Сверх бюджета импульсы идут по постоянной (не мерцающей) части связей
+// Бюджет точек импульсов: на огромных графах их понадобились бы сотни тысяч. Сверх бюджета импульсы идут
+// по постоянной части связей
 const PULSE_BUDGET = 30000;
 function emitPulses(obj, D, t, gain, accept, colorFn, dt) {
     if (!obj) return;
     if (gain <= 0.001) { obj.geometry.setDrawRange(0, 0); return; }
     const Lk = gdata.links, speed = Math.max(1, vis.pulseSpeed), period = 1 / Math.max(0.05, vis.pulseRate), step = speed * period;
-    // Доля связей с импульсами - по оценке прошлого кадра (сколько точек понадобилось бы всем связям)
-    // Доля связей с импульсами меняется плавно: поворот камеры меняет набор видимых связей, и раньше импульсы разом
-    // включались и гасли на тысячах связей - яркость связей прыгала. У порога доли импульсы связи плавно гаснут
+    // Доля связей с импульсами - по оценке прошлого кадра (сколько точек понадобилось бы всем связям). Она меняется
+    // плавно (набор видимых связей зависит от камеры), а у порога доли импульсы связи плавно гаснут
     const goal = Math.min(1, PULSE_BUDGET / Math.max(1, obj.__need || 0));
     obj.__frac = obj.__frac == null ? goal : obj.__frac + (goal - obj.__frac) * Math.min(1, (dt || 0.016) * 1.5);
     if (goal === 1 && obj.__frac > 0.995) obj.__frac = 1;
@@ -2542,15 +2531,14 @@ function detectGpu() {
 }
 
 
-// Раскладка «силы» считается в отдельном потоке: на больших графах один шаг физики занимает десятки миллисекунд,
-// и в основном потоке это тормозило камеру и отрисовку. Поток шлёт позиции ~60 раз в секунду, главный только переносит их
+// Раскладка считается в отдельном потоке: на больших графах шаг физики занимает десятки миллисекунд и не должен
+// мешать камере и отрисовке. Поток шлёт позиции ~60 раз в секунду, основной поток только переносит их
 const PHYS_WORKER_SRC = `
 import { forceSimulation, forceManyBody, forceLink, forceCollide, forceY, forceRadial } from 'https://cdn.jsdelivr.net/npm/d3-force-3d@3.0.5/+esm';
 let sim = null, nodes = [], gen = 0, cfg = {}, t0 = 0, softUntil = 0, running = false, timer = 0, pinAlpha = 0;
 // Мягкий старт: трение плавно спадает от SOFT к обычному. Остановка: когда узлы SLOW_TICKS шагов подряд движутся
 // медленнее порога (STILL от размера графа × ползунок «Порог остановки») или сила раскладки иссякла - трение за FADE
-// шагов плавно (по S-кривой) растёт до 1, узлы тормозят до нуля. Раньше ждали ещё и ослабления силы - узлы уже стояли,
-// а раскладка (и нагрузка) шла ещё секунды.
+// шагов плавно (по S-кривой) растёт до 1, узлы тормозят до нуля.
 // Остывание: в самом конце (сила ниже COOL_AT) трение подрастает до COOL - плотный ком не колышется, как капля
 const SOFT = 0.88, FADE = 60, STILL = 1.5e-4, COOL_AT = 0.05, COOL = 0.5, SLOW_TICKS = 30, MOVE_EPS = 0.02;
 let maxV = 0, idlePosts = 0;
@@ -2672,8 +2660,8 @@ onmessage = e => {
         if (cfg.layout === 'td') sim.force('level', forceY((n, i) => m.lv[i]).strength(1));
         else if (cfg.layout === 'radial') sim.force('level', forceRadial((n, i) => m.lv[i]).strength(1));
         applyCfg();
-        // Прогрев - не дольше 150 мс: на огромном виде (10к узлов, 60к связей) шаг тяжёлый, и 40 шагов прогрева держали
-        // экран пустым несколько секунд после смены вкладки; дальше граф разворачивается на глазах
+        // Прогрев - не дольше 150 мс: на огромном виде шаг тяжёлый, а граф должен появиться сразу; дальше он
+        // разворачивается на глазах
         const tw = performance.now();
         for (let i = 0; i < (cfg.warmup || 0) && performance.now() - tw < 150; i++) sim.tick();
         post('pos');
@@ -2757,7 +2745,7 @@ function levelTargets(lay) {
     }
     let maxL = 0; for (let i = 0; i < N; i++) maxL = Math.max(maxL, lvl[i]);
     const dist = (N > 400 ? 40 : 50) * vis.dagDist * Math.max(1, Math.sqrt(N) / 15);
-    // Радиально: корни - на своей сфере, а не в центре (иначе никем не вызываемые функции сбивались в яркий ком)
+    // Радиально: корни - на своей сфере, а не в центре (иначе никем не вызываемые функции сбиваются в яркий ком)
     return Float32Array.from(lvl, v => lay === 'radial' ? (v + 0.8) * dist * 1.3 : (maxL / 2 - v) * dist * 1.4);
 }
 
@@ -2792,8 +2780,8 @@ function physicsStart(opts) {
     });
     const deg = id => { const a = adj.inn.get(id), b = adj.out.get(id); return (a ? a.length : 0) + (b ? b.length : 0) || 1; };
     const L = gdata.links, links = new Int32Array(L.length * 2), dist = new Float32Array(L.length), str = new Float32Array(L.length);
-    // Плотность: у узла с сотней связей и в графе «все со всеми» связи длиннее, а отталкивание сильнее - иначе
-    // такие места слипались в ком. Степень - под корнем, чтобы хабы не разлетались слишком далеко
+    // Плотность: у узла с сотней связей и в графе «все со всеми» связи длиннее, а отталкивание сильнее, чтобы такие
+    // места не слипались в ком. Степень - под корнем, чтобы хабы не разлетались слишком далеко
     const dens = Math.max(1, Math.sqrt(L.length / Math.max(1, N)) / 1.3), hier = viewOpts[curView].layout !== 'force' && curView !== 'dirs' ? 0.3 : 1;
     const chg = Float32Array.from(ns, n => dens * (1 + Math.sqrt(deg(n.id)) * 0.2));
     L.forEach((l, i) => {
@@ -2814,8 +2802,8 @@ function physicsSend(type, extra) { if (physics.worker) physics.worker.postMessa
 
 
 // Отложенный до первых позиций рост начинается сейчас. Волна - пространственная: шар, расширяющийся от «главного»
-// узла (узел вырастает, когда фронт доходит до его места). Волна по обходу связей в плотном графе сразу зажигала узлы
-// по всему объёму, и связи между ними складывались в рваный многогранник. Без позиций - прежняя волна, сдвинутая во времени
+// узла (узел вырастает, когда фронт доходит до его места), поэтому видимая часть графа всегда компактна.
+// Без позиций - волна по обходу связей, сдвинутая во времени
 function releaseGrowth() {
     if (physics.growShift == null) return;
     const now = performance.now() / 1000, ns = gdata.nodes, N = ns.length, root = growOrder && growOrder.length ? growOrder[0] : -1;
@@ -2928,8 +2916,8 @@ function initGraph() {
         .onEngineStop(() => { if (!workerLayout()) layoutStopped(); })
         .cooldownTime(COOL_FULL);
     G.pauseAnimation(); // кадры даёт orbitFrame - только когда нужно
-    // Камерой управляет только orbit: встроенные OrbitControls библиотеки в каждом кадре делали camera.lookAt(target),
-    // срезая крен - картинка расходилась с нашей камерой (странное вращение, неверное отсечение узлов и связей у краёв)
+    // Камерой управляет только orbit: встроенные OrbitControls библиотеки в каждом кадре делают camera.lookAt(target)
+    // и срезают крен, поэтому они отключены
     { const ctr = G.controls(); if (ctr) { ctr.enabled = false; ctr.update = () => false; } }
     // Силы библиотеки - на случай иерархических раскладок (для «сил» их отключаем: считает поток)
     libForces = { charge: G.d3Force('charge'), link: G.d3Force('link') };
@@ -2938,6 +2926,13 @@ function initGraph() {
     ro.observe(el);
     bindOrbitInput(G.renderer().domElement);
     detectGpu();
+    // Браузер рисует без видеокарты (SwiftShader, llvmpipe и т.п.) - всё будет медленным, предупреждаем сразу
+    if (gpu.kind === 'software') toast(t('gpuSoftwareHint'), 15000);
+    // Сбой видеокарты (драйвер, нехватка памяти): браузер забирает контекст WebGL и потом может вернуть - тогда
+    // сцена (небо, свечение, буферы) строится заново
+    const glCanvas = G.renderer().domElement;
+    glCanvas.addEventListener('webglcontextlost', e => { e.preventDefault(); toast(t('glLost'), 12000); });
+    glCanvas.addEventListener('webglcontextrestored', () => { applyStyle(); requestRender(); toast(t('glRestored'), 3000); });
     ensureLines();
     applyRenderScale();
     applyStyle();
@@ -2986,7 +2981,7 @@ function applyPhysics() {
 
 
 // Раскладка библиотеки ведёт себя как поток: трение плавно спадает после мягкого старта, а когда узлы почти
-// не движутся - плавно растёт до 1, и раскладка останавливается (раньше шла до таймаута и обрывалась)
+// не движутся - плавно растёт до 1, и раскладка останавливается сама, а не по таймауту
 const SOFT_DECAY = 0.88, PHYS_FADE = 45, STILL_K = 1.5e-4;
 const lib = { ticks: 0, fade: 0 };
 function libPhysicsTick() {
@@ -3034,16 +3029,16 @@ function reheat(resume) {
 }
 
 
-// Снять закрепление узлов (пауза, снимок). В иерархической раскладке координата уровня остаётся закреплённой -
-// раньше она снималась вместе с остальными, и после «продолжить» дерево расползалось
+// Снять закрепление узлов (пауза, снимок). В иерархической раскладке координата уровня остаётся закреплённой,
+// чтобы после «продолжить» дерево не расползалось
 function unpinNodes() {
     const fk = dagEase.axis && !workerLayout() ? 'f' + dagEase.axis : null;
     for (const n of gdata.nodes) { delete n.fx; delete n.fy; delete n.fz; if (fk && n.__dfix != null) n[fk] = n.__dfix; }
 }
 
 
-// Смена иерархической раскладки: библиотека сразу ставит узлам координату уровня (fx / fy) - узлы прыгали.
-// Эта «сила» запоминает цели уровней и первые DAG_EASE мс плавно ведёт закреплённую координату от старого места к цели
+// Смена иерархической раскладки: библиотека сразу ставит узлам координату уровня (fx / fy). Эта «сила» запоминает
+// цели уровней и первые DAG_EASE мс плавно ведёт закреплённую координату от старого места к цели
 const DAG_EASE = 1200;
 const dagEase = { axis: null, grab: false, t0: 0 };
 function dagEaseForce() {
@@ -3072,7 +3067,9 @@ function applyView(keepSel) {
     if (isStats) setShown($('#opts'), false); else if (isShown($('#opts')) && $('#opts').dataset.view !== curView) setTimeout(renderOpts, 0);
     if (isStats) { renderStats(true); closeDetails(); return; }
     const first = !G;
-    if (!G) initGraph();
+    if (!G) {
+        try { initGraph(); } catch (err) { console.error(err); G = null; toast(t('noWebGL'), 20000); return; }
+    }
     // Перестройка того же вида (опции, фильтр, обновление файлов) сохраняет позиции узлов и камеру
     const viewChanged = lastAppliedView !== curView || first; lastAppliedView = curView;
     // Другой проект или перечитанный тот же - после раскладки камера показывает граф целиком
@@ -3121,8 +3118,8 @@ function applyView(keepSel) {
     }
     // Тот же вид - всегда «доводка» на месте (возвращённые фильтром узлы вырастают из соседей), иначе граф раскладывался бы заново
     const incremental = reused > 0 && (reused > gdata.nodes.length * 0.5 || !viewChanged);
-    // Сменили раскладку - узлы начинают с текущих мест, но раскладка идёт полностью: «доводка» с сильным трением
-    // за 3 с не успевала развернуть дерево в «силы» (и наоборот)
+    // Сменили раскладку - узлы начинают с текущих мест, но раскладка идёт полностью, а не короткой «доводкой»:
+    // дерево должно успеть развернуться в «силы» (и наоборот)
     const relayout = relayoutNext; relayoutNext = false;
     const gentle = incremental && !relayout;
     // Первые секунды - сильное трение: при доводке узлы почти стоят, при смене раскладки граф перетекает в новую форму,
@@ -3150,8 +3147,8 @@ function applyView(keepSel) {
         softFrom = performance.now(); softUntil = soft ? softFrom + soft : 0;
         libPhysicsRestart();
     }
-    // Концы связей - сами узлы, а не их id. Раньше это делала сила связей библиотеки; при раскладке в потоке её нет,
-    // и без этого не рисовались связи (общий буфер пропускал их), а выделенные стояли кучей в центре сцены
+    // Концы связей - сами узлы, а не их id: при раскладке в потоке у библиотеки нет силы связей, которая сделала бы
+    // это сама, а общий буфер и выделенные связи берут координаты прямо из узлов
     { const byId = new Map(gdata.nodes.map(n => [n.id, n])); for (const l of gdata.links) { if (typeof l.source !== 'object') l.source = byId.get(l.source) || l.source; if (typeof l.target !== 'object') l.target = byId.get(l.target) || l.target; } }
     // Встречные связи (A → B и B → A) у выделенного узла рисуются дугами в разные стороны - иначе стрелки лежат на одной
     // линии и упираются друг в друга
@@ -3275,7 +3272,7 @@ function renderLegend() {
         for (const k of ['c', 'h', 'dir', 'fn', 'macro', 'type', 'var', 'nodef', 'ext', 'vendor']) if (kinds.has(k)) items.push([k === 'vendor' ? t('vendor') : L[k], k === 'vendor' ? colorCache['--ext'] : colorCache[KIND_COLORS[k]]]);
     }
     el.innerHTML = items.map(([l, c]) => `<span><i style="background:${c}${o.color === 'metric' ? ';width:34px;border-radius:3px' : ''}"></i>${esc(l)}</span>`).join('') +
-        `<span class="arrowleg" title="${esc(t('arrowHint'))}">${esc(t('arr_' + (curView === 'calls' && o.gran === 'file' ? 'callsFile' : curView)))}</span>` +
+        `<span class="arrowleg" title="${esc(t('arrowHint'))}">${esc(t('arr_' + (curView === 'calls' && o.gran === 'file' ? 'callsFile' : curView === 'api' && !gdata.nodes.some(n => n.kind === 'h') ? 'apiPub' : curView)))}</span>` +
         `<span id="gcount">${fmt(gdata.nodes.length)} ${t('nodes')} · ${fmt(gdata.links.length)} ${t('links')}</span>` + (vis.showFps ? `<span id="fpsVal" class="mono">… FPS</span>` : '');
 }
 
@@ -3569,7 +3566,7 @@ function ghLink(path, a, b) { return model.web ? `<a class="iconbtn" target="_bl
 
 
 function codeBlock(file, a, b) {
-    if (typeof file.text !== 'string') return ''; // снимок без исходников - кода нет (раньше панель деталей падала)
+    if (typeof file.text !== 'string') return ''; // снимок без исходников - кода нет
     const lines = file.text.split('\n');
     b = Math.min(b, a + 400, lines.length);
     let out = '';
@@ -3609,7 +3606,7 @@ function showDetails(n) {
     const L = KIND_LABEL();
     if (n.kind === 'c' || n.kind === 'h') {
         const f = r;
-        h += kv([[t('path'), `<span class="mono">${esc(f.path)}</span>`], [t('kind'), L[n.kind]], ...statRows(f.stats), [t('funcs'), fmt(f.funcs.length)], [t('macros'), fmt(f.macros.length)]]);
+        h += kv([[t('path'), `<span class="mono">${esc(f.path)}</span>`], [t('kind'), L[n.kind]], ...statRows(f.stats), [t('funcs'), fmt(f.funcs.length)], f.macros.length || cLike(f) ? [t('macros'), fmt(f.macros.length)] : null]);
         h += acts + `<button class="iconbtn" data-act="md">Markdown</button>` + ghLink(f.path) + `</div>`;
         const incl = transIncludes(f);
         if (curView === 'includes') {
@@ -3629,7 +3626,7 @@ function showDetails(n) {
         const fnItems = f.fnIds.map(id => model.fns.get(id)).sort((a, b) => a.line - b.line).map(fn => ({ id: fn.id, label: fn.name, title: fn.sig, color: colorCache['--s3'], ct: 'L' + fn.line, view: 'calls' }));
         h += sec(t('definedHere'), fnItems.length, listHtml(fnItems, 300));
         const ext = f.includes.filter(i => i.res && i.res.kind !== 'project');
-        if (ext.length) h += sec(t('external') + ' #include', ext.length, `<div class="small mono">${ext.map(i => esc(i.sys ? `<${i.path}>` : `"${i.path}"`) + (i.res.kind === 'vendor' ? ` <span class="badge">${t('vendor')}</span>` : '')).join('<br>')}</div>`);
+        if (ext.length) h += sec(t('extIncludes'), ext.length, `<div class="small mono">${ext.map(i => esc(mdImport(f, i)) + (i.res.kind === 'vendor' ? ` <span class="badge">${t('vendor')}</span>` : '')).join('<br>')}</div>`);
     } else if (n.kind === 'fn') {
         const fn = r; const len = fn.endLine - fn.startLine + 1;
         h += `<div class="sig">${esc(fn.sig)}</div>`;
@@ -3781,8 +3778,8 @@ function renderStats(animate) {
             card(t('medianFn'), fmt(quant(lens, 0.5)), `${t('st_p90')} ${fmt(quant(lens, 0.9))}`) +
             card(t('longFns'), fmt(long50), pct(long50, fns.length)) : '') +
         card(t('avgFile'), fmt(Math.round(T.code / Math.max(1, M.files.size))), t('codeLinesU')) +
-        card(t('macros'), fmt(M.macros.size)) + card(t('types'), fmt(M.types.size)) +
-        card('#include', fmt(incEdges), t('includeEdges')) +
+        (M.macros.size ? card(t('macros'), fmt(M.macros.size)) : '') + card(t('types'), fmt(M.types.size)) +
+        card(t('incCard'), fmt(incEdges), t('includeEdges')) +
         card(t('ignored'), fmt(M.ignoredCount), M.large ? `> ${readCfg().maxKB} KB: ${M.large}` : '') + `</div>`;
 
     // Графики
@@ -3822,8 +3819,9 @@ function renderStats(animate) {
         `<div class="panel"><h3>${t('mostCalled')}</h3>${topList(mostCalled)}</div>` +
         `<div class="panel"><h3>${t('fanOut')}</h3>${topList(fanOut)}</div></div>`;
 
-    // Диагностика
+    // Диагностика (прототипы и заголовки - понятия C/C++: в других языках эти разделы не показываются)
     const cFamily = f => f.lang === 'c' || f.lang === 'cpp';
+    const hasC = M.langs && [...M.langs].some(l => l === 'c' || l === 'cpp');
     const protoNoDef = [...M.declsByName.entries()].filter(([n, ds]) => !M.fnByName.has(n) && ds.some(d => d.file.isH && cFamily(d.file))).map(([n, ds]) => ({ id: 'fd:' + n, label: n, title: ds[0].file.path, color: 'var(--s8)', ct: basename(ds[0].file.path) + ':' + ds[0].line, view: 'api' }));
     const noProto = fns.filter(f => f.file.lang === 'c' && !f.isStatic && f.name !== 'main' && !f.file.isH && !f.declaredIn.some(d => d.file.isH)).map(f => ({ id: f.id, label: f.name, title: f.file.path, color: 'var(--s3)', ct: basename(f.file.path), view: 'calls' }));
     const unused = fns.filter(f => !f.inn.length && f.name !== 'main' && !/^(WinMain|wWinMain|DllMain|SDL_main|android_main)$/.test(f.name)).map(f => ({ id: f.id, label: f.name, title: f.file.path, color: 'var(--s3)', ct: basename(f.file.path), view: 'calls' }));
@@ -3838,10 +3836,10 @@ function renderStats(animate) {
         statDiag[key] = build; return `<details class="box" data-diag="${key}"><summary>${esc(title)} <span class="muted">(${items})</span></summary><div class="dbody"></div></details>`;
     };
     h += `<div class="panel" style="margin-top:16px"><h3>${t('diag')}</h3>` +
-        dsec('proto', t('protoNoDef'), protoNoDef.length, () => listHtml(protoNoDef, 300)) +
-        dsec('noProto', t('noProto'), noProto.length, () => listHtml(noProto, 300)) +
+        (hasC ? dsec('proto', t('protoNoDef'), protoNoDef.length, () => listHtml(protoNoDef, 300)) +
+            dsec('noProto', t('noProto'), noProto.length, () => listHtml(noProto, 300)) : '') +
         dsec('unused', t('unused'), unused.length, () => listHtml(unused, 300)) +
-        dsec('hdr', t('headersUnused'), hdrUnused.length, () => listHtml(hdrUnused, 300)) +
+        ([...M.files.values()].some(f => f.isH) ? dsec('hdr', t('headersUnused'), hdrUnused.length, () => listHtml(hdrUnused, 300)) : '') +
         dsec('cyc', t('cycles'), cyc.length, () => cycHtml) + `</div></div>`;
     const y = st.scrollTop; st.innerHTML = h; st.scrollTop = y;
     renderTreemap(); fitStatCharts(true);
@@ -3934,8 +3932,9 @@ function renderTreemap() {
     nav.innerHTML = [`<button class="chip" data-tdir="">${esc(M.name)}</button>`].concat(parts.map((p, i) => `<button class="chip" data-tdir="${esc(parts.slice(0, i + 1).join('/'))}">${esc(p)}</button>`)).join('<span class="muted">/</span>') +
         (statTree.mode === 'comments' ? `<span class="tmleg">${t('comments').toLowerCase()}: 0% <i></i> 25%+</span>` : '');
     const W = Math.max(200, box.clientWidth), H = Math.max(160, box.clientHeight);
+    box.dataset.w = W;
     // «Папки»: у каждой плитки верхнего уровня свой цвет, вложенные - цвета своей папки (модуль часто один на весь
-    // проект, и карта была одноцветной); «комментарии» - плотность комментариев каждой плитки
+    // проект); «комментарии» - плотность комментариев каждой плитки
     const color = (it, inherit) => {
         const s = it.dir ? it.dir.stats : it.file.stats;
         return statTree.mode === 'comments' ? commentColor(s.comment / Math.max(1, s.code + s.comment)) : inherit;
@@ -4154,7 +4153,7 @@ function paretoHtml(M) {
 }
 
 
-const STAT_COLS = () => [['path', t('path')], ['code', t('code')], ['comment', t('comments')], ['blank', t('blank')], ['total', t('total')], ['funcs', t('funcs')], ['inc', '#include'], ['incBy', t('includedBy')]];
+const STAT_COLS = () => [['path', t('path')], ['code', t('code')], ['comment', t('comments')], ['blank', t('blank')], ['total', t('total')], ['funcs', t('funcs')], ['inc', t('includes')], ['incBy', t('includedBy')]];
 function statFileRows() {
     const cols = STAT_COLS();
     const val = (f, k) => (k === 'path' ? f.path : k === 'funcs' ? f.funcs.length : k === 'inc' ? f.incOut.length : k === 'incBy' ? f.incIn.length : f.stats[k]);
@@ -4198,6 +4197,24 @@ const mdCode = s => '`' + String(s).replace(/`/g, 'ˋ') + '`';
 function mdQuote(text) { return text.split('\n').map(l => '> ' + l).join('\n'); }
 
 
+// Язык файла: подсветка блоков кода, вид импорта, «только API» (заголовки C/C++ или публичное в остальных языках)
+const MD_FENCE = { c: 'c', cpp: 'cpp', java: 'java', cs: 'csharp', py: 'python' };
+const mdFence = f => MD_FENCE[f.lang] || (f.lang === 'js' ? (/\.[mc]?tsx?$/i.test(f.path) ? 'typescript' : 'javascript') : 'text');
+const cLike = f => f.lang === 'c' || f.lang === 'cpp';
+// Файл в справочнике API: заголовок C/C++ или любой файл языка без заголовков
+const mdApiFile = f => !!f.api;
+// Публичная функция для справочника API: в C/C++ - всё из заголовка, в остальных языках - не private / не «_имя»
+const mdApiFn = (f, fn) => (cLike(f) ? f.isH : !fn.isStatic);
+// Импорт в синтаксисе языка файла
+function mdImport(f, i) {
+    if (cLike(f)) return i.sys ? `<${i.path}>` : `"${i.path}"`;
+    if (f.lang === 'java') return `import ${i.path}`;
+    if (f.lang === 'cs') return `using ${i.path}`;
+    if (f.lang === 'py') return i.kind === 'from' ? `from ${i.path} import ${(i.names || []).join(', ')}` : `import ${i.path}`;
+    return `'${i.path}'`;
+}
+
+
 function mdFileLink(f, line) {
     return `[${mdCode(f.path + (line ? ':' + line : ''))}](#${mdAnchor(f.path)})`;
 }
@@ -4205,7 +4222,7 @@ function mdFileLink(f, line) {
 
 function generateMarkdown(opts = {}) {
     const M = model, apiOnly = !!opts.apiOnly;
-    const files = [...M.files.values()].filter(f => (!apiOnly || f.isH) && (!opts.only || opts.only.has(f))).sort((a, b) => a.path.localeCompare(b.path));
+    const files = [...M.files.values()].filter(f => (!apiOnly || mdApiFile(f)) && (!opts.only || opts.only.has(f))).sort((a, b) => a.path.localeCompare(b.path));
     const out = [];
     const T = M.totals;
     const date = new Date().toISOString().slice(0, 10);
@@ -4226,8 +4243,9 @@ function generateMarkdown(opts = {}) {
         // Дерево директорий
         out.push('<a id="tree"></a>', '', `## ${t('md_tree')}`, '', '```text', M.name + '/');
         const walk = (d, prefix) => {
-            const kids = [...d.subdirs.filter(s => s.nFiles).sort((a, b) => a.path.localeCompare(b.path)).map(s => ({ dir: s })),
-                ...d.files.filter(f => !apiOnly || f.isH).sort((a, b) => a.path.localeCompare(b.path)).map(f => ({ file: f }))];
+            const hasApi = x => x.files.some(mdApiFile) || x.subdirs.some(hasApi);
+            const kids = [...d.subdirs.filter(s => s.nFiles && (!apiOnly || hasApi(s))).sort((a, b) => a.path.localeCompare(b.path)).map(s => ({ dir: s })),
+                ...d.files.filter(f => !apiOnly || mdApiFile(f)).sort((a, b) => a.path.localeCompare(b.path)).map(f => ({ file: f }))];
             kids.forEach((k, i) => {
                 const last = i === kids.length - 1;
                 if (k.dir) { out.push(`${prefix}${last ? '└── ' : '├── '}${basename(k.dir.path)}/`); walk(k.dir, prefix + (last ? '    ' : '│   ')); }
@@ -4247,38 +4265,43 @@ function mdFile(f, out, apiOnly) {
     out.push(`<a id="${mdAnchor(f.path)}"></a>`, '', `### ${mdCode(f.path)}`, '');
     if (f.fileDoc) out.push(mdQuote(f.fileDoc), '');
     out.push(`*${t('lines')}: ${f.stats.total} - ${t('code').toLowerCase()} ${f.stats.code}, ${t('comments').toLowerCase()} ${f.stats.comment}, ${t('blank').toLowerCase()} ${f.stats.blank}*` + (M.web ? ` · [${t('md_source')}](${M.web(f.path)})` : ''), '');
-    const inc = f.includes.map(i => i.res && i.res.kind === 'project' ? mdFileLink(M.files.get(i.res.path)) : mdCode(i.sys ? `<${i.path}>` : `"${i.path}"`));
-    if (inc.length) out.push(`**${t('includes')}:** ${inc.join(', ')}  `);
+    const inc = f.includes.map(i => (i.res && i.res.kind === 'project' && M.files.get(i.res.path) ? mdFileLink(M.files.get(i.res.path)) : mdCode(mdImport(f, i))));
+    const incU = [...new Set(inc)];
+    if (incU.length) out.push(`**${t('includes')}:** ${incU.join(', ')}  `);
     if (f.incIn.length) out.push(`**${t('includedBy')} (${f.incIn.length}):** ${f.incIn.slice(0, 20).map(e => mdFileLink(e.file)).join(', ')}${f.incIn.length > 20 ? ', …' : ''}`);
-    if (inc.length || f.incIn.length) out.push('');
+    if (incU.length || f.incIn.length) out.push('');
 
-    // Функции: для заголовка - прототипы + inline-определения; для .c - определения
-    const items = []; const seen = new Set();
+    // Функции: для заголовка C/C++ - прототипы + inline-определения; для .c - определения; в языках с классами -
+    // методы с именем класса, перегрузки (одно имя, разные параметры) - отдельно
+    const items = []; const seen = new Set(), cl = cLike(f);
+    const key = (name, container, sig) => (cl ? name : `${container || ''}.${name}|${sig}`);
     for (const d of f.decls) {
-        if (seen.has(d.name)) continue; seen.add(d.name);
-        const fn = M.resolveFn(d.name, f);
-        items.push({ name: d.name, sig: d.sig, doc: d.doc || (fn && fn.doc) || '', fn, line: d.line });
+        const k = key(d.name, d.container, d.sig); if (seen.has(k)) continue; seen.add(k);
+        const fn = cl ? M.resolveFn(d.name, f) : M.resolveFn(d.name, f, d.container);
+        if (apiOnly && !cl && fn && fn.isStatic) continue;
+        items.push({ name: d.container ? d.container + '.' + d.name : d.name, sig: d.sig, doc: d.doc || (fn && fn.doc) || '', fn, line: d.line });
     }
     for (const id of f.fnIds) {
-        const fn = M.fns.get(id); if (seen.has(fn.name)) continue; seen.add(fn.name);
-        if (apiOnly && !f.isH) continue;
-        items.push({ name: fn.name, sig: fn.sig, doc: fn.doc || fn.implDoc || '', fn, line: fn.line, def: true });
+        const fn = M.fns.get(id); const k = key(fn.name, fn.container, fn.sig); if (seen.has(k)) continue; seen.add(k);
+        if (apiOnly && !mdApiFn(f, fn)) continue;
+        items.push({ name: fn.qual || fn.name, sig: fn.sig, doc: fn.doc || fn.implDoc || '', fn, line: fn.line, def: true });
     }
     if (items.length) {
         out.push(`#### ${t('funcs')}`, '');
         for (const it of items.sort((a, b) => a.line - b.line)) {
-            out.push(`##### ${mdCode(it.name)}`, '', '```c', it.sig + (it.def ? '' : ';'), '```', '');
+            out.push(`##### ${mdCode(it.name)}`, '', '```' + mdFence(f), it.sig + (it.def || !cl ? '' : ';'), '```', '');
             if (it.doc) out.push(it.doc, '');
             const meta = [];
             if (it.fn) {
                 const hdr = it.def && it.fn.declaredIn.find(d => d.file !== f);
                 if (hdr) meta.push(`${t('declaredIn')}: ${mdFileLink(hdr.file, hdr.line)}`);
                 if (it.fn.file !== f || !it.def) meta.push(`${t('definedIn')}: ${mdFileLink(it.fn.file, it.fn.line)}` + (M.web ? ` ([↗](${M.web(it.fn.file.path, it.fn.startLine, it.fn.endLine)}))` : ''));
-                const flags = [it.fn.isStatic && 'static', it.fn.isInline && 'inline'].filter(Boolean);
+                // В C/C++ isStatic - static (виден только в своём файле), в остальных языках - private / «_имя»
+                const flags = [it.fn.isStatic && (cl ? 'static' : 'private'), it.fn.isInline && 'inline'].filter(Boolean);
                 if (flags.length) meta.push(flags.map(mdCode).join(' '));
-                const calls = [...new Set(expandOut(it.fn, { showMacros: false }).filter(e => e.kind === 'call' || e.kind === 'indirect').map(e => e.kind === 'indirect' ? `${e.target.name} (->${e.field})` : e.target.name))];
+                const calls = [...new Set(expandOut(it.fn, { showMacros: false }).filter(e => e.kind === 'call' || e.kind === 'indirect').map(e => (e.kind === 'indirect' ? `${e.target.name} (->${e.field})` : e.target.qual || e.target.name)))];
                 if (calls.length) meta.push(`${t('calls')}: ${calls.slice(0, 15).map(mdCode).join(', ')}${calls.length > 15 ? ', …' : ''}`);
-                const by = [...new Set(it.fn.inn.filter(e => e.from.kind === 'fn').map(e => e.from.name))];
+                const by = [...new Set(it.fn.inn.filter(e => e.from.kind === 'fn').map(e => e.from.qual || e.from.name))];
                 if (by.length) meta.push(`${t('calledBy')}: ${by.slice(0, 15).map(mdCode).join(', ')}${by.length > 15 ? ', …' : ''}`);
             } else meta.push(`⚠ ${t('noDef')}`);
             if (meta.length) out.push(meta.map(m => '- ' + m).join('\n'), '');
@@ -4303,7 +4326,7 @@ function mdFile(f, out, apiOnly) {
         out.push('');
     }
     // Глобальные переменные
-    const vars = f.vars.filter(v => f.isH || (!v.isStatic && !apiOnly));
+    const vars = f.vars.filter(v => f.isH || !v.isStatic);
     if (vars.length) {
         out.push(`#### ${t('vars')}`, '', `| ${t('variable')} | ${t('md_decl')} | ${t('md_desc')} |`, '|---|---|---|');
         for (const v of vars) out.push(`| ${mdCode(v.name)} | ${mdCode(v.sig.length > 90 ? v.sig.slice(0, 90) + '…' : v.sig)} | ${mdCell(v.doc || '')} |`);
@@ -4540,18 +4563,18 @@ function setView(v, noApply) {
 /* Подсказки к настройкам (ключ - ключ опции или ключ подписи из I18N) */
 const HINTS = {
     ru: {
-        layout: 'Как расставляются узлы. «Силы» - физическая модель: связанные узлы притягиваются, остальные отталкиваются. «Дерево» - уровнями по направлению связей (кто кого включает/вызывает). «Радиально» - уровни расходятся кольцами от центра.',
+        layout: 'Как расставляются узлы. «Силы» - физическая модель: связанные узлы притягиваются, остальные отталкиваются. «Дерево» - уровнями по направлению связей (кто кого подключает/вызывает). «Радиально» - уровни расходятся кольцами от центра.',
         colorBy: 'Чем раскрашены узлы: по типу (файл, функция, макрос…), по модулю (папке проекта) или по метрике - чем больше строк/связей, тем ярче.', colorShade: 'Цвет модуля или типа ведёт себя как раскраска «по метрике»: мелкие и малосвязанные узлы - тёмный оттенок своего цвета, крупные и важные - яркий. Метрика - как у размера («по связям» - число связей, иначе - строки кода).',
         sizeBy: 'От чего зависит размер узла: сумма размеров по строкам и по связям, только строки кода, только число связей или одинаковый размер у всех.',
-        gran: 'Уровень детализации графа вызовов: отдельные функции или целые файлы (связь = «функции файла A вызывают функции файла B»). Отличие от «Подключений»: там связь - #include / import (что файлу нужно при сборке, обычно заголовок), а здесь - реальные вызовы между файлами реализации, мимо заголовков; две связи навстречу значат, что файлы вызывают друг друга (например, через указатели на функции).',
+        gran: 'Уровень детализации графа вызовов: отдельные функции или целые файлы (связь = «функции файла A вызывают функции файла B»). Отличие от «Подключений»: там связь - подключение файла (что ему нужно для сборки или работы), а здесь - реальные вызовы между файлами; две связи навстречу значат, что файлы вызывают друг друга (например, через указатели на функции).',
         showIndirect: 'Вызовы через указатели на функции: obj->field(...) связывается с функциями, которые присваиваются этому полю (например, колбэки сцены start/update/render).',
         showMacros: 'Показывать макросы отдельными узлами. Если выключено, вызов через макрос сразу ведёт к функциям, которые макрос вызывает.',
         showRefs: 'Ссылки на функцию без вызова (&fn): например, функция передаётся как колбэк в другую.',
-        showExt: 'Показывать внешние узлы: функции и заголовки, которых нет в проекте (libc, SDL, OpenGL…). Рисуются полупрозрачными каркасами.',
-        showVendor: 'Показывать заголовки сторонних библиотек, которые лежат в проекте, но исключены фильтром (cglm, glad, stb…).',
+        showExt: 'Показывать внешние узлы: функции и подключения, которых нет в проекте (libc, SDL, java.util, numpy…). Рисуются полупрозрачными каркасами.',
+        showVendor: 'Показывать файлы сторонних библиотек, которые лежат в проекте, но исключены фильтром (cglm, glad, stb…).',
         hideIsolated: 'Скрыть узлы без единой связи в этом виде (например, функции, которые никто не вызывает и которые сами никого не вызывают). Помогает убрать «шум» по краям графа.',
-        kinds: 'Какие объявления из заголовков показывать в виде API.',
-        fn: 'Функции, объявленные или определённые в заголовках.', macro: 'Макросы #define из заголовков.', type: 'struct / union / enum / typedef.', var: 'Глобальные переменные (extern).',
+        kinds: 'Какие объявления показывать в виде API: из заголовков C/C++, в остальных языках - из любого файла.',
+        fn: 'Функции и методы.', macro: 'Макросы #define из заголовков.', type: 'struct / union / enum / typedef.', var: 'Глобальные переменные (extern).',
         includeC: 'Показывать в API и символы, определённые только в .c файлах (не static).',
         palette: 'Набор цветов сцены. «Тема» - спокойные цвета под светлую/тёмную тему сайта, остальные - собственный тёмный фон и яркие цвета.',
         shape: 'Форма узлов: гладкая сфера, огранённый кристалл или проволочный каркас.',
@@ -4587,7 +4610,7 @@ const HINTS = {
         vidFormat: 'MP4 (H.264) - маленький файл, открывается везде, в том числе в мессенджерах. GIF - без звука и кодеков, но в разы тяжелее: лучше 480 px и 15 кадров/с.', vidLoop: 'Граф делает ровно один оборот за ролик - при повторе (GIF, зацикленное видео) стык не виден. Иначе скорость задаётся ползунком.', vidDur: 'Длина ролика в секундах.', vidSpeed: 'Сколько градусов в секунду поворачивается граф.', vidSize: 'Сторона квадратного кадра. Подписи, пояснение цветов и заголовок рисуются поверх ролика по галочкам ниже; подписи в ролике пересчитываются на каждом кадре.', vidFps: 'Частота кадров ролика: 30 - стандарт, 60 - плавнее, но тяжелее; для GIF хватит 15-24.', dirsFilter: 'Папки проекта: снимите галочку, чтобы скрыть папку со всем содержимым (например, встроенную библиотеку). Число - файлов внутри.', liveFilter: 'Показывать только файлы, подходящие под шаблоны: «src/core» - только эта папка, «!tests» - исключить. Несколько условий - через пробел. Чипы ниже прячут целые модули. Работает сразу во всех видах.', sens: 'Чувствительность вращения и масштаба.',
         fpsCap: 'Максимум кадров в секунду. 30 заметно снижает нагрузку.',
         resScale: 'Разрешение рендера. «Авто» само снижает его, если кадры не успевают отрисоваться. «Максимум» - родное разрешение экрана (на телефонах ×3).',
-        msaa: 'Сглаживание краёв (MSAA). Выше - меньше «лесенок», но тяжелее.',
+        msaa: 'Сглаживание краёв (MSAA): меньше «лесенок» и мерцания тонких линий. 2× и 4× почти бесплатны, 8× на больших графах заметно нагружает видеокарту (на графе в 10 тысяч узлов - около четверти времени кадра).',
         idleStop: 'Через сколько секунд бездействия остановить фоновую анимацию (рендер замрёт до следующего движения мыши). 0 - никогда. Не действует, пока включено автовращение («Стиль»).',
         showFps: 'Показывать в легенде частоту кадров и текущий масштаб разрешения.',
         theme: 'Тема интерфейса: как в системе, светлая или тёмная.',
@@ -4602,15 +4625,15 @@ const HINTS = {
         layout: 'How nodes are placed. Force: physics, linked nodes attract. Tree: levels along link direction. Radial: levels as rings.',
         colorBy: 'Node color: by kind, by module (project folder) or by metric (more lines/links = brighter).', colorShade: 'Module or kind colors behave like metric coloring: small, loosely linked nodes get a dark shade of their color, big and important ones a bright one. The metric follows node size (links for "by links", otherwise lines of code).',
         sizeBy: 'Node size: lines of code, number of links, or uniform.',
-        gran: 'Call graph detail: functions or whole files (link = functions of A call functions of B). Unlike Imports (#include / import - what a file needs to build, usually a header), these are real calls between implementation files; two opposite links mean the files call each other (e.g. via function pointers).',
+        gran: 'Call graph detail: functions or whole files (link = functions of A call functions of B). Unlike Imports (what a file needs to build or run), these are real calls between files; two opposite links mean the files call each other (e.g. via function pointers).',
         showIndirect: 'Calls through function pointers: obj->field(...) links to functions assigned to that field (e.g. scene callbacks).',
         showMacros: 'Show macros as nodes. When off, a call via macro leads straight to the functions it calls.',
         showRefs: 'Function references without a call (&fn), e.g. passed as a callback.',
-        showExt: 'Show external nodes (libc, SDL, OpenGL…) as translucent wireframes.',
-        showVendor: '3rd-party headers that are inside the project but excluded by filters.',
+        showExt: 'Show external nodes (libc, SDL, java.util, numpy…) as translucent wireframes.',
+        showVendor: '3rd-party library files that are inside the project but excluded by filters.',
         hideIsolated: 'Hide nodes with no links in this view - removes noise around the graph.',
-        kinds: 'Which header declarations to show in the API view.',
-        fn: 'Functions declared/defined in headers.', macro: '#define macros from headers.', type: 'struct / union / enum / typedef.', var: 'Global (extern) variables.',
+        kinds: 'Which declarations to show in the API view: from C/C++ headers, in other languages from any file.',
+        fn: 'Functions and methods.', macro: '#define macros from headers.', type: 'struct / union / enum / typedef.', var: 'Global (extern) variables.',
         includeC: 'Also show non-static symbols defined only in .c files.',
         palette: 'Scene colors. Theme = calm colors matching the UI theme; others use their own dark background.',
         shape: 'Node shape: sphere, faceted crystal or wireframe.', material: 'Lighting: matte, soft (rim light) or glowing.',
@@ -4621,10 +4644,10 @@ const HINTS = {
         gradient: 'A link goes from the source node color to the target node color and is darker at the source.', autoRotate: 'Rotate on its own when idle (the delay is set below). Rotation runs at full FPS, and while it is on the animation never sleeps.', rotateSpeed: 'Auto-rotation speed: ×1 is about one turn per 2.3 min, ×5 about 28 s.', rotateDelay: 'Idle seconds (no mouse, touch or keys) before auto-rotation starts.',
         wobble: 'Subtle thermal jitter of nodes. 0 = off.', pulseSpeed: 'How fast a pulse travels along a link.', pulseRate: 'Pulses per second per link. The pause button stops new ones.', sky: 'Background: gradient, stars, procedural nebula or grid.', skyAmt: 'Background brightness.',
         nodeSize: 'Global node scale.', nodeOpacity: 'Node opacity.', linkOpacity: 'How opaque (visible) link lines are. Very dense graphs (dozens of links per node) dim their lines further automatically, otherwise they merge into a solid blob.', quality: 'Sphere detail.',
-        arrows: 'Arrows on links of the selected node, from the caller (includer) to the callee (included). The legend below says what an arrow means in the current view.', particles: 'Pulses on links of the selected node. Speed and rate are shared with link pulses (Style).', nearFade: 'Nodes right in front of the camera dissolve.',
+        arrows: 'Arrows on links of the selected node, from the caller (importer) to the callee (imported). The legend below says what an arrow means in the current view.', particles: 'Pulses on links of the selected node. Speed and rate are shared with link pulses (Style).', nearFade: 'Nodes right in front of the camera dissolve.',
         vidFormat: 'MP4 (H.264) is small and plays everywhere, including messengers. GIF needs no codecs but is far heavier: prefer 480 px and 15 fps.', vidLoop: 'The graph makes exactly one turn per clip, so the loop seam is invisible. Otherwise the speed slider sets it.', vidDur: 'Clip length in seconds.', vidSpeed: 'Rotation in degrees per second.', vidSize: 'Side of the square frame. Labels, color key and title are drawn on the clip per the checkboxes below; labels are re-placed every frame.', vidFps: 'Clip frame rate: 30 is standard, 60 is smoother but heavier; 15-24 is enough for GIF.', dirsFilter: 'Project folders: uncheck one to hide it with everything inside (e.g. a bundled library). The number is the file count.', labelCount: 'How many nodes get labels when nothing is selected (the most connected or the nearest).', labelNear: 'Turn on to label the nodes nearest to the camera when nothing is selected (labels change as you fly). Off by default: the most connected nodes are labelled. With a selection only the node and its neighbours are labelled.', labelSize: 'Label font size.', labelKinds: 'Which node kinds get labels (the selection always does).',
         smooth: 'Camera inertia.', sens: 'Rotate/zoom sensitivity.', fpsCap: 'Frame rate limit; 30 lowers load a lot.',
-        resScale: 'Render resolution; Auto lowers it when frames are late, Max is the native screen resolution.', msaa: 'Edge anti-aliasing.',
+        resScale: 'Render resolution; Auto lowers it when frames are late, Max is the native screen resolution.', msaa: 'Edge anti-aliasing (MSAA): fewer jaggies and less shimmering of thin lines. 2× and 4× are almost free, 8× noticeably loads the GPU on large graphs.',
         idleStop: 'Stop background animation after this many idle seconds. 0 = never. Ignored while auto-rotation (Style) is on.', showFps: 'Show FPS and resolution scale in the legend.',
         theme: 'UI theme.', charge: 'Node repulsion.', linkDist: 'Preferred link length.', gravity: 'Pull to the center.',
         decay: 'Friction: higher settles faster but may get stuck in a poor shape. Low by default, so the graph spreads out more evenly; the layout runs until the forces balance (usually 10-20 s).',
@@ -4719,7 +4742,10 @@ function renderOpts() {
             h += field(t('gran'), seg('gran', [['fn', t('gran_fn')], ['file', t('gran_file')]]));
             h += chk('showIndirect', t('showIndirect')) + chk('showMacros', t('showMacros')) + chk('showRefs', t('showRefs')) + chk('showExt', t('showExt')) + chk('hideIsolated', t('hideIsolated'));
         }
-        if (curView === 'api') h += field(t('kinds'), chk('fn', t('funcs')) + chk('macro', t('macros')) + chk('type', t('types')) + chk('var', t('vars'))) + chk('includeC', t('includeC'));
+        if (curView === 'api') {
+            const c = model && model.langs && [...model.langs].some(l => l === 'c' || l === 'cpp'); // макросы и .c - понятия C/C++
+            h += field(t('kinds'), chk('fn', t('funcs')) + (c ? chk('macro', t('macros')) : '') + chk('type', t('types')) + chk('var', t('vars'))) + (c ? chk('includeC', t('includeC')) : '');
+        }
     } else if (optsTab === 'style') {
         // Пресеты - карточки; дальше все параметры пресета можно менять по отдельности
         h += `<div class="presets">${Object.keys(STYLE_PRESETS).map(k => `<button class="preset ${vis.style === k ? 'on' : ''}" data-preset="${k}"><i class="pv pv-${k}"></i><span>${esc(t('st_' + k))}</span></button>`).join('')}</div>`;
@@ -4764,7 +4790,10 @@ function renderOpts() {
         h += `<div class="row"><button class="iconbtn grow" data-oact="reheat">${t('reheat')}</button></div>`;
     } else {
         h += `<p class="small muted" style="margin:0 0 8px">${t('mdHint')}</p>`;
-        h += `<div class="field"><button class="iconbtn primary" data-oact="mdAll">${t('mdAll')}</button><button class="iconbtn" data-oact="mdApi">${t('mdApi')}</button></div>`;
+        // «Только API»: заголовки C/C++, в остальных языках - публичные классы и методы; в смешанном проекте - и то и другое
+        const langs = model && model.langs ? [...model.langs] : ['c'], hdr = langs.filter(l => l === 'c' || l === 'cpp').length;
+        const apiLbl = hdr === langs.length ? t('mdApi') : hdr ? t('mdApiMixed') : t('mdApiPub');
+        h += `<div class="field"><button class="iconbtn primary" data-oact="mdAll">${t('mdAll')}</button><button class="iconbtn" data-oact="mdApi">${apiLbl}</button></div>`;
         h += hr + `<h4>${t('png')}</h4>`;
         h += field(t('pngScale'), `<div class="seg" data-pngscale>${[1, 2, 3, 4].map(v => `<button data-v="${v}" aria-pressed="${vis.png.scale === v}">${v}×</button>`).join('')}</div>`);
         const cv = G && G.renderer().domElement, ps = cv ? pngScale(cv.clientWidth, cv.clientHeight) : 1;
@@ -4978,7 +5007,7 @@ function pngScale(w, h) {
 // screenLabels: только подписи, видимые сейчас на экране (PNG); иначе (ролик, камера вращается) - отбор заново
 // на каждом кадре: от ближних к дальним, перекрывающая уже нарисованную подпись пропускается
 // Шрифт и пункты легенды не меняются за ролик - берутся один раз (getComputedStyle и разбор DOM на каждом кадре
-// заметно тормозили запись); cache = {} от вызывающего, для PNG - без кэша
+// дороги); cache = {} от вызывающего, для PNG - без кэша
 function drawOverlays(ctx, W, H, k, cam, o, screenLabels, cache) {
     const dark = darkScene() || colorCache.dark;
     const ink = dark ? '#e8eeff' : '#0c0f17', plate = dark ? 'rgba(8,12,26,0.62)' : 'rgba(252,252,251,0.8)';
@@ -5056,7 +5085,7 @@ async function savePng() {
     await sleep0();
     try {
         // MSAA на время экспорта выключено: картинка в 2-4 раза больше экрана уже сглажена размером, а многосэмпловые
-        // буферы такого размера занимают гигабайты - видеокарта их не выделяла, и сцена в PNG выходила чёрной
+        // буферы такого размера видеокарта может не выделить (сцена в PNG выйдет чёрной)
         for (const rt of [comp.renderTarget1, comp.renderTarget2]) if (rt && rt.samples) { rt.samples = 0; rt.dispose(); }
         r.setPixelRatio(pr); r.setSize(w, h, false); comp.setPixelRatio(pr); comp.setSize(w, h);
         G.camera().clearViewOffset(); G.camera().updateProjectionMatrix(); G.camera().updateMatrixWorld();
@@ -5129,8 +5158,8 @@ async function saveVideo() {
             if (cz.bloom && cz.bloom.enabled) comp.render(); else r.render(G.scene(), cam);
             if (gif || anyOv) { ctx.drawImage(cv, 0, 0, S, S); if (anyOv) drawOverlays(ctx, S, S, S / 640, cam, ov, false, ovCache); }
             if (gif) {
-                // Палитра подбирается раз в 20 кадров (соседние кадры вращения почти одинаковы по цветам) - подбор был
-                // самой дорогой частью записи GIF (~80 мс на кадр 480×480)
+                // Палитра подбирается раз в 20 кадров (соседние кадры вращения почти одинаковы по цветам): подбор -
+                // самая дорогая часть записи GIF
                 const data = ctx.getImageData(0, 0, S, S).data;
                 if (i % 20 === 0) gifPal = lib.quantize(data, 256);
                 gifEnc.writeFrame(lib.applyPalette(data, gifPal), S, S, { palette: gifPal, delay: Math.round(1000 / fps) });
@@ -5483,7 +5512,7 @@ function bind() {
     $('#btnPause').onclick = () => {
         // «Пауза» замораживает раскладку (узлы фиксируются) и останавливает рождение импульсов; рендер и выделение работают
         paused = !paused; if (!G) return;
-        // Раскладка уже успокоилась до паузы - «продолжить» её не трогает (раньше граф встряхивался заново)
+        // Раскладка уже успокоилась до паузы - «продолжить» её не трогает
         if (paused) pausedSettled = !engineActive;
         if (paused) for (const n of gdata.nodes) { n.fx = n.x; n.fy = n.y; n.fz = n.z; } else unpinNodes();
         if (workerLayout()) {
@@ -5651,7 +5680,12 @@ function bind() {
     }, true);
     $('#stats').addEventListener('scroll', hideTip, { passive: true });
     // Карта кода и графики пересчитываются под новую ширину (окно, панель источника), но не чаще раза в 200 мс
-    { let rt = 0; new ResizeObserver(() => { clearTimeout(rt); rt = setTimeout(() => { if (curView === 'stats' && !$('#stats').hidden && model) { renderTreemap(); fitStatCharts(); } }, 200); }).observe($('#stats')); }
+    // Наблюдатель срабатывает и сразу после открытия вкладки - тогда ширина та же, и перерисовывать нечего
+    { let rt = 0; new ResizeObserver(() => { clearTimeout(rt); rt = setTimeout(() => {
+        if (curView !== 'stats' || $('#stats').hidden || !model) return;
+        const box = $('#stTreeBody'); if (box && Math.abs(Math.max(200, box.clientWidth) - (+box.dataset.w || 0)) > 2) renderTreemap();
+        fitStatCharts();
+    }, 200); }).observe($('#stats')); }
     $('#stats').addEventListener('input', e => {
         if (e.target.id === 'stFilter') { statFilter = e.target.value; const [rows, n] = statFileRows(); $('#stFilesBody').innerHTML = rows; $('#stFilesCount').textContent = fmt(n); }
     });
