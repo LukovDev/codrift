@@ -3,15 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<!-- Веб-приложение: значок на экране «Домой», полноэкранный режим, цвет строки состояния -->
-<!-- Манифест - только по http(s): под file:// браузер его не читает и сыплет ошибками CORS в консоль -->
 <script>if (location.protocol.startsWith('http')) { const m = document.createElement('link'); m.rel = 'manifest'; m.href = 'manifest.webmanifest'; document.head.appendChild(m); }</script>
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Codrift">
-<!-- Обычная строка состояния (не «translucent»): страница начинается под ней, цвет строки берётся из theme-color.
-     В режиме black-translucent страница заходит под строку состояния, и iOS размывает её край -->
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="theme-color" content="#fcfcfb" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#161a22" media="(prefers-color-scheme: dark)">
@@ -618,13 +614,10 @@ body.recording #graph canvas { object-fit: contain; }
     </main>
 </div>
 <div id="boot" hidden role="status" aria-live="polite"><div class="bcard"><div class="spin"></div><div class="btitle" id="bootTitle"></div><div class="small muted" id="bootText"></div><div class="bbar"><div id="bootBar"></div></div><button class="chip" id="bootCancel" type="button">✕</button></div></div>
-<!-- Ссылка с проектом: экран загрузки сразу, ещё до загрузки библиотек с CDN (заголовок допишет app.js) -->
 <script>if (/[?&](repo|snap)=/.test(location.search)) document.getElementById('boot').hidden = false;</script>
 <script src="parser.js?v=142"></script>
 <script src="langs.js?v=142"></script>
-<!-- three.js и 3d-force-graph как ES-модули с одного CDN: three@0.174.0 - та же копия, что импортирует сам граф,
-     поэтому собственные объекты сцены (общий буфер связей) совместимы. app.js - обычный скрипт, чтобы работал и file:// -->
-<!-- Сборка three/webgpu не нужна (рендер - WebGL): заглушка вместо ~880 КБ второй копии Three.js -->
+
 <script type="importmap">{ "imports": { "https://cdn.jsdelivr.net/npm/three@0.174.0/webgpu/+esm": "data:text/javascript,export class WebGPURenderer { constructor() { throw new Error('WebGPU renderer is not bundled'); } }" } }</script>
 <script type="module">
     import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.174.0/+esm';
